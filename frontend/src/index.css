@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Aapki hierarchy ke mutabiq fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-font-poppins);
+  background-color: #FFFFFF;
+  color: #000000;
+}
