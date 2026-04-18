@@ -115,12 +115,7 @@ const Hero = () => {
         </motion.div>
       </div>
       
-      {/* Sidebar Badge - Hidden on small mobile */}
-      <div className="absolute right-0 top-1/2 -rotate-90 translate-x-12 z-20 hidden lg:block">
-        <div className="bg-purple-600 text-white px-6 py-2 rounded-t-xl text-xs font-black tracking-widest uppercase">
-          Expert Opinions Online
-        </div>
-      </div>
+
     </div>
   );
 };

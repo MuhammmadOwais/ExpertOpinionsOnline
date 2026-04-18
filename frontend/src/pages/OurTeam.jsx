@@ -121,147 +121,176 @@ const OurTeam = () => {
       </section>
 
       {/* Departments Grid */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full mb-4">
-              <Users size={16} className="text-purple-600" />
-              <span className="text-xs font-black tracking-wider text-purple-600 uppercase">Our Departments</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">
-              Specialized Teams
-            </h2>
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              Each department brings unique expertise to deliver exceptional results
-            </p>
-          </motion.div>
-
-          <motion.div 
-            variants={staggerChildren}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          >
-            {departments.map((dept, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
-              >
-                <div className="p-6 sm:p-8">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="p-3 bg-purple-50 rounded-xl">
-                      {React.cloneElement(dept.icon, { size: 28 })}
-                    </div>
-                    <ArrowUpRight size={20} className="text-gray-300 group-hover:text-purple-600 transition-colors" />
-                  </div>
-                  
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-6">
-                    {dept.title}
-                  </h3>
-
-                  {/* Department Head */}
-                  {dept.head && (
-                    <div className="mb-6 p-4 bg-purple-50 rounded-xl">
-                      <p className="text-xs font-black text-purple-600 uppercase tracking-wider mb-1">Department Head</p>
-                      <p className="text-base sm:text-lg font-bold text-gray-900">{dept.head.name}</p>
-                      <p className="text-xs sm:text-sm text-gray-600">{dept.head.role}</p>
-                    </div>
-                  )}
-
-                  {/* Team Members */}
-                  <div className="mb-6">
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-wider mb-3">Core Team</p>
-                    <div className="flex flex-wrap gap-2">
-                      {dept.members.map((m, i) => (
-                        <span key={i} className="px-3 py-1.5 bg-gray-50 rounded-lg text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
-                          {m}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Services */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-wider mb-3">Capabilities</p>
-                    <div className="flex flex-wrap gap-2">
-                      {dept.services.map((s, i) => (
-                        <span key={i} className="px-2.5 py-1 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+<section className="py-10 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Minimalist Header */}
+    <div className="border-b-2 border-gray-900 pb-12 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-end gap-8">
+        <div>
+          <p className="text-sm font-bold tracking-[0.3em] text-gray-400 uppercase mb-4">
+            03 / Departments
+          </p>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tighter">
+            Core Specialized <br /> Teams
+          </h2>
         </div>
-      </section>
-
-      {/* Stats Section - Added for better engagement */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "6+", label: "Specialized Departments", icon: <Briefcase /> },
-              { number: "25+", label: "Expert Team Members", icon: <Users /> },
-              { number: "15+", label: "Years Combined Experience", icon: <Award /> },
-              { number: "500+", label: "Projects Completed", icon: <Star /> }
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-purple-400 flex justify-center mb-3">
-                  {React.cloneElement(stat.icon, { size: 32 })}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mb-2">{stat.number}</div>
-                <div className="text-sm text-gray-300">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="md:text-right">
+          <p className="text-gray-500 text-lg max-w-md md:ml-auto leading-relaxed">
+            Our organizational structure is built on deep technical expertise and 
+            seamless cross-departmental integration.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
 
-      {/* Join the Team CTA - Responsive */}
-      <section className="py-16 md:py-20 bg-white">
+    {/* Table-Style Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-16 gap-x-12">
+      {departments.map((dept, index) => (
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center px-4 sm:px-6"
+          transition={{ delay: index * 0.1 }}
+          className="flex flex-col"
         >
-          <div className="bg-gradient-to-br from-purple-50 to-white p-8 sm:p-12 md:p-16 rounded-3xl border-2 border-purple-100">
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Want to join this circle?
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-              We are always looking for hungry, curious, and humble individuals who want to build the future of AI and E-commerce.
-            </p>
-            <a 
-              href="mailto:info@expertopinions.online" 
-              className="inline-flex items-center gap-3 bg-gray-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:bg-purple-600 transition-all shadow-lg hover:shadow-xl group"
-            >
-              <Mail size={20} /> 
-              <span>Drop Your Resume</span>
-              <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </a>
+          {/* Index Number */}
+          <span className="text-[10px] font-black text-gray-900 mb-6 block">
+            [{String(index + 1).padStart(2, '0')}]
+          </span>
+
+          {/* Title */}
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">
+            {dept.title}
+          </h3>
+
+          {/* Department Head - Professional Identity Card style */}
+          {dept.head && (
+            <div className="mb-10 group">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Lead Authority</p>
+              <div className="border-l-2 border-gray-100 group-hover:border-gray-900 transition-colors pl-4">
+                <p className="text-lg font-bold text-gray-900">{dept.head.name}</p>
+                <p className="text-sm text-gray-500 uppercase tracking-wide">{dept.head.role}</p>
+              </div>
+            </div>
+          )}
+
+          {/* Personnel List */}
+          <div className="mb-10">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Core Personnel</p>
+            <div className="flex flex-col gap-2">
+              {dept.members.map((m, i) => (
+                <div key={i} className="flex justify-between items-center py-2 border-b border-gray-50 text-sm font-medium text-gray-700">
+                  <span>{m}</span>
+                  <span className="text-[10px] text-gray-300">Active</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Capabilities */}
+          <div className="mt-auto">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Functional Areas</p>
+            <div className="flex flex-wrap gap-x-2 gap-y-1 text-[11px] font-bold text-gray-900">
+              {dept.services.map((s, i) => (
+                <span key={i} className="uppercase bg-gray-100 px-2 py-1">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+{/* Stats Section - Option 3 Structure, Original Colors, No Icons, Forced 4-Col Grid */}
+<section className="py-16 bg-gray-900 border-t border-gray-800">
+  <div className="max-w-7xl mx-auto px-2 sm:px-6">
+    {/* Hamesha 4 columns, gap mobile par kam rakha hai taaki text ko jagah mile */}
+    <div className="grid grid-cols-4 gap-1 md:gap-6">
+      {[
+        { number: "6+", label: "Depts" }, // Mobile ke liye labels thode short karein toh best hai
+        { number: "25+", label: "Experts" },
+        { number: "15+", label: "Years" },
+        { number: "500+", label: "Projects" }
+      ].map((stat, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className={`
+            relative py-4 px-1 sm:p-6 text-center rounded-lg overflow-hidden
+            ${i % 2 === 0 ? "bg-gray-800" : "bg-gray-800/60"}
+          `}
+        >
+          {/* Subtle Accent - Mobile par thoda chota rakha hai */}
+          <div className="absolute top-0 right-0 -mr-4 -mt-4 w-10 h-10 rounded-full bg-purple-900/30" />
+
+          {/* Number - Mobile par size chota kiya gaya hai (text-xl) */}
+          <div className="text-xl sm:text-4xl font-black text-white mb-1 leading-none">
+            {stat.number}
+          </div>
+
+          {/* Label - Mobile par size 'tiny' (text-[10px]) aur wrap hone se roka gaya hai */}
+          <div className="text-[10px] sm:text-xs font-bold text-purple-400 uppercase tracking-tighter sm:tracking-widest whitespace-nowrap">
+            {/* Desktop par pura label dikhega, mobile par sirf pehla word ya condensed version */}
+            <span className="hidden sm:inline">{stat.label === "Depts" ? "Specialized Departments" : 
+                                              stat.label === "Experts" ? "Expert Team Members" : 
+                                              stat.label === "Years" ? "Years Combined Experience" : 
+                                              "Projects Completed"}</span>
+            <span className="sm:hidden">{stat.label}</span>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* Join the Team CTA - Sleek & Professional */}
+<section className="py-10 bg-white">
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="max-w-5xl mx-auto px-6"
+  >
+    <div className="relative overflow-hidden bg-[#F8FAFC] border border-gray-100 rounded-[2rem] p-8 md:p-16 text-center">
+      
+      {/* Background Subtle Accent - Ek professional light glow corner mein */}
+      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-purple-50 rounded-full blur-3xl opacity-60" />
+      
+      <div className="relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+          Ready to build the <span className="text-purple-600">future</span>?
+        </h2>
+        
+        <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+          We’re seeking driven individuals to join our mission in shaping the next generation of AI and E-commerce.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a 
+            href="mailto:info@expertopinions.online" 
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-black transition-all shadow-sm hover:shadow-md group text-base"
+          >
+            <span>Apply for a Position</span>
+            <ArrowUpRight size={18} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+          </a>
+          
+          {/* Ek secondary button professional look ke liye */}
+          <p className="text-sm text-gray-400 mt-4 sm:mt-0">
+            Or reach out at: <span className="text-gray-900 font-medium">info@expertopinions.online</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+</section>
     </div>
   );
 };

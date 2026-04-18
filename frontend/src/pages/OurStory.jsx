@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Zap, Quote } from 'lucide-react';
+import { Target, Eye, Heart, Zap, Quote, ShieldCheck, Lightbulb, TrendingUp, ArrowRight } from 'lucide-react';
 import ContactForm from '../components/ContactForm'; 
 import Insights from '../components/Insights';
 
@@ -25,185 +25,241 @@ const OurStory = () => {
     <div className="bg-white font-poppins text-gray-900 overflow-x-hidden">
       
       {/* 1. Hero Section - Purple Glassmorphism Style */}
-      <div className="relative min-h-[80vh] md:h-[75vh] flex items-center justify-center bg-gray-900 overflow-hidden px-4 py-20">
-        {/* Background Image */}
-        <div className="absolute inset-0 opacity-40">
-          <img 
-            src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774954768/pexels-cowomen-1058097-2041637_vd0180.jpg" 
-            alt="Our Story Background" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-gray-900"></div>
-        
-        {/* Responsive Glass Container */}
-        <div className="relative z-10 text-center w-full max-w-5xl bg-black/40 backdrop-blur-md p-6 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-2xl">
+<div className="relative min-h-screen flex items-center justify-center bg-gray-950 overflow-hidden px-4 py-24">
+      
+      {/* 1. Background Image Layer (Full Screen & Parallax effect hint) */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774954768/pexels-cowomen-1058097-2041637_vd0180.jpg" 
+          alt="Our Story Background" 
+          className="w-full h-full object-cover scale-105" // Slightly scaled for potential parallax later
+        />
+      </div>
+      
+      {/* 2. Professional Gradient Overlay (radial for focus) */}
+      {/* This makes corners dark and center clearer */}
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/60 via-black/85 to-gray-950/95"></div>
+      
+      {/* 3. Subtle Animated Background Element */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] z-10 animate-pulse"></div>
 
-          
-          <motion.h1 
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8 leading-tight"
-          >
-            Expert Solutions, <br className="sm:hidden" />
-            <span className="text-purple-500 relative inline-block mt-2 sm:mt-0">
-              for digital growth.
-              <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-purple-600 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]"></span>
-            </span>
-          </motion.h1>
+      {/* 4. Content Container (Centered with refined Glassmorphism) */}
+      <div className="relative z-20 text-center w-full max-w-5xl bg-white/[0.01] backdrop-blur-[6px] p-8 sm:p-12 md:p-20 rounded-[2.5rem] border border-white/5 shadow-[0_0_60px_-15px_rgba(0,0,0,0.7)]">
+        
+        {/* Small Eyebrow Text (Optional but professional) */}
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-purple-400 font-medium tracking-widest uppercase text-xs sm:text-sm mb-4"
+        >
+          Scale Your Business Digitally
+        </motion.p>
+        
+        {/* Main Heading (Expert Solutions...) */}
+        <motion.h1 
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-8 leading-[1.1]"
+        >
+          Expert Solutions, <br />
+          <span className="relative inline-block text-white">
+            <span className="relative z-10">for digital growth.</span>
+            {/* Elegant Gradient Underline Highlight */}
+            <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-[1px] opacity-80"></span>
+            {/* Text Glow */}
+            <span className="absolute inset-0 text-purple-500 blur-md opacity-40 z-0">for digital growth.</span>
+          </span>
+        </motion.h1>
 
-          <motion.div
-             initial={{ y: 20, opacity: 0 }}
-             animate={{ y: 0, opacity: 1 }}
-             transition={{ delay: 0.3 }}
-          >
-            <a href="/contact" className="inline-block bg-purple-600 text-white px-8 md:px-12 py-3 md:py-4 rounded-full font-black text-base md:text-lg hover:bg-purple-500 transition-all shadow-xl shadow-purple-900/40 transform hover:scale-105 active:scale-95">
+        {/* Description Text (Newly Added for depth) */}
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.7 }}
+          className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+        >
+          Unlock your brand's full potential with our bespoke digital strategies. We specialize in turning complexity into seamless growth.
+        </motion.p>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <a href="/contact" className="inline-block relative group">
+            {/* Button Glow Effect */}
+            <div className="absolute inset-0 bg-purple-600 rounded-full blur-md opacity-60 group-hover:opacity-100 transition-opacity"></div>
+            
+            <span className="relative flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-10 md:px-14 py-4 md:py-5 rounded-full font-bold text-lg hover:from-purple-500 hover:to-indigo-500 transition-all shadow-2xl shadow-purple-900/40 transform hover:scale-105 active:scale-95">
               Get in Touch
-            </a>
-          </motion.div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </a>
+        </motion.div>
+
+      </div>
+    </div>
+{/* 2. The Narrative - Professional Version */}
+<section className="py-24 md:py-40 px-6 max-w-7xl mx-auto bg-white overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+    
+    {/* Left Side: Sticky Header Area */}
+    <motion.div 
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="lg:col-span-5 lg:sticky lg:top-32 h-fit"
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <span className="h-[2px] w-12 bg-purple-600"></span>
+        <h2 className="text-xs font-bold tracking-[0.3em] text-purple-600 uppercase">
+          Our Origin Story
+        </h2>
+      </div>
+      
+      <h3 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+        From a <span className="text-purple-600">Laptop</span> to a Digital Powerhouse.
+      </h3>
+
+    </motion.div>
+
+    {/* Right Side: Narrative Content */}
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="lg:col-span-7 space-y-10"
+    >
+      <div className="relative">
+        {/* Subtle decorative quote mark */}
+        <span className="absolute -top-10 -left-6 text-[120px] text-slate-50 font-serif leading-none select-none -z-10">“</span>
+        
+        <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-normal">
+          Let’s face it. <span className="text-slate-900 font-semibold underline decoration-purple-500/30 decoration-4 underline-offset-4">Expert Opinions Online</span> was not created in an innovative tech incubator. 
+        </p>
+      </div>
+
+      <p className="text-lg text-slate-600 leading-[1.8]">
+We witnessed something obvious but overlooked: the business digital divide is very much alive. As everyone else was selling “packages,” we noticed geniuses having trouble with
+        <span className="text-slate-900 font-medium italic"> Amazon SEO</span> and startups wandering around the 
+        <span className="text-slate-900 font-medium italic"> MERN stack</span>.
+      </p>
+
+      <div className="bg-purple-50/50 border-l-4 border-purple-600 p-8 rounded-r-2xl shadow-sm">
+        <p className="text-slate-800 italic text-lg md:text-xl leading-relaxed">
+"Our story doesn’t have anything to do with fast growth. It’s all about those sleepless nights working on a Shopify bug and the “Eureka” moments that make a difference in our partners' lives."        </p>
+        <div className="mt-4 flex items-center gap-3">
+          <div className="h-px w-8 bg-purple-300"></div>
+          <span className="text-sm font-bold text-slate-900 uppercase tracking-widest">The Mission</span>
         </div>
       </div>
 
-      {/* 2. The Narrative */}
-      <section className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-          
-          <motion.div {...fadeInLeft} className="md:col-span-4 md:sticky md:top-32">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-950 border-l-8 border-purple-600 pl-6 leading-tight">
-              How it all <br className="hidden md:block" /> <span className="text-purple-600 font-light italic">actually</span> started.
-            </h2>
-            <div className="w-20 h-1 bg-purple-100 mt-6 ml-8 rounded-full hidden md:block"></div>
-          </motion.div>
-          
-          <motion.div {...fadeInRight} className="md:col-span-8 space-y-6 md:space-y-8 text-gray-700 text-lg md:text-xl leading-relaxed">
-            <p className="first-letter:text-4xl md:first-letter:text-5xl first-letter:font-black first-letter:text-purple-600 first-letter:mr-3 first-letter:float-left">
-              Let’s be honest. **Expert Opinions Online** wasn’t born in a high-tech boardroom with a million-dollar investment. It was born with a laptop, a very uncomfortable chair, and the simple observation that the digital gap for businesses is very real.
-            </p>
-            
-            <p>
-              We watched brilliant entrepreneurs struggle with Amazon SEO, and brilliant startups get lost in the maze of the MERN stack. So, we stopped being just another agency and started being **partners**.
-            </p>
-            
-            <div className="bg-purple-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-l-4 border-purple-600 shadow-sm italic text-gray-800 text-base md:text-lg">
-              "Our story isn’t about rapid growth. It’s about the sleepless nights we spent fixing a client’s Shopify bug. Or the 'Aha!' moment when we finally figured out the tricky Google algorithm."
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <p className="text-lg text-slate-600 leading-[1.8]">
+Rather than joining another pack, we decided to follow a different track. We decided to becomePartners in your growth journey.
+      </p>
+    </motion.div>
+  </div>
+</section>
 
       {/* 3. Mission & Vision */}
-      <section className="py-16 md:py-24 bg-gray-50/80 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+<section className="relative py-24 bg-[#050505] overflow-hidden">
+      {/* Abstract Background Accent */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col gap-32">
           
-          {/* Mission Card */}
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-purple-50 relative group overflow-hidden"
-          >
-            <div className="absolute -top-2 -right-2 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:rotate-12">
-              <Quote size={24} className="md:w-8 md:h-8 transform -scale-x-100" />
-            </div>
-
-            <div className="flex items-center gap-4 md:gap-6 mb-8">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-100 text-purple-700 rounded-xl md:rounded-2xl flex items-center justify-center shadow-inner">
-                <Target size={28} />
+          {/* Mission Section - Editorial Style */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-xs font-bold uppercase tracking-widest mb-6">
+                <Target size={14} /> Our Purpose
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-gray-900">Our Mission</h3>
+              <h2 className="text-4xl md:text-6xl font-bold text-white leading-[1.1]">
+                Demystifying <span className="text-purple-500">Technology</span> for the Modern Enterprise.
+              </h2>
             </div>
-            
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed pl-4 border-l-2 border-purple-200">
-              To demystify technology for businesses. We don’t just deliver a service; we enable our clients to be empowered as business owners. Our mission is to deliver high-end SEO, AI, and development solutions that not only scale, make sense, and, more importantly, deliver profitability to our clients.
-            </p>
-          </motion.div>
-
-          {/* Vision Card */}
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="bg-gray-950 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-2xl text-white relative group overflow-hidden border border-white/5"
-          >
-            <div className="absolute -top-2 -right-2 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-purple-500 text-white rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:-rotate-12">
-              <Quote size={24} className="md:w-8 md:h-8 transform -scale-x-100" />
+            <div className="lg:col-span-6 lg:col-start-7 pt-4">
+              <p className="text-xl text-gray-400 leading-relaxed mb-8">
+We do more than provide services; we engineer empowerment. By combining our top-of-the-line SEO expertise with Generative AI and full-stack development, we engineer scalable engines that convert technical challenges into profits.              </p>
+              <div className="h-[1px] w-full bg-gradient-to-r from-purple-500/50 to-transparent" />
             </div>
+          </div>
 
-            <div className="flex items-center gap-4 md:gap-6 mb-8">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-900/50 text-purple-400 rounded-xl md:rounded-2xl flex items-center justify-center shadow-inner border border-purple-800/50">
-                <Eye size={28} />
+          {/* Vision Section - Dark Glassmorphism Card */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <div className="relative bg-black border border-white/10 rounded-3xl p-8 md:p-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-[0.3em] text-purple-500 mb-4">The Vision</h3>
+                  <p className="text-2xl md:text-4xl font-medium text-white leading-snug">
+                    Setting the global benchmark for <span className="italic text-gray-500">digital integrity</span> and AI-driven growth.
+                  </p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <p className="text-gray-400 text-lg leading-relaxed mb-8">
+Our dream for the future is that every enterprise, big or small, adopts "Expert Opinions" to grow from a regional company to a global empire through the use of advanced technologies.                  </p>
+                  <div className="flex gap-8">
+                    <div>
+                      <div className="text-3xl font-bold text-white">Global</div>
+                      <div className="text-sm text-gray-500 uppercase">Scale</div>
+                    </div>
+                    <div className="w-[1px] bg-gray-800" />
+                    <div>
+                      <div className="text-3xl font-bold text-white">Ethical</div>
+                      <div className="text-sm text-gray-500 uppercase">AI Integration</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-white">Our Vision</h3>
             </div>
-            
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed pl-4 border-l-2 border-purple-900">
-              Our vision is to set a benchmark for digital integrity on a global scale. We envision a world where every business, irrespective of their scale, has access to 'Expert Opinions' that can help them turn their local presence into a global legacy with the power of Generative AI and full-stack technologies.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      {/* Insights Section */}
-      <section className="py-16 md:py-20 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900">
-            Latest <span className="text-purple-600">Insights</span>
-          </h2>
-          <p className="text-gray-500 mt-4 text-sm md:text-base">Stay updated with our latest thoughts and industry trends.</p>
         </div>
-        <div className="w-full px-4 md:px-0">
-          <Insights />
-        </div>
-      </section>
+      </div>
+    </section>
+
+
 
       {/* 4. Core Values */}
-      <section className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto text-center">
-        <motion.h2 
-          {...fadeInLeft}
-          className="text-3xl md:text-5xl font-black text-gray-950 mb-12 md:mb-16"
-        >
-          The Values We <span className="text-purple-600">Live By</span>
-        </motion.h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {[
-            { icon: <Heart className="text-red-500" />, title: "Radical Honesty", desc: "If a strategy won't work, we'll tell you upfront. We value your money.", delay: 0 },
-            { icon: <Zap className="text-purple-500" />, title: "Relentless Innovation", desc: "From n8n to Generative AI, we stay at the bleeding edge.", delay: 0.1 },
-            { icon: <Target className="text-purple-600" />, title: "Outcome Obsession", desc: "Code is just text if it doesn't bring results. We care about ROI.", delay: 0.2 }
-          ].map((val, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: val.delay }}
-              className="p-8 md:p-12 border border-gray-100 rounded-[2rem] hover:border-purple-200 hover:bg-purple-50/30 transition-all group shadow-sm"
-            >
-              <div className="mb-6 transform group-hover:scale-110 transition-transform inline-block p-4 md:p-6 bg-gray-50 rounded-2xl md:rounded-3xl group-hover:bg-white shadow-inner">
-                {val.icon}
-              </div>
-              <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{val.title}</h4>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">{val.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+<section className="py-24 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-6xl font-black text-slate-950">
+        The Values We <span className="text-purple-600">Live By.</span>
+      </h2>
+    </div>
 
-      {/* 5. Final CTA */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-purple-700 to-indigo-900 text-white relative overflow-hidden px-6">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-6xl font-black mb-6 md:mb-8 leading-tight">
-            Ready to start your chapter with us?
-          </h2>
-          <p className="text-purple-100 text-lg md:text-xl mb-10 md:mb-12 opacity-90 max-w-2xl mx-auto font-light">
-            Our story is still being written, and we’d love for your business to be the next highlight.
-          </p>
-          <a href="/contact" className="inline-block bg-white text-purple-700 px-10 md:px-16 py-4 md:py-5 rounded-full font-black text-lg md:text-xl hover:bg-gray-100 transition-all shadow-2xl transform hover:-translate-y-1">
-            Let's Make History
-          </a>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { icon: <ShieldCheck size={32} />, title: "Strategic Integrity", desc: "We prioritize ROI over billables. No fluff, just results.", color: "text-indigo-600", bg: "bg-indigo-50" },
+        { icon: <Lightbulb size={32} />, title: "Adaptive Tech", desc: "We stay at the bleeding edge of AI to keep you ahead.", color: "text-purple-600", bg: "bg-purple-50" },
+        { icon: <TrendingUp size={32} />, title: "Outcome Focused", desc: "Success is measured in growth, not just code.", color: "text-blue-600", bg: "bg-blue-50" }
+      ].map((val, i) => (
+        <div key={i} className="p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl transition-all group">
+          <div className={`mb-8 w-16 h-16 rounded-2xl ${val.bg} ${val.color} flex items-center justify-center`}>
+            {val.icon}
+          </div>
+          <h4 className="text-2xl font-bold text-slate-900 mb-4">{val.title}</h4>
+          <p className="text-slate-500 leading-relaxed">{val.desc}</p>
         </div>
-        
-        {/* Glows */}
-        <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-white/10 blur-[80px] md:blur-[100px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-48 md:w-64 h-48 md:h-64 bg-purple-500/20 blur-[80px] md:blur-[100px] rounded-full"></div>
+      ))}
+    </div>
+  </div>
+</section>
+      {/* Insights Section */}
+      <section className="py-16 md:py-20 bg-white w-full">
+        <Insights />
+ 
       </section>
+      {/* 5. Final CTA */}
+
 
       <div className="max-w-5xl mx-auto px-6 py-12">
         <ContactForm />

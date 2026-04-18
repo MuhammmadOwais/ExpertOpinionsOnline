@@ -34,13 +34,6 @@ const Footer = () => {
     ]
   };
 
-  const socialLinks = [
-      { icon: FaLinkedin, href: 'www.linkedin.com' },
-      { icon: FaFacebook, href: 'www.facebook.com' },
-      { icon: FaInstagram, href: 'www.instagram.com' },
-      { icon: FaTwitter, href: 'wwww.x.com' },
-    ];
-
   return (
     <footer className="relative bg-[#101010] text-white pt-24 pb-12 font-poppins overflow-hidden">
       
@@ -101,23 +94,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* 4. Support/Call to Action */}
-          <div className="text-left pt-6">
-            <h3 className="text-xl font-extrabold text-white mb-6 uppercase tracking-widest text-sm">Connect</h3>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} target="_blank" rel="noreferrer" className="inline-block p-3 bg-gray-800 text-purple-600 rounded-xl hover:bg-purple-600 hover:text-white transition-all transform hover:scale-110">
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
-            <div className="mt-8">
-              <p className="text-gray-400 text-sm mb-4">Want to work with us?</p>
-              <Link to="/contact" className="bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all inline-block shadow-lg shadow-purple-900/40">
-                Let's Talk
-              </Link>
-            </div>
-          </div>
+
 
         </div>
 

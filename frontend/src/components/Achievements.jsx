@@ -1,87 +1,104 @@
-import React, { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
 
 const Achievements = () => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  const stats = [
-    { label: "Successful Projects", value: 150 },
-    { label: "Countries Reached", value: 12 },
-    { label: "Satisfied Clients", value: 80 },
-    { label: "Years of Excellence", value: 5 },
+  const achievementData = [
+    {
+      title: "Successful Projects",
+      progress: 150,
+      total: 200,
+      label: "150+ Projects Delivered",
+    },
+    {
+      title: "Countries Reached",
+      progress: 12,
+      total: 20,
+      label: "12 Global Markets",
+    },
+    {
+      title: "Satisfied Clients",
+      progress: 80,
+      total: 100,
+      label: "80+ Retained Partners",
+    },
+    {
+      title: "Years of Excellence",
+      progress: 5,
+      total: 10,
+      label: "5 Years Experience",
+    },
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-white font-poppins overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+    <section className="py-20 bg-gray-50 font-poppins relative">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-24">
         
-        {/* Left Side Content */}
-        <div className="lg:w-1/2 text-left">
-          <span className="text-purple-600 uppercase tracking-[0.3em] text-sm font-bold mb-4 block">
-            Innovation Meets Excellence
+        {/* Left Side: Sticky Text Content */}
+        <div className="w-full lg:w-5/12 sticky top-20 z-0">
+          <span className="text-purple-700 uppercase tracking-widest text-xs md:text-sm font-bold mb-4 block">
+            Expert Opinions Milestones
           </span>
-          <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[1.1] mb-6">
-            Expert Opinions <br /> 
-            <span className="text-purple-700">Milestones</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            Our Journey of <br /> 
+            <span className="text-purple-700">Digital Impact</span>
           </h2>
-          <p className="text-gray-600 text-lg mb-4 max-w-md">
-            We empower brands with cutting-edge digital solutions and strategic marketing expertise.
+          <p className="text-gray-600 text-lg mb-8 max-w-md">
+            We track our success through the growth of our clients. These milestones represent our commitment to technical excellence.
           </p>
-          <p className="text-gray-600 text-lg mb-10 max-w-md">
-            Our journey is defined by the success of our clients and our commitment to quality.
-          </p>
-          
           <a 
-            href="#contact" 
-            className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-10 py-4 rounded-2xl font-bold text-xl transition-all transform hover:scale-105 shadow-[0_10px_20px_rgba(126,34,206,0.3)]"
+            href="contact" 
+            className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg mb-12 lg:mb-0"
           >
-            Get in Touch
+            Work With Us
           </a>
         </div>
 
-        {/* Right Side Stats */}
-        <div className="lg:w-1/2 grid grid-cols-2 gap-x-8 gap-y-16 w-full">
-          {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center lg:items-start group">
-              <h3 className="text-5xl md:text-7xl font-black text-purple-700 mb-2 transition-transform duration-300 group-hover:scale-110">
-                <Counter end={stat.value} shouldStart={inView} />+
-              </h3>
-              <p className="text-xl md:text-2xl font-bold text-gray-800 leading-tight text-center lg:text-left">
-                {stat.label}
-              </p>
+        {/* Right Side: Clean Achievement Card (No Icons/Emojis) */}
+        <div className="w-full lg:w-6/12 bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden relative z-10">
+          <div className="p-6 border-b border-gray-100 bg-white sticky top-0 z-20">
+            <div className="flex justify-between items-center">
+              <h3 className="font-bold text-gray-800 tracking-tight">Current Performance</h3>
+              <span className="text-[10px] font-bold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-100 uppercase tracking-widest">
+                2026 Live Data
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div className="divide-y divide-gray-100 bg-white">
+            {achievementData.map((item, index) => (
+              <div key={index} className="p-8 md:p-10 flex flex-col bg-white">
+                
+                {/* Header Row */}
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg md:text-2xl leading-none">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 mt-2 font-medium">
+                      {item.label}
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-purple-700 font-black text-xl md:text-3xl">
+                      {item.progress}+
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Minimalist Progress Bar */}
+                <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                  <div 
+                    className="bg-purple-600 h-full rounded-full" 
+                    style={{ width: `${(item.progress / item.total) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
-};
-
-const Counter = ({ end, shouldStart }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!shouldStart) return;
-
-    let start = 0;
-    const duration = 2000; 
-    const totalFrames = duration / 16;
-    const increment = end / totalFrames;
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.round(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [end, shouldStart]); 
-  
-  return <span>{count.toLocaleString()}</span>;
 };
 
 export default Achievements;

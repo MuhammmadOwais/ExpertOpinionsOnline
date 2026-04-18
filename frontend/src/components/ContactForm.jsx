@@ -43,7 +43,7 @@ const ContactForm = () => {
   ];
 
   return (
-    <section className="py-24 bg-white font-poppins">
+    <section className="py-10 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
         
         {/* LEFT: FORM SIDE */}
@@ -86,13 +86,26 @@ const ContactForm = () => {
             {/* Region Select */}
             <div className="flex flex-col">
               <label className="font-bold text-gray-700 mb-2">Region*</label>
-              <select {...register("region")} className="p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none">
-                <option value="">Select Region</option>
-                <option value="Asia">Asia</option>
-                <option value="North America">North America</option>
-                <option value="Europe">Europe</option>
-                <option value="Middle East">Middle East</option>
-              </select>
+              <div className="relative">
+                <select 
+                  {...register("region")} 
+                  className={`w-full p-3 bg-gray-50 border ${errors.region ? 'border-red-500' : 'border-gray-200'} 
+                  rounded-lg outline-none focus:border-purple-500 appearance-none cursor-pointer pr-10 transition-all text-gray-600 focus:bg-white`}
+                >
+                  <option value="">Select Region</option>
+                  <option value="Asia">Asia</option>
+                  <option value="North America">North America</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Middle East">Middle East</option>
+                </select>
+                  
+                {/* Custom Arrow Icon */}
+                <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </div>
+              </div>
               {errors.region && <span className="text-red-500 text-xs mt-1">{errors.region.message}</span>}
             </div>
 
@@ -124,25 +137,7 @@ const ContactForm = () => {
         </div>
 
         {/* RIGHT: INFO SIDE */}
-        <div className="lg:w-1/3 space-y-16 pt-20">
-          <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-purple-100 text-purple-600 rounded-full"><Globe size={24} /></div>
-              <h3 className="text-3xl font-black text-gray-900 leading-none">Global Presence</h3>
-            </div>
-            <p className="text-gray-600 mb-6 font-medium">We're across 5 continents, explore our office nearest to you.</p>
-            <button className="bg-purple-600 text-white px-8 py-2.5 rounded-full font-bold text-sm">Learn more</button>
-          </div>
 
-          <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-purple-100 text-purple-600 rounded-full"><Users size={24} /></div>
-              <h3 className="text-3xl font-black text-gray-900 leading-none">Global Leaders</h3>
-            </div>
-            <p className="text-gray-600 mb-6 font-medium">Our capability and competencies are backed by diverse Global leadership.</p>
-            <button className="bg-purple-600 text-white px-8 py-2.5 rounded-full font-bold text-sm">Learn more</button>
-          </div>
-        </div>
 
       </div>
     </section>

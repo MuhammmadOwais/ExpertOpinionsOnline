@@ -522,15 +522,6 @@ const BlogPostDetail = () => {
   return (
     <article className="bg-white min-h-screen font-poppins pb-20">
       {/* Navigation */}
-      <div className="w-full border-b border-gray-100 bg-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-gray-500 text-sm font-bold hover:text-purple-600 transition-colors">
-            <ChevronLeft size={18} /> Back to Insights
-          </Link>
-          <Share2 size={18} className="text-gray-400 cursor-pointer hover:text-purple-600" />
-        </div>
-      </div>
-
       {/* Header Section */}
       <div className="w-full bg-gray-50 border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-8 py-16 text-center md:text-left">
@@ -553,6 +544,8 @@ const BlogPostDetail = () => {
         <img 
           src={currentPost.image} 
           alt={currentPost.title} 
+          loading="eager"
+          fetchpriority="high"
           className="w-full h-auto rounded-[3rem] shadow-2xl border-8 border-white object-cover"
         />
       </div>
