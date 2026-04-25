@@ -82,10 +82,10 @@ const PrivacyPolicy = () => {
               If you’re unsure about anything in this policy, don’t hesitate to reach out. We’re here to help.
             </p>
             <a 
-              href="mailto:info@expertopinions.online" 
+              href="mailto:Support@expertopinions.net" 
               className="text-purple-400 font-bold hover:text-purple-300 underline"
             >
-              info@expertopinions.online
+              Support@expertopinions.net
             </a>
           </div>
         </div>

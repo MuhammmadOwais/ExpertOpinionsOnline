@@ -275,7 +275,7 @@ const OurTeam = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
-            href="mailto:info@expertopinions.online" 
+            href="mailto:Support@expertopinions.net" 
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-black transition-all shadow-sm hover:shadow-md group text-base"
           >
             <span>Apply for a Position</span>
@@ -284,7 +284,7 @@ const OurTeam = () => {
           
           {/* Ek secondary button professional look ke liye */}
           <p className="text-sm text-gray-400 mt-4 sm:mt-0">
-            Or reach out at: <span className="text-gray-900 font-medium">info@expertopinions.online</span>
+            Or reach out at: <span className="text-gray-900 font-medium">Support@expertopinions.net</span>
           </p>
         </div>
       </div>

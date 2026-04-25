@@ -12,8 +12,8 @@ const Contact = () => {
     {
       icon: <Mail className="text-purple-600" />,
       title: "Email Us",
-      value: "info@expertopinions.online",
-      link: "mailto:info@expertopinions.online"
+      value: "Support@expertopinions.net",
+      link: "mailto:Support@expertopinions.net"
     },
     {
       icon: <Phone className="text-purple-600" />,

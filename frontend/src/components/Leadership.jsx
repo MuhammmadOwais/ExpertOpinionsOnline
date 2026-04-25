@@ -24,7 +24,7 @@ const leaders = [
   {
     name: "Muhammad Owais",
     role: "Head of Development and Management",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1777113155/retouch_2026042503474735.jpg_tgksji.jpg",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1777141674/retouch_2026042503474735.jpg_qjn2k4.jpg",
     linkedin: "https://www.linkedin.com/in/owaiskhubaisi/",
   },
 ];

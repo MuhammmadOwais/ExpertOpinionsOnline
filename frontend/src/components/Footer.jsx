@@ -28,7 +28,7 @@ const Footer = () => {
       { name: 'Contact Us', href: '/contact' },
     ],
     contact: [
-      { icon: Mail, value: 'info@expertopinions.online', href: 'mailto:info@expertopinions.online' },
+      { icon: Mail, value: 'Support@expertopinions.net', href: 'mailto:Support@expertopinions.net' },
       { icon: Phone, value: '+1 307 227 3735', href: 'tel:+13072273735' },
       { icon: MapPin, value: '1908 Thomes Ave STE 12337, Cheyenne, WY 82001, USA', href: 'https://maps.app.goo.gl/9q3tdhePSXAcKFVGA' },
     ]
