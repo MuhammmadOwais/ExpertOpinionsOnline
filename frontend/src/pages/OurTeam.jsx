@@ -27,7 +27,7 @@ const departments = [
     title: "Development Department",
     icon: <Code className="text-purple-600" size={24} />,
     head: { name: "Muhammad Owais", role: "Head of Digital Services" },
-    members: ["Zaid Amjad", "Faizan Shahid", "Rayyan Talha", "Waleed Sarfaraz", "Fatimah Sheikh", "Hassan Abbasi", "Muhammad Anees", "Muhammad Rashid", "Aleeza Dilawar"],
+    members: ["Zaid Amjad", "Faizan Shahid", "Rayyan Taha", "Waleed Sarfaraz", "Fatimah Sheikh", "Hassan Abbasi", "Muhammad Anees", "Muhammad Rashid", "Aleeza Dilawar"],
     services: ["Full Stack Development", "WordPress Development", "UI/UX Design"],
     color: "green"
   },
