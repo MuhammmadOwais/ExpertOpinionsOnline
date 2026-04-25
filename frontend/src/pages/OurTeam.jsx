@@ -282,7 +282,6 @@ const OurTeam = () => {
             <ArrowUpRight size={18} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
           </a>
           
-          {/* Ek secondary button professional look ke liye */}
           <p className="text-sm text-gray-400 mt-4 sm:mt-0">
             Or reach out at: <span className="text-gray-900 font-medium">Support@expertopinions.net</span>
           </p>
