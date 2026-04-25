@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
-          <img src={logoUrl} alt="Expert Opinions Online" className="h-14 w-auto object-contain" />
+          <img src={logoUrl} alt="Expert Opinions" className="h-14 w-auto object-contain" />
         </Link>
 
         {/* Links */}

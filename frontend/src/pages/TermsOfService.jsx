@@ -13,7 +13,7 @@ const TermsOfService = () => {
     },
     {
       title: "2. Our Expertise & Services",
-      content: "Expert Opinions Online is a company with expertise in Search Engine Optimization, Amazon Management, Shopify Development, WordPress Development, Full Stack Solutions, Mobile Apps, DevOps, Generative AI, and n8n Automations. We put our heart and soul into every single line of code and every single strategy we come up with, but please note that digital results can vary depending on the market and technology."
+      content: "Expert Opinions is a company with expertise in Search Engine Optimization, Amazon Management, Shopify Development, WordPress Development, Full Stack Solutions, Mobile Apps, DevOps, Generative AI, and n8n Automations. We put our heart and soul into every single line of code and every single strategy we come up with, but please note that digital results can vary depending on the market and technology."
     },
     {
       title: "3. Payments & Fair Play",
@@ -62,7 +62,7 @@ const TermsOfService = () => {
         <div className="prose prose-lg max-w-none">
           <div className="mb-12 p-6 bg-purple-50 border-r-4 border-purple-600 rounded-lg shadow-sm">
             <p className="text-gray-700 leading-relaxed font-medium">
-              Welcome to Expert Opinions Online. These terms are here to ensure we both have a clear understanding of our professional relationship. Think of this as the foundation of our partnership.
+              Welcome to Expert Opinions. These terms are here to ensure we both have a clear understanding of our professional relationship. Think of this as the foundation of our partnership.
             </p>
           </div>
 

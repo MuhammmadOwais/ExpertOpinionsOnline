@@ -59,8 +59,8 @@ const Insights = () => {
               Our Latest News
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-8">
-              Insightful stories and <br />
-              <span className="text-purple-600">Expert Opinions</span>
+              Insightful stories of 
+              <span className="text-purple-600"> Expert Opinions</span>
             </h2>
             
             <Link to="/blog" className="hidden lg:inline-block">

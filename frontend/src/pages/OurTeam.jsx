@@ -19,7 +19,7 @@ const departments = [
     title: "E-Commerce Department",
     icon: <ShoppingCart className="text-purple-600" size={24} />,
     head: { name: "Maqsood Ahmed", role: "Head of E-Commerce" },
-    members: ["Faizan", "Hamza", "Ali", "Ali Ahmad", "Khadijah Saeed"],
+    members: ["Faizan", "Hamza", "Ali", "Ali Ahmad", "Sana Hussain"],
     services: ["Amazon Optimization", "Shopify Development", "E-Commerce Strategy"],
     color: "blue"
   },
@@ -27,7 +27,7 @@ const departments = [
     title: "Development Department",
     icon: <Code className="text-purple-600" size={24} />,
     head: { name: "Muhammad Owais", role: "Head of Digital Services" },
-    members: ["Zaid Amjad", "Faizan Gujjar", "Rayyan Talha", "Waleed Sarfaraz", "Fatimah Sheikh"],
+    members: ["Zaid Amjad", "Faizan Shahid", "Rayyan Talha", "Waleed Sarfaraz", "Fatimah Sheikh", "Hassan Abbasi", "Muhammad Anees", "Muhammad Rashid", "Aleeza Dilawar"],
     services: ["Full Stack Development", "WordPress Development", "UI/UX Design"],
     color: "green"
   },
@@ -103,7 +103,7 @@ const OurTeam = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium px-4"
           >
-            Meet the architects, dreamers, and problem-solvers of Expert Opinions Online.
+            Meet the architects, dreamers, and problem-solvers of Expert Opinions.
           </motion.p>
         </div>
       </div>

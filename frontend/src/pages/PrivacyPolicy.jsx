@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
   const sections = [
     {
       title: "1. What We Collect (And Why)",
-      content: "We're not the kind of company that believes in collecting information for the sake of collecting information. We only collect what we need to make your experience with Expert Opinions Online an even better one. This includes some basic information such as your name and email address when you contact us, as well as some technical information such as your IP address to keep our site safe and speedy."
+      content: "We're not the kind of company that believes in collecting information for the sake of collecting information. We only collect what we need to make your experience with Expert Opinions an even better one. This includes some basic information such as your name and email address when you contact us, as well as some technical information such as your IP address to keep our site safe and speedy."
     },
     {
       title: "2. How We Use Your Information",
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
             Privacy <span className="text-purple-500">Policy</span>
           </motion.h1>
           <p className="text-gray-300 max-w-xl mx-auto">
-            Transparent, honest, and built on trust. Here is how we handle your information at Expert Opinions Online.
+            Transparent, honest, and built on trust. Here is how we handle your information at Expert Opinions.
           </p>
         </div>
       </div>

@@ -140,7 +140,7 @@ const OurStory = () => {
         <span className="absolute -top-10 -left-6 text-[120px] text-slate-50 font-serif leading-none select-none -z-10">“</span>
         
         <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-normal">
-          Let’s face it. <span className="text-slate-900 font-semibold underline decoration-purple-500/30 decoration-4 underline-offset-4">Expert Opinions Online</span> was not created in an innovative tech incubator. 
+          Let’s face it. <span className="text-slate-900 font-semibold underline decoration-purple-500/30 decoration-4 underline-offset-4">Expert Opinions</span> was not created in an innovative tech incubator. 
         </p>
       </div>
 

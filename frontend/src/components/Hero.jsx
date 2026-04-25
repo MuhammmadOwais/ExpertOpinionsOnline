@@ -56,7 +56,7 @@ const Hero = () => {
             <span className="text-purple-500">Speed of AI</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed">
-            Expert Opinions Online empower global brands with advanced 
+            Expert Opinions empower global brands with advanced 
             SEO strategies, MERN stack solutions, and E-commerce management.
           </p>
 

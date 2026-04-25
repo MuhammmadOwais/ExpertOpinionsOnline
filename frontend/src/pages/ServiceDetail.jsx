@@ -447,7 +447,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
             </div>
             <div>
               <p style={{ fontSize:'15px', fontWeight:500, color:'#111', marginBottom:'2px' }}>Maqsood Ahmad</p>
-              <p style={{ fontSize:'13px', fontWeight:300, color:'#9A9088' }}>Founder, Expert Opinions Online</p>
+              <p style={{ fontSize:'13px', fontWeight:300, color:'#9A9088' }}>Founder, Expert Opinions</p>
             </div>
           </div>
         </div>
@@ -523,7 +523,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               In a high-velocity digital economy, system robustness is not an option it is a prerequisite. Our DevOps practice synchronizes workflows to ensure that speed never compromises stability.
             </p>
             <p className="text-lg leading-relaxed text-slate-500">
-              At Expert Opinions Online, we architect the technical bridge between rapid software iteration and enterprise-grade reliability, allowing your organization to deploy with absolute certainty.
+              At Expert Opinions, we architect the technical bridge between rapid software iteration and enterprise-grade reliability, allowing your organization to deploy with absolute certainty.
             </p>
           </div>
           <div className="lg:col-span-4 border border-slate-200 p-10 bg-slate-50 shadow-sm">
@@ -684,7 +684,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
                 In an era where digital proximity defines market share, a robust mobile presence is no longer secondary, it is the primary touchpoint for consumer engagement.
               </p>
               <p>
-                At Expert Opinions Online, we engineer specialized mobile solutions that integrate deeply with OS-level capabilities, ensuring your services are accessible, responsive, and secure at the point of need.
+                At Expert Opinions, we engineer specialized mobile solutions that integrate deeply with OS-level capabilities, ensuring your services are accessible, responsive, and secure at the point of need.
               </p>
             </div>
           </div>
@@ -784,7 +784,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 },
 "local-seo": {
   title: "Local Search Engine Optimization: Claim Your Digital Territory and Grow Your Business",
-  subtitle: "Expert Opinions Online bridges the gap between your physical storefront and the digital world.",
+  subtitle: "Expert Opinions bridges the gap between your physical storefront and the digital world.",
   heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Local_SEO_Services_qvg8qn.png",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
@@ -927,7 +927,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 },
 "n8n-automation": {
   title: "Strategic Workflow Automation: Empowering Infrastructure through n8n",
-  subtitle: "Expert Opinions Online engineers complex ecosystems where your software runs as a single entity.",
+  subtitle: "Expert Opinions engineers complex ecosystems where your software runs as a single entity.",
   heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/n8n_yknrgj.jpg",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
@@ -971,7 +971,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               Modern enterprises operate on a multitude of platforms. True efficiency is found not in the tools themselves, but in the seamless flow of information between them. We utilize n8n to engineer this connectivity.
             </p>
             <p className="text-lg leading-relaxed text-slate-500 font-light">
-              At Expert Opinions Online, we move beyond simple integrations. We build deep-logic ecosystems where your entire software stack operates with deterministic precision, eliminating manual friction and data fragmentation.
+              At Expert Opinions, we move beyond simple integrations. We build deep-logic ecosystems where your entire software stack operates with deterministic precision, eliminating manual friction and data fragmentation.
             </p>
           </div>
           <div className="lg:col-span-4 bg-slate-900 p-12 text-white border-t-4 border-purple-600 shadow-2xl">
@@ -1270,7 +1270,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               "An e-commerce platform is an operational engine. Every interaction is a data point, and every second of latency is a lost transaction. We build for the culmination of the purchase."
             </p>
             <p className="text-lg leading-relaxed text-slate-500 font-light">
-              At Expert Opinions Online, we specialize in the technical optimization of the Shopify framework. Whether launching a brand-new enterprise or re-engineering an existing storefront, we provide the architectural precision required to outperform the global marketplace.
+              At Expert Opinions, we specialize in the technical optimization of the Shopify framework. Whether launching a brand-new enterprise or re-engineering an existing storefront, we provide the architectural precision required to outperform the global marketplace.
             </p>
           </div>
           <div className="lg:col-span-4 bg-slate-50 border border-slate-200 p-12">
@@ -1416,7 +1416,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               "Digital excellence is not merely about presence; it is about the conscious selection of infrastructure. Your tech stack must evolve with your commercial objectives."
             </p>
             <p className="text-lg leading-relaxed text-slate-500 font-light">
-              At Expert Opinions Online, we provide two distinct engineering pathways. Our capabilities range from strategic WordPress deployment for rapid content delivery to high-concurrency MERN stack applications for complex business logic.
+              At Expert Opinions, we provide two distinct engineering pathways. Our capabilities range from strategic WordPress deployment for rapid content delivery to high-concurrency MERN stack applications for complex business logic.
             </p>
           </div>
           <div className="lg:col-span-4 bg-slate-900 p-12 text-white border-t-4 border-blue-600">
@@ -1569,7 +1569,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <div className="max-w-5xl">
             <p className="text-purple-500 font-bold tracking-[0.3em] uppercase text-sm mb-8">
-              Expert Opinions Online
+              Expert Opinions
             </p>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tighter mb-10">
               Machine <br /> Intelligence.
@@ -1756,7 +1756,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               Online existence is common. Online authority is engineered.
             </p>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
-              At Expert Opinions Online, we move beyond campaign execution. We architect growth strategies that serve as a specific roadmap, connecting your brand with the right people at the absolute peak of their intent.
+              At Expert Opinions, we move beyond campaign execution. We architect growth strategies that serve as a specific roadmap, connecting your brand with the right people at the absolute peak of their intent.
             </p>
           </div>
         </section>
@@ -1848,7 +1848,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
             Lead the Market.
           </h2>
           <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-light">
-            Stop guessing your digital outcomes. Transition to a data-driven growth strategy with Expert Opinions Online.
+            Stop guessing your digital outcomes. Transition to a data-driven growth strategy with Expert Opinions.
           </p>
           <Link to="/contact" className="inline-block bg-slate-950 text-white px-20 py-6 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 transition-all">
             Get My Roadmap
@@ -1913,7 +1913,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
               Content is no longer just text. It is your most powerful sales asset.
             </p>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
-              At Expert Opinions Online, we produce editorial content designed for results. We bridge the gap between creative storytelling and technical SEO to ensure your brand's voice reaches the front page of global search results.
+              At Expert Opinions, we produce editorial content designed for results. We bridge the gap between creative storytelling and technical SEO to ensure your brand's voice reaches the front page of global search results.
             </p>
           </div>
         </section>
@@ -2026,7 +2026,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 },
 "bloging": {
   title: "Blogging and Content Strategy: Building Authority Through Words",
-  subtitle: "Expert Opinions Online creates a voice for your brand that helps you rise above the digital noise.",
+  subtitle: "Expert Opinions creates a voice for your brand that helps you rise above the digital noise.",
   heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/bloging_yrfxxt.jpg",
   content: (
     <div className="bg-white text-slate-950 overflow-x-hidden font-poppins selection:bg-slate-950 selection:text-white">
@@ -2053,7 +2053,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
             </h1>
             <div className="flex flex-col md:flex-row md:items-end gap-10">
               <p className="text-xl md:text-2xl text-slate-400 max-w-xl font-light leading-relaxed">
-                Expert Opinions Online engineers a professional voice for your brand, transforming digital noise into a coherent narrative of authority.
+                Expert Opinions engineers a professional voice for your brand, transforming digital noise into a coherent narrative of authority.
               </p>
               <div className="pt-4">
                 <Link to="/contact" className="inline-block bg-white text-slate-950 px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 hover:text-white transition-all duration-300">
@@ -2167,7 +2167,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
             Start Your Story.
           </h2>
           <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-light">
-            A professional blog is the most effective tool for long-term growth. Partner with Expert Opinions Online to establish your digital voice.
+            A professional blog is the most effective tool for long-term growth. Partner with Expert Opinions to establish your digital voice.
           </p>
           <Link to="/contact" className="inline-block bg-slate-950 text-white px-20 py-6 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 transition-all">
             Launch Your Brand Voice

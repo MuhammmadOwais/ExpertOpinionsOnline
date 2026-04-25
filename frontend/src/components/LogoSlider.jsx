@@ -15,7 +15,7 @@ const LogoSlider = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="bg-white py-6 border-b border-gray-50 overflow-hidden">
+    <div className="bg-white py-12 border-b border-gray-50 overflow-hidden">
 
 
       <div className="relative flex overflow-hidden group">

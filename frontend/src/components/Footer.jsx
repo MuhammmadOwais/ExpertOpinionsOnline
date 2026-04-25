@@ -24,7 +24,7 @@ const Footer = () => {
     company: [
       { name: 'Our Story', href: '/about/our-story' },
       { name: 'Our Team', href: '/about/our-team' },
-      { name: 'News', href: '/blog' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Contact Us', href: '/contact' },
     ],
     contact: [
@@ -46,7 +46,7 @@ const Footer = () => {
             <Link to="/">
               <img 
                 src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774948117/Gemini_Generated_Image_c0yhgdc0yhgdc0yh_dg0tky.png" 
-                alt="Expert Opinions Online" 
+                alt="Expert Opinions" 
                 className="h-16 w-auto mb-6"
               />
             </Link>
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Bottom Bar: Copyright & Terms */}
         <div className="pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
           <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Expert Opinions Online. All rights reserved. <span className="text-purple-600 font-bold">#BuildingAtTheSpeedOfAI</span>
+            &copy; {currentYear} Expert Opinions. All rights reserved. <span className="text-purple-600 font-bold">#BuildingAtTheSpeedOfAI</span>
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
             <Link to="/privacy-policy" className="hover:text-purple-400 transition-colors">Privacy Policy</Link>

@@ -30,7 +30,7 @@ const Header = () => {
 
   // New colors derived from the provided image (image_0.png)
   const colors = {
-    bgNav: 'bg-[#0a0a0d]',
+    bgNav: 'bg-[#000000]',
     borderNav: 'border-b border-[#252a35]',
     navText: 'text-[#ffffff]',
     navTextActive: 'text-[#a811da]', // Magenta/Purple from image text
@@ -45,12 +45,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo */}
+          {/* Logo Size Updated */}
           <Link to="/" className="flex-shrink-0 flex items-center">
             <img 
               src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774948117/Gemini_Generated_Image_c0yhgdc0yhgdc0yh_dg0tky.png" 
-              alt="Expert Opinions Online" 
-              className="h-12 w-auto brightness-110" // Make logo clearer on dark bg
+              alt="Expert Opinions" 
+              className="h-15 w-auto brightness-110 transition-transform hover:scale-105" // h-20 (80px) use kiya hai
             />
           </Link>
 

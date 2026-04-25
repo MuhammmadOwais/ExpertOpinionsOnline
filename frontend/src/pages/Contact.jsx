@@ -54,7 +54,7 @@ const Contact = () => {
       {/* 2. Google Map Section */}
       <div className="w-full h-[450px] bg-gray-200 grayscale hover:grayscale-0 transition-all duration-700">
         <iframe
-          title="Expert Opinions Online - Wyoming Office"
+          title="Expert Opinions - Wyoming Office"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.464673627042!2d-104.8190!3d41.1347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3ab43859666d%3A0x6b49e6f30453e198!2s1908%20Thomes%20Ave%2C%20Cheyenne%2C%20WY%2082001%2C%20USA!5e0!3m2!1sen!2s!4v1711234567890!5m2!1sen!2s"
           width="100%"
           height="100%"
