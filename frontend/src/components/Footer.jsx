@@ -8,8 +8,8 @@ const Footer = () => {
 
   const footerLinks = {
   services: [
-    { name: 'SEO Optimization', href: '/services/seo-optimization' },
-    { name: 'Amazon Optimization', href: '/services/amazon-management' },
+    { name: 'SEO', href: '/services/seo' },
+    { name: 'Amazon Account Management', href: '/services/amazon-account-management' },
     { name: 'Shopify Development', href: '/services/shopify-development' },
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
     { name: 'Content Writing', href: '/services/content-writing' },
