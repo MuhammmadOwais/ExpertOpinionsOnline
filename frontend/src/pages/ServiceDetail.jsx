@@ -12,8 +12,8 @@ const ServiceDetail = () => {
 
   // --- SERVICES DATA REPOSITORY ---
   const servicesData = {
-"amazon-management": {
-  title: "Amazon Optimization and Management",
+"amazon-account-management": {
+  title: "Amazon Account Management",
   content: (
     <div className="overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif", color: '#111' }}>
 
@@ -1065,7 +1065,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
     </div>
   )
 },
-"seo-optimization": {
+"seo": {
   title: "Search Engine Optimization: Establish Organic Authority and Outperform Competitors",
   subtitle: "We don't just make tweaks; we engineer your website into a definitive industry presence.",
   heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg",

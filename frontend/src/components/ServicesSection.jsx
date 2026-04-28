@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
 
 const allServices = [
-  { name: 'SEO Optimization', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg', slug: 'seo-optimization' },
-  { name: 'Amazon Optimization', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Amazon_Optimization_and_Management_wicum8.jpg', slug: 'amazon-management' },
+  { name: 'SEO', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg', slug: 'seo' },
+  { name: 'Amazon Account Management', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Amazon_Optimization_and_Management_wicum8.jpg', slug: 'amazon-account-management' },
   { name: 'Shopify Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/Shopify_Store_development_and_optimization_cxi3lp.jpg', slug: 'shopify-development' },
   { name: 'Digital Marketing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Digital_Marketing_Strategy_n283jq.png', slug: 'digital-marketing' },
   { name: 'Content Writing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Content_Writing_and_SEO_Content_Production_wlqhqh.jpg', slug: 'content-writing' },

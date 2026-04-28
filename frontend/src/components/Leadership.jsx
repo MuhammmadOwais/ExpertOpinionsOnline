@@ -6,7 +6,7 @@ const leaders = [
   {
     name: "Maqsood Ahmed",
     role: "Founder & Head of E-Commerce",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_auto,w_800/v1774871001/Maqsood_Ahmad_ewxr6a.jpg",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1777408825/WhatsApp_Image_2026-04-25_at_6.56.34_PM_jspc7c.jpg",
     linkedin: "https://www.linkedin.com/in/maqsood-ahmad-business-advisor/",
   },
   {
