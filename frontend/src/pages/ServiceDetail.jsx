@@ -152,7 +152,7 @@ const ServiceDetail = () => {
         {/* BG image */}
         <div style={{
           position:'absolute', inset:0,
-          backgroundImage:`url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Amazon_Optimization_and_Management_wicum8.jpg')`,
+          backgroundImage:`url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Amazon_Optimization_and_Management_wicum8_adznot.webp')`,
           backgroundSize:'cover', backgroundPosition:'center', opacity:0.15,
         }} />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(108deg,#0D0C0A 42%,rgba(13,12,10,0.72) 68%,rgba(13,12,10,0.15) 100%)' }} />
@@ -478,7 +478,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "devops": {
   title: "DevOps Solutions: Facilitating Business Agility through Intelligent Automation",
   subtitle: "Bridging the gap between development and operations for seamless delivery.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833489/Devops_ylm5az.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Devops_ylm5az_qzvl6x.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -487,7 +487,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833489/Devops_ylm5az.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Devops_ylm5az_qzvl6x.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -637,7 +637,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "mobile-app-dev": {
   title: "Mobile Application Development: Creating High Performance Digital Experiences",
   subtitle: "Reaching the palm of your customers' hands with cutting-edge mobile solutions.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/Mobile_Application_Development_rkueq7.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Mobile_Application_Development_rkueq7_zhouy0.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -646,7 +646,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/Mobile_Application_Development_rkueq7.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Mobile_Application_Development_rkueq7_zhouy0.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -785,7 +785,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "local-seo": {
   title: "Local Search Engine Optimization: Claim Your Digital Territory and Grow Your Business",
   subtitle: "Expert Opinions bridges the gap between your physical storefront and the digital world.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Local_SEO_Services_qvg8qn.png",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Local_SEO_Services_qvg8qn_yfobvg.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -794,7 +794,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40 grayscale-[20%]"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Local_SEO_Services_qvg8qn.png')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Local_SEO_Services_qvg8qn_yfobvg.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -928,7 +928,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "n8n-automation": {
   title: "Strategic Workflow Automation: Empowering Infrastructure through n8n",
   subtitle: "Expert Opinions engineers complex ecosystems where your software runs as a single entity.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/n8n_yknrgj.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/n8n_yknrgj_p8i2k0.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -937,7 +937,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-35"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/n8n_yknrgj.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/n8n_yknrgj_p8i2k0.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -1068,7 +1068,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "seo": {
   title: "Search Engine Optimization: Establish Organic Authority and Outperform Competitors",
   subtitle: "We don't just make tweaks; we engineer your website into a definitive industry presence.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/SEO_Optimization_zat9to_lugqth.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -1077,7 +1077,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30 grayscale-[30%]"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/SEO_Optimization_zat9to_lugqth.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -1227,7 +1227,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "shopify-development": {
   title: "Shopify Store Development: Transforming Your Digital Storefront into a Sales Engine",
   subtitle: "We build Shopify stores that don't just look amazing, but possess the finesse to succeed.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/Shopify_Store_development_and_optimization_cxi3lp.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Shopify_Store_development_and_optimization_cxi3lp_kjwicc.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -1236,7 +1236,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30 grayscale-[20%]"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/Shopify_Store_development_and_optimization_cxi3lp.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Shopify_Store_development_and_optimization_cxi3lp_kjwicc.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -1373,7 +1373,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "web-development": {
   title: "Comprehensive Web Development: Achieving Digital Excellence",
   subtitle: "From strategic WordPress management to high-performance MERN stack engineering.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/website_development_by_wordpress_and_mern_stack_gxpczc.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/website_development_by_wordpress_and_mern_stack_gxpczc_wm39yo.webp",
   content: (
     <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
       
@@ -1382,7 +1382,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30 grayscale-[40%]"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/website_development_by_wordpress_and_mern_stack_gxpczc.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/website_development_by_wordpress_and_mern_stack_gxpczc_wm39yo.webp')`,
             backgroundAttachment: 'fixed' 
           }}
         ></div>
@@ -1550,7 +1550,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "generative-ai": {
   title: "Generative AI Services: Transforming Business with Machine Intelligence",
   subtitle: "Bridging the gap between AI potential and the real-world demands of your business.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Genrative_AI_d937jp.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Genrative_AI_d937jp_ienmyz.webp",
   content: (
     <div className="bg-white text-slate-900 overflow-x-hidden font-poppins selection:bg-slate-900 selection:text-white">
       
@@ -1559,7 +1559,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 opacity-40 grayscale"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Genrative_AI_d937jp.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Genrative_AI_d937jp_ienmyz.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed' 
@@ -1862,7 +1862,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "content-writing": {
   title: "Content Writing and SEO Content Production: Powering Digital Growth",
   subtitle: "Words that rank on Google and convert visitors into loyal customers.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Content_Writing_and_SEO_Content_Production_wlqhqh.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Content_Writing_and_SEO_Content_Production_wlqhqh_mezhzn.webp",
   content: (
     <div className="bg-white text-slate-950 overflow-x-hidden font-poppins selection:bg-slate-950 selection:text-white">
       
@@ -1871,7 +1871,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 opacity-40 grayscale contrast-125"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Content_Writing_and_SEO_Content_Production_wlqhqh.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Content_Writing_and_SEO_Content_Production_wlqhqh_mezhzn.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed' 
@@ -2027,7 +2027,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
 "bloging": {
   title: "Blogging and Content Strategy: Building Authority Through Words",
   subtitle: "Expert Opinions creates a voice for your brand that helps you rise above the digital noise.",
-  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/bloging_yrfxxt.jpg",
+  heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/bloging_yrfxxt_pjwvmn.webp",
   content: (
     <div className="bg-white text-slate-950 overflow-x-hidden font-poppins selection:bg-slate-950 selection:text-white">
       
@@ -2036,7 +2036,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
         <div 
           className="absolute inset-0 opacity-40 grayscale"
           style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/bloging_yrfxxt.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/bloging_yrfxxt_pjwvmn.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed' 

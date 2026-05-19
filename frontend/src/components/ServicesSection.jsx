@@ -1,36 +1,51 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
 
+// Cloudinary URL Optimization pipeline built for core grid density
+const getOptimizedServiceUrl = (url, isMobile = false) => {
+  if (isMobile) {
+    return url.replace('/upload/', '/upload/f_auto,q_65,w_320,c_scale/');
+  }
+  return url.replace('/upload/', '/upload/f_auto,q_75,w_450,c_scale/'); // Squished to 450px for faster layout painting
+};
+
 const allServices = [
-  { name: 'SEO', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/SEO_Optimization_zat9to.jpg', slug: 'seo' },
-  { name: 'Amazon Account Management', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Amazon_Optimization_and_Management_wicum8.jpg', slug: 'amazon-account-management' },
-  { name: 'Shopify Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/Shopify_Store_development_and_optimization_cxi3lp.jpg', slug: 'shopify-development' },
-  { name: 'Digital Marketing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/Digital_Marketing_Strategy_n283jq.png', slug: 'digital-marketing' },
-  { name: 'Content Writing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Content_Writing_and_SEO_Content_Production_wlqhqh.jpg', slug: 'content-writing' },
-  { name: 'Local SEO Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Local_SEO_Services_qvg8qn.png', slug: 'local-seo' },
-  { name: 'Full Stack Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833509/website_development_by_wordpress_and_mern_stack_gxpczc.jpg', slug: 'mern-stack-development' },
-  { name: 'Mobile App Dev', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/Mobile_Application_Development_rkueq7.jpg', slug: 'mobile-app-development' },
-  { name: 'DevOps', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833489/Devops_ylm5az.jpg', slug: 'devops' },
-  { name: 'Generative AI', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833491/Genrative_AI_d937jp.jpg', slug: 'generative-ai' },
-  { name: 'n8n Automation', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833492/n8n_yknrgj.jpg', slug: 'n8n-automation' },
-  { name: 'Blogging Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1774833490/bloging_yrfxxt.jpg', slug: 'blogging' },
+  { name: 'SEO', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/SEO_Optimization_zat9to_lugqth.webp', slug: 'seo' },
+  { name: 'Amazon Account Management', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Amazon_Optimization_and_Management_wicum8_adznot.webp', slug: 'amazon-account-management' },
+  { name: 'Shopify Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Shopify_Store_development_and_optimization_cxi3lp_kjwicc.webp', slug: 'shopify-development' },
+  { name: 'Digital Marketing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Digital_Marketing_Strategy_n283jq_xt8el1.webp', slug: 'digital-marketing' },
+  { name: 'Content Writing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Content_Writing_and_SEO_Content_Production_wlqhqh_mezhzn.webp', slug: 'content-writing' },
+  { name: 'Local SEO Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Local_SEO_Services_qvg8qn_yfobvg.webp', slug: 'local-seo' },
+  { name: 'Full Stack Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/website_development_by_wordpress_and_mern_stack_gxpczc_wm39yo.webp', slug: 'web-development' },
+  { name: 'Mobile App Dev', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Mobile_Application_Development_rkueq7_zhouy0.webp', slug: 'mobile-app-dev' },
+  { name: 'DevOps', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Devops_ylm5az_qzvl6x.webp', slug: 'devops' },
+  { name: 'Generative AI', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Genrative_AI_d937jp_ienmyz.webp', slug: 'generative-ai' },
+  { name: 'n8n Automation', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/n8n_yknrgj_p8i2k0.webp', slug: 'n8n-automation' },
+  { name: 'Blogging Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/bloging_yrfxxt_pjwvmn.webp', slug: 'bloging' },
 ];
 
 const ServicesSection = () => {
   const [showAll, setShowAll] = useState(false);
-  // Mobile par initial 4 services behter hain (2 rows of 2)
-  const displayedServices = showAll ? allServices : allServices.slice(0, 4);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <section className="relative py-12 md:py-24 px-4 sm:px-6 overflow-hidden bg-white">
+    <section className="relative py-12 md:py-24 px-4 sm:px-6 overflow-hidden bg-white contain-intrinsic-size">
       
-      {/* Background Glows */}
+      {/* Background Glow - GPU Layer Isolation */}
       <div 
-        className="absolute inset-0 z-0 pointer-events-none select-none opacity-60 md:opacity-100"
+        className="absolute inset-0 z-0 pointer-events-none select-none opacity-50 md:opacity-90 transform-gpu"
         style={{
-          background: `radial-gradient(circle at 50% 40%, rgba(147, 51, 234, 0.45) 0%, rgba(168, 85, 247, 0.2) 40%, rgba(255, 255, 255, 0) 75%)`
+          background: `radial-gradient(circle at 50% 40%, rgba(147, 51, 234, 0.35) 0%, rgba(168, 85, 247, 0.15) 40%, rgba(255, 255, 255, 0) 75%)`
         }}
       ></div>
 
@@ -44,58 +59,71 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        {/* Services Grid: 2 columns on Mobile, 4 on Desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
-          <AnimatePresence mode='popLayout'>
-            {displayedServices.map((service) => (
-              <motion.div
-                key={service.slug}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+        {/* CRITICAL FIX: Pure CSS expansion track. Hum JavaScript rendering block ke bajaye 
+          saari 12 services ko map karenge, lakin jo hidden hain unpar Tailwind classes se 
+          smooth transition, opacity, aur height scale apply karenge. 
+          Isse loop structure break nahi hoga aur smoothness absolute makkhan hogi!
+        */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 transition-all duration-500 ease-in-out">
+          {allServices.map((service, index) => {
+            const finalCardImg = getOptimizedServiceUrl(service.img, isMobile);
+            const isHidden = !showAll && index >= 4;
+
+            return (
+              <div 
+                key={service.slug} 
+                className={`w-full transform-gpu transition-all duration-500 ease-in-out ${
+                  isHidden 
+                    ? 'opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden hidden md:block lg:opacity-0 lg:max-h-0' 
+                    : 'opacity-100 scale-100 max-h-[500px]'
+                }`}
               >
                 <Link 
                   to={`/services/${service.slug}`}
-                  className="group relative block aspect-square overflow-hidden rounded-2xl md:rounded-[2rem] bg-gray-900 shadow-lg transition-all active:scale-95 md:hover:shadow-purple-300/50"
+                  className="group relative block aspect-square overflow-hidden rounded-2xl md:rounded-[2rem] bg-gray-900 shadow-md transition-all active:scale-98 md:hover:shadow-purple-300/20"
                 >
                   {/* Background Image */}
                   <img 
-                    src={service.img} 
+                    src={finalCardImg} 
                     alt={service.name} 
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 md:opacity-60"
+                    
+                    // Fixed aspect properties to lock cumulative layout shift
+                    width="450"
+                    height="450"
+                    
+                    // Native performance hooks: Eager load first row, lazy load expanded ones
+                    loading={index < 4 ? "eager" : "lazy"}
+                    decoding="async"
+                    
+                    className="h-full w-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-50 md:opacity-60 pointer-events-none"
                   />
                   
                   {/* Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent md:group-hover:from-purple-900/90 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent md:group-hover:from-purple-900/80 transition-all duration-300"></div>
                   
                   {/* Service Text */}
                   <div className="absolute bottom-0 p-3 md:p-8 w-full">
-                    <h3 className="text-sm md:text-2xl font-extrabold text-white font-poppins leading-tight transition-transform duration-300">
+                    <h3 className="text-sm md:text-2xl font-extrabold text-white font-poppins leading-tight">
                       {service.name}
                     </h3>
                     <div className="w-6 h-0.5 md:w-8 md:h-1 bg-purple-500 mt-2 transform origin-left scale-x-100 md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-300"></div>
                   </div>
                 </Link>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
 
         {/* View More Button */}
-        <div className="mt-10 md:mt-20 flex justify-center">
+        <div className="mt-10 md:mt-16 flex justify-center">
           <button 
             onClick={() => setShowAll(!showAll)}
-            className="group flex items-center gap-2 border-2 border-purple-600 text-purple-600 px-6 py-3 md:px-10 md:py-4 rounded-full font-black text-[10px] md:text-sm uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all duration-500 active:scale-95 shadow-md"
+            className="group flex items-center gap-2 border-2 border-purple-600 text-purple-600 px-6 py-3 md:px-10 md:py-4 rounded-full font-black text-[10px] md:text-sm uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all duration-300 active:scale-95 shadow-md"
           >
             {showAll ? 'View Less' : 'View More'}
-            <motion.div
-              animate={{ y: showAll ? -2 : 2 }}
-              transition={{ repeat: Infinity, duration: 0.6, repeatType: "reverse" }}
-            >
+            <div className={`transition-transform duration-300 ${showAll ? 'rotate-180 animate-none' : 'animate-bounce'}`}>
               <ArrowDown size={16} className="md:w-5 md:h-5" strokeWidth={3} />
-            </motion.div>
+            </div>
           </button>
         </div>
       </div>
