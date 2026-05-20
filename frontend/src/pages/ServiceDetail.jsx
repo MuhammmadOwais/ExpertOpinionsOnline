@@ -2024,7 +2024,7 @@ Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We w
     </div>
   )
 },
-"bloging": {
+"blogging": {
   title: "Blogging and Content Strategy: Building Authority Through Words",
   subtitle: "Expert Opinions creates a voice for your brand that helps you rise above the digital noise.",
   heroImage: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/bloging_yrfxxt_pjwvmn.webp",
