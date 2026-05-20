@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Allow backend API traffic to pass through untouched
+    RewriteCond %{REQUEST_URI} ^/backend/ [NC]
+    RewriteRule ^ - [L]
+
+    # 2. If the request is looking for a file that exists inside frontend/dist/, serve it
+    RewriteCond %{DOCUMENT_ROOT}/frontend/dist/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/frontend/dist/$1 -d
+    RewriteRule ^(.*)$ /frontend/dist/$1 [L]
+
+    # 3. Route all other clean URLs/fallback routing to frontend/dist/index.html
+    RewriteCond %{REQUEST_URI} !^/frontend/dist/
+    RewriteRule ^(.*)$ /frontend/dist/index.html [L]
+</IfModule>
