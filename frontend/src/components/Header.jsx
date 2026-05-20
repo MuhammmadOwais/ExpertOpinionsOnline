@@ -722,7 +722,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" aria-label="Expert Opinions — Home" className="logo-link">
             <img
-              src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774948117/Gemini_Generated_Image_c0yhgdc0yhgdc0yh_dg0tky.png"
+              src="https://res.cloudinary.com/dawp1fcci/image/upload/v1779164562/logo_1_mqrgws.webp"
               alt="Expert Opinions"
               className="logo-img"
             />
