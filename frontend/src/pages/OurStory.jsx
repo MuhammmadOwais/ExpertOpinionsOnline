@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Target, ShieldCheck, Lightbulb, TrendingUp } from 'lucide-react';
-import ContactForm from '../components/ContactForm'; 
+import ContactForm from '../components/ContactForm';
 import Insights from '../components/Insights';
 
 const OurStory = () => {
@@ -8,7 +7,7 @@ const OurStory = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -17,217 +16,199 @@ const OurStory = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // CLOUDINARY HYPER-OPTIMIZATION: Hero asset dynamic scaling setup
-  const heroImage = isMobile 
-    ? "https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_65,w_600,c_scale/v1779162797/pexels-cowomen-1058097-2041637_vd0180_2_qrn8uq.webp"
-    : "https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_65,w_1440,c_scale/v1779162797/pexels-cowomen-1058097-2041637_vd0180_2_qrn8uq.webp";
+  // Optimized Hero & Section Images
+  const heroImage = isMobile
+    ? 'https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_65,w_600,c_scale/v1779162797/pexels-cowomen-1058097-2041637_vd0180_2_qrn8uq.webp'
+    : 'https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_65,w_1440,c_scale/v1779162797/pexels-cowomen-1058097-2041637_vd0180_2_qrn8uq.webp';
+
+  // Editorial Contextual Assets (Clean, high-end office/architecture photography equivalents)
+  const phase1Image = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80';
+  const phase2Image = 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80';
+
+  const domains = [
+    { title: 'Artificial Intelligence', copy: 'Training custom ML models, deploying autonomous workflows, and architectural systems integration.' },
+    { title: 'Full-Stack Engineering', copy: 'High-performance web architecture, enterprise systems, and custom native application ecosystems.' },
+    { title: 'Cybersecurity Operations', copy: 'Rigorous vulnerability assessments, advanced authentication protocols, and secure infrastructure hardening.' },
+    { title: 'Creative Design', copy: 'Minimalist, conversion-led user experience blueprints and bespoke interactive digital environments.' },
+    { title: 'Elite eCommerce', copy: 'Data-driven marketplace positioning, strategic asset optimization, and scaling commercial revenue engines.' },
+  ];
 
   return (
-    <div className="bg-white font-poppins text-gray-900 overflow-x-hidden">
+    <div className="bg-white font-poppins text-black w-full overflow-x-hidden antialiased">
       
-      {/* 1. Hero Section - Performance Tuned */}
-      {/* PERFORMANCE FIX: Mobile par h-[50vh] ya min-h-[60vh] kardi hai aur desktop par h-screen, jisse layout load fast hoga */}
-      <div className="relative min-h-[60vh] md:min-h-screen flex items-center justify-center bg-gray-950 overflow-hidden px-4 py-16 md:py-24">
-        
-        {/* Background Image Layer */}
+      {/* 1. Hero Section - Minimalist Immersive Style */}
+      <div className="relative min-h-[60vh] md:min-h-screen w-full flex items-center justify-start bg-black overflow-hidden px-6 sm:px-12 md:px-24">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Our Story Background" 
-            
-            // Explicit hardcoded tags block CLS engine triggers completely
-            width={isMobile ? "600" : "1440"}
-            height={isMobile ? "400" : "900"}
-            
-            // Critical LCP boost rule
+          <img
+            src={heroImage}
+            alt="Our Story Background"
+            width={isMobile ? '600' : '1440'}
+            height={isMobile ? '400' : '900'}
             fetchpriority="high"
             loading="eager"
             decoding="async"
-            
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
         </div>
-        
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/60 via-black/85 to-gray-950/95"></div>
-        
-        {/* Content Container (Animations & glassmorphism calculating parameters completely stripped) */}
-        <div className="relative z-20 text-center w-full max-w-5xl p-6 sm:p-12 md:p-20 rounded-[2.5rem]">
-          
-          <p className="text-purple-400 font-medium tracking-widest uppercase text-xs sm:text-sm mb-4">
+
+        <div className="relative z-20 w-full max-w-5xl py-12 md:py-20">
+          <p className="text-purple-500 font-semibold tracking-widest uppercase text-xs sm:text-sm mb-4 md:mb-6">
             Scale Your Business Digitally
           </p>
-          
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6 md:mb-8 leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-6 md:mb-8 leading-[1.05]">
             Expert Solutions, <br />
-            <span className="relative inline-block text-white">
-              <span className="relative z-10">for digital growth.</span>
-              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full opacity-80"></span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-purple-500">
+              for digital growth.
             </span>
           </h1>
-
-          <p className="text-gray-300 text-sm md:text-lg max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed font-light">
-            Unlock your brand's full potential with our bespoke digital strategies. We specialize in turning complexity into seamless growth.
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mb-8 md:mb-12 leading-relaxed font-light">
+            Unlock your brand's full potential with our bespoke digital strategies. We specialize in turning operational complexity into seamless long-term growth.
           </p>
-
           <div>
-            <a href="/contact" className="inline-block relative group">
-              <span className="relative flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 md:px-14 py-4 rounded-full font-bold text-base md:text-lg transition-all shadow-xl">
-                Get in Touch
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center justify-center bg-purple-700 hover:bg-purple-800 text-white px-8 md:px-10 py-3 md:py-4 rounded-none font-medium text-base tracking-wide transition-all duration-300"
+            >
+              Get in Touch
             </a>
           </div>
-
         </div>
       </div>
 
-      {/* 2. The Narrative Section (Pure Static Clean Flow) */}
-      <section className="py-16 md:py-32 px-6 max-w-7xl mx-auto bg-white overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+      {/* 2. Main Narrative Section */}
+      <section className="w-full px-6 sm:px-12 md:px-24 py-12 md:py-36 bg-white">
+        <div className="w-full">
           
-          {/* Left Side: Header Area */}
-          <div className="lg:col-span-5 h-fit">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="h-[2px] w-12 bg-purple-600"></span>
-              <h2 className="text-xs font-bold tracking-[0.3em] text-purple-600 uppercase">
-                Our Origin Story
-              </h2>
-            </div>
-            
-            <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-              From a <span className="text-purple-600">Laptop</span> to a Digital Powerhouse.
-            </h3>
-          </div>
-
-          {/* Right Side: Narrative Content */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="relative">
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-normal">
-                Let’s face it. <span className="text-slate-900 font-semibold underline decoration-purple-500/30 decoration-4 underline-offset-4">Expert Opinions</span> was not created in an innovative tech incubator. 
-              </p>
-            </div>
-
-            <p className="text-base md:text-lg text-slate-600 leading-[1.8]">
-              We witnessed something obvious but overlooked: the business digital divide is very much alive. As everyone else was selling “packages,” we noticed geniuses having trouble with
-              <span className="text-slate-900 font-medium italic"> Amazon SEO</span> and startups wandering around the 
-              <span className="text-slate-900 font-medium italic"> MERN stack</span>.
-            </p>
-
-            <div className="bg-purple-50/50 border-l-4 border-purple-600 p-6 md:p-8 rounded-r-2xl">
-              <p className="text-slate-800 italic text-base md:text-lg leading-relaxed">
-                "Our story doesn’t have anything to do with fast growth. It’s all about those sleepless nights working on a Shopify bug and the “Eureka” moments that make a difference in our partners' lives."
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="h-px w-8 bg-purple-300"></div>
-                <span className="text-xs font-bold text-slate-900 uppercase tracking-widest">The Mission</span>
-              </div>
-            </div>
-
-            <p className="text-base md:text-lg text-slate-600 leading-[1.8]">
-              Rather than joining another pack, we decided to follow a different track. We decided to become Partners in your growth journey.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Mission & Vision */}
-      <section className="relative py-24 bg-[#050505] overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col gap-24 md:gap-32">
-            
-            {/* Mission Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <div className="lg:col-span-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-xs font-bold uppercase tracking-widest mb-6">
-                  <Target size={14} /> Our Purpose
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.1]">
-                  Demystifying <span className="text-purple-500">Technology</span> for the Modern Enterprise.
-                </h2>
-              </div>
-              <div className="lg:col-span-6 lg:col-start-7 pt-2 md:pt-4">
-                <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-8">
-                  We do more than provide services; we engineer empowerment. By combining our top-of-the-line SEO expertise with Generative AI and full-stack development, we engineer scalable engines that convert technical challenges into profits.
-                </p>
-                <div className="h-[1px] w-full bg-gradient-to-r from-purple-500/50 to-transparent" />
-              </div>
-            </div>
-
-            {/* Vision Section */}
-            <div className="relative">
-              <div className="relative bg-black border border-white/10 rounded-3xl p-6 md:p-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  <div>
-                    <h3 className="text-xs font-black uppercase tracking-[0.3em] text-purple-500 mb-4">The Vision</h3>
-                    <p className="text-xl md:text-3xl font-medium text-white leading-snug">
-                      Setting the global benchmark for <span className="italic text-gray-500">digital integrity</span> and AI-driven growth.
-                    </p>
-                  </div>
-                  <div className="flex flex-col justify-between">
-                    <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
-                      Our dream for the future is that every enterprise, big or small, adopts "Expert Opinions" to grow from a regional company to a global empire through the use of advanced technologies.
-                    </p>
-                    <div className="flex gap-8">
-                      <div>
-                        <div className="text-2xl font-bold text-white">Global</div>
-                        <div className="text-xs text-gray-500 uppercase">Scale</div>
-                      </div>
-                      <div className="w-[1px] bg-gray-800" />
-                      <div>
-                        <div className="text-2xl font-bold text-white">Ethical</div>
-                        <div className="text-xs text-gray-500 uppercase">AI Integration</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Core Values (Clean cut tiles - hover scales completely removed) */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-950">
-              The Values We <span className="text-purple-600">Live By.</span>
+          {/* Section Introduction */}
+          <div className="mb-12 md:mb-24 max-w-4xl">
+            <span className="text-xs uppercase tracking-widest font-semibold text-purple-700 block mb-3">
+              Our Identity
+            </span>
+            <h2 className="text-2xl sm:text-5xl font-bold tracking-tight text-black leading-tight mb-4 md:mb-8">
+              From global commerce engine rooms to a sovereign software house.
             </h2>
+            <p className="text-gray-600 text-base md:text-xl leading-relaxed font-normal max-w-3xl">
+              Every revolutionary venture begins with an architectural problem demanding an honest blueprint. Ours was the industry-wide deficit of transparency and raw technical precision in the digital services sector. Closing that gap became our foundational standard.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: <ShieldCheck size={28} />, title: "Strategic Integrity", desc: "We prioritize ROI over billables. No fluff, just results.", color: "text-indigo-600", bg: "bg-indigo-50" },
-              { icon: <Lightbulb size={28} />, title: "Adaptive Tech", desc: "We stay at the bleeding edge of AI to keep you ahead.", color: "text-purple-600", bg: "bg-purple-50" },
-              { icon: <TrendingUp size={28} />, title: "Outcome Focused", desc: "Success is measured in growth, not just code.", color: "text-blue-600", bg: "bg-blue-50" }
-            ].map((val, i) => (
-              <div key={i} className="p-8 md:p-10 rounded-[2.5rem] border border-slate-100 bg-slate-50/50">
-                <div className={`mb-6 w-14 h-14 rounded-2xl ${val.bg} ${val.color} flex items-center justify-center`}>
-                  {val.icon}
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">{val.title}</h4>
-                <p className="text-sm md:text-base text-slate-500 leading-relaxed">{val.desc}</p>
+          {/* Phase 01 — Genesis */}
+          <div className="grid lg:grid-cols-12 gap-6 md:gap-12 py-8 md:py-16 border-t border-black/10 items-center">
+            <div className="lg:col-span-4 space-y-2 md:space-y-4">
+              <span className="text-xs md:text-sm font-mono text-gray-400 block">01 / GENESIS</span>
+              <h3 className="text-xl md:text-3xl font-bold text-black tracking-tight">
+                A decade inside global commerce
+              </h3>
+              <div className="pt-2">
+                <img 
+                  src={phase1Image} 
+                  alt="Global Commerce Operations" 
+                  className="w-full h-48 md:h-64 object-cover grayscale border border-black/5" 
+                />
               </div>
-            ))}
+            </div>
+            <div className="lg:col-span-8 space-y-4 md:space-y-6">
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+                Before Expert Opinions took form as a multi-disciplinary software house, our founding team spent over ten years operating within the global eCommerce landscape engineering, optimizing, and managing complex market operations from the ground up. We did not merely study the digital marketplace; we built within it.
+              </p>
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+                Along this path, we realized businesses were routinely falling short not from a lack of internal ambition, but from a clear absence of honest, deeply scientific technical leadership. Expert Opinions was engineered to override this paradigm with complete mathematical transparency.
+              </p>
+              <div className="pt-4 border-l-2 border-purple-700 pl-4 md:pl-6 my-4 md:my-8">
+                <p className="text-base md:text-xl text-black font-medium italic leading-relaxed">
+                  "Success in the digital world comes down to two clear rules: uncompromised integrity of data and logical foresight. Build a resilient technical baseline, and sustained market expansion scales naturally."
+                </p>
+                <span className="block mt-2 text-[10px] md:text-xs tracking-widest font-mono text-gray-400 uppercase">
+                  — Maqsood Ahmad, Founder Expert Opinions
+                </span>
+              </div>
+            </div>
           </div>
+
+          {/* Phase 02 — Expansion */}
+          <div className="grid lg:grid-cols-12 gap-6 md:gap-12 py-8 md:py-16 border-t border-black/10 items-center">
+            <div className="lg:col-span-4 lg:order-last space-y-2 md:space-y-4">
+              <span className="text-xs md:text-sm font-mono text-gray-400 block">02 / EXPANSION</span>
+              <h3 className="text-xl md:text-3xl font-bold text-black tracking-tight">
+                Breaking architectural boundaries
+              </h3>
+              <div className="pt-2">
+                <img 
+                  src={phase2Image} 
+                  alt="Systems Engineering Infrastructure" 
+                  className="w-full h-48 md:h-64 object-cover grayscale border border-black/5" 
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-8 space-y-4 md:space-y-6">
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+                As our operational footprint scaled internationally, our partners' operational mandates evolved. The requirements quickly shifted toward custom automated ecosystems, fault-tolerant legacy databases, secure cross-platform portals, and native product designs. Isolated third-party tools were no longer viable.
+              </p>
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+                We made a targeted transition from a specialized consultancy into an integrated development ecosystem. We integrated elite computational talent systems architects, software engineers, and digital design purists establishing standalone units dedicated to machine intelligence, hardened security, and structural automation.
+              </p>
+              <div className="pt-4 border-l-2 border-purple-700 pl-4 md:pl-6 my-4 md:my-8">
+                <p className="text-base md:text-xl text-black font-medium italic leading-relaxed">
+                  "Software architectures should never be static tools layered onto an organization. They are the core engine of corporate reality. We do not just deploy code; we configure scalable operational futures."
+                </p>
+                <span className="block mt-2 text-[10px] md:text-xs tracking-widest font-mono text-gray-400 uppercase">
+                  — Muhammad Owais,CTO Expert Opinions
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Phase 03 — Today */}
+          <div className="grid lg:grid-cols-12 gap-6 md:gap-12 py-8 md:py-16 border-t border-black/10">
+            <div className="lg:col-span-4">
+              <span className="text-xs md:text-sm font-mono text-gray-400 block mb-1 md:mb-2">03 / CURRENT CAPABILITIES</span>
+              <h3 className="text-xl md:text-3xl font-bold text-black tracking-tight">
+                The integrated software house
+              </h3>
+              <p className="text-gray-500 text-xs md:text-sm mt-2 md:mt-4 leading-relaxed">
+                Today, Expert Opinions manages digital architecture for an international client portfolio across five corporate focus areas.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-8 md:gap-y-12">
+                {domains.map((d, idx) => (
+                  <div key={idx} className="border-t border-gray-100 pt-4 md:pt-6">
+                    <h4 className="text-black font-bold text-base md:text-lg mb-2 tracking-tight">{d.title}</h4>
+                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{d.copy}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Insights Section */}
-      <section className="py-12 md:py-16 bg-white w-full">
-        <Insights />
+      {/* 3. Creed Section */}
+      <section className="w-full px-6 sm:px-12 md:px-24 py-16 md:py-32 bg-black text-white">
+        <div className="w-full max-w-4xl">
+          <span className="text-xs uppercase tracking-widest font-semibold text-purple-500 block mb-3">
+            Our Creed
+          </span>
+          <h2 className="text-2xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-4 md:mb-8">
+            Engineering sustainable corporate legacies.
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-lg leading-relaxed font-light mb-8 md:mb-12 max-w-2xl">
+            No predictive guesswork. No artificial shortcuts. No compromised operational benchmarks. Partnering with Expert Opinions means acquiring an extended engineering infrastructure dedicated to transforming structural code into systemic corporate advantage.
+          </p>
+          <a 
+            href="/contact" 
+            className="inline-flex items-center gap-2 text-white font-semibold text-sm md:text-base border-b-2 border-purple-500 pb-1 hover:text-purple-400 hover:border-purple-400 transition-all duration-200"
+          >
+            Initiate Consultation
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </section>
 
-      {/* Contact Form Section */}
-      <div className="max-w-5xl mx-auto px-6 py-12 contain-intrinsic-size">
-        <ContactForm />
-      </div>
 
     </div>
   );

@@ -8,6 +8,9 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "lucide-react": "^1.16.0",
     "nodemailer": "^8.0.4"

@@ -173,7 +173,7 @@ const ServiceDetail = () => {
           </div>
           <div style={{ display:'flex', flexDirection:'column', justifyContent:'flex-end', paddingBottom:'4px' }}>
             <p style={{ fontSize:'17px', fontWeight:300, color:'rgba(255,255,255,0.4)', lineHeight:1.85, maxWidth:'400px', marginBottom:'44px' }}>
-Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We will help you get your share of profits with professional planning, management, and measurable results.            </p>
+              Everyday, most Amazon sellers are losing out on opportunities. Not anymore! We will help you get your share of profits with professional planning, management, and measurable results.            </p>
             <div style={{ display:'flex', alignItems:'center', gap:'28px', flexWrap:'wrap' }}>
               <Link to="/contact" className="am-btn-primary">Start With a Free Audit</Link>
               <a href="#services" className="am-btn-ghost">See Our Services <span style={{ fontSize:'20px', lineHeight:1 }}>↓</span></a>

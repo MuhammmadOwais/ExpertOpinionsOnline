@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 // Cloudinary URL Optimization specifically structured for modern formats
 const getOptimizedBlogUrl = (url, width, quality = 70) => {
-  // FIXED: Variable interpolation interpolation perfectly fixed now
   return url.replace('/upload/', `/upload/f_auto,q_${quality},w_${width},c_scale/`);
 };
 
@@ -19,10 +18,11 @@ const BlogCard = ({ blog, height, mobileHeight }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={`relative ${mobileHeight} ${height} rounded-2xl overflow-hidden bg-gray-900 border border-purple-900/20 group transition-all duration-300 hover:border-purple-500/50 contain-intrinsic-size transform-gpu`}>
+    // CHANGED: bg-gray-900 to bg-gray-800/60 to make the cards fit nicely on the lighter background
+    <div className={`relative ${mobileHeight} ${height} rounded-2xl overflow-hidden bg-gray-800/60 border border-purple-950/40 group transition-all duration-300 hover:border-purple-500/50 contain-intrinsic-size transform-gpu`}>
       <Link to={`/blog/${blog.slug}`} className="block h-full">
         {/* Image Container */}
-        <div className="relative w-full h-full overflow-hidden bg-gray-800/50">
+        <div className="relative w-full h-full overflow-hidden bg-gray-800/30">
           {!isLoaded && <div className="absolute inset-0 bg-gray-800 animate-pulse" />}
           
           {/* HTML Responsive Image Selection */}
@@ -34,11 +34,8 @@ const BlogCard = ({ blog, height, mobileHeight }) => {
             <img 
               src={getOptimizedBlogUrl(blog.img, 380, 65)} 
               alt={blog.title} 
-              
-              // Sizing matrix to block CLS warnings completely
               width="380"
               height="250"
-              
               loading="lazy"
               decoding="async"
               onLoad={() => setIsLoaded(true)}
@@ -48,7 +45,7 @@ const BlogCard = ({ blog, height, mobileHeight }) => {
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent z-[1]" />
 
         {/* Content */}
         <div className="absolute inset-0 p-5 flex flex-col justify-end z-[2]">
@@ -66,7 +63,8 @@ const BlogCard = ({ blog, height, mobileHeight }) => {
 
 const Insights = () => {
   return (
-    <section className="relative py-16 lg:py-24 bg-black font-poppins overflow-hidden">
+    // CHANGED: bg-black changed to bg-gray-900 (a softer, lighter slate dark color)
+    <section className="relative py-16 lg:py-24 bg-gray-900 font-poppins overflow-hidden">
       <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-900/10 blur-[100px] pointer-events-none transform-gpu" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

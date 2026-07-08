@@ -52,7 +52,7 @@ const ContactForm = () => {
       */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
         
-        {/* LEFT: FORM SIDE (Spans 2 columns) */}
+        {/* LEFT: FORM SIDE (Spans 2 columns on large displays, full width on mobile) */}
         <div className="lg:col-span-2 flex flex-col justify-between">
           <div>
             <h2 className="text-4xl font-black text-purple-600 mb-6">Get In Touch</h2>
@@ -64,7 +64,7 @@ const ContactForm = () => {
                   <label htmlFor="fullName" className="font-bold text-gray-700 text-sm mb-1">Full Name*</label>
                   <input 
                     id="fullName"
-                    {...register("fullName")} 
+                    {...register("fullName")}
                     autoComplete="name"
                     className={`p-2.5 text-sm bg-gray-50 border ${errors.fullName ? 'border-red-500' : 'border-gray-200'} rounded-none outline-none focus:border-purple-500`} 
                   />
@@ -173,9 +173,9 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* RESTORED RIGHT: INFO SIDE (Perfect sharp theme matching padding fields) */}
-        <div className="lg:col-span-1 flex flex-col h-full lg:pt-14">
-          <div className="h-full bg-white p-6 rounded-none border border-gray-200 flex flex-col justify-between space-y-5">
+        {/* CHANGED HERE: Added 'hidden lg:flex' to hide this panel on mobile screens entirely */}
+        <div className="hidden lg:flex lg:col-span-1 flex-col h-full lg:pt-14">
+          <div className="h-full w-full bg-white p-6 rounded-none border border-gray-200 flex flex-col justify-between space-y-5">
             
             <div className="pb-3 border-b border-gray-100">
               <h3 className="text-lg font-black text-gray-900 tracking-tight">Connect with Us</h3>

@@ -10,8 +10,8 @@ const getOptimizedLogoUrl = (url) => {
 const logos = [
   { id: 1, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779153414/jd_b64gvi.jpg", url: "https://www.jdphones.co.uk/" },
   { id: 2, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779153806/aivisty_logo_y5497n.avif", url: "https://aivisty.com" },
-  { id: 3, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779153414/Myrtle-Enterprise_jzyp0g_1_v14soa.jpg", url: "https://myrtlent.com/" },
-  { id: 4, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774698237/rustcoffee_gsyfzt.webp", url: "https://rustcoffee.co.uk/" },
+  { id: 3, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783355026/Shekhani-1_rlux4q.png", url: "https://shekhanillc.com/" },
+  { id: 4, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1774698237/erainmercantile_b6slzg.webp", url: "https://erainmercantile.com/" },
   { id: 5, img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779153754/thjcoohq04u8f7qqzp6s_slqtpo.webp", url: "https://rizmercantile.com/" },
 ];
 

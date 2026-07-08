@@ -139,13 +139,13 @@ const Hero = () => {
               />
             </a>
 
-            {/* Myrtle-Enterprise */}
-            <a href="https://myrtlent.com/" target="_blank" rel="noreferrer" 
+            {/* Rizz Mercantile-Enterprise */}
+            <a href="https://rizmercantile.com/" target="_blank" rel="noreferrer" 
                className="transition-all hover:brightness-125 flex items-center justify-center h-10 md:h-16 w-28 md:w-48">
               <img 
-                src="https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_80,w_180/v1774698238/Myrtle-Enterprise_jzyp0g.webp" 
-                alt="Myrtent" 
-                width="180"
+                src="https://res.cloudinary.com/dawp1fcci/image/upload/f_auto,q_80,w_180/v1774698237/RizMercantile_zldts2.webp"
+                alt="Rizz Mercantile" 
+                width="200"
                 height="50"
                 loading="lazy" // Safe below fold lazy load
                 className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-90 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" 
