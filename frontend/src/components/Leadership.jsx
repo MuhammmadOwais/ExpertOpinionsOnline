@@ -21,21 +21,21 @@ const coreLeaders = [
   {
     name: "Abdur Rehman",
     role: "Chief Executive Officer (CEO) / COO",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779159593/Gemini_Generated_Image_ofddeoofddeoofdd_m9xzll_1_1_nbwycr.webp",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783636196/ChatGPT_Image_Jul_9_2026_03_28_14_PM_z1mjqq.png",
     linkedin: "#",
     bio: "The operational backbone of the agency. He manages daily agency updates, client communications, and complex troubleshooting with relentless performance execution."
   },
   {
     name: "Ahsan Ali",
     role: "Head of Digital Marketing",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779159593/WhatsApp_Image_2026-04-24_at_2.22.39_PM_tmsxbi_bwhy5g.webp",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783636372/ahsanblackandwhite_pgqd6p.jpg",
     linkedin: "#",
     bio: "The strategic mind behind our market presence. He tracks shifting trends, builds high-converting campaigns, and designs the growth frameworks that help clients scale."
   },
   {
     name: "Muhammad Owais",
     role: "Chief Technology Officer & Project Director",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779159593/retouch_2026042503474735.jpg_qjn2k4_1_1_m4vdad.webp",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783636713/ChatGPT_Image_Jul_9_2026_03_09_55_PM_o8dtsn.png",
     linkedin: "https://www.linkedin.com/in/owaiskhubaisi/",
     bio: "A seasoned computer scientist leading our technical frontiers. He handles project scoping, budget allocation, timelines, and overall modern architecture with elite precision."
   },
@@ -43,7 +43,7 @@ const coreLeaders = [
 
 // 2. Department Heads & Technical Leads (Text-Only Structural Layout)
 const technicalLeads = [
-    {
+  {
     name: "Hamza Faizan",
     role: "Head of eCommerce & Amazon SEO",
     linkedin: "https://www.linkedin.com/in/hamza-faizan-6a6b42336?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -52,25 +52,24 @@ const technicalLeads = [
   {
     name: "Abdul Hanan",
     role: "Head of Artificial Intelligence",
-    linkedin: "https://www.linkedin.com/in/abdul-hanan-8a7220293/",
+    linkedin: "#",
     bio: "Specializes in building complex AI automation pipelines, advanced machine learning architectures, and autonomous AI bots."
   },
   {
     name: "Zaid Amjad",
     role: "Senior Lead, Web & Mobile Apps",
-    linkedin: "https://www.linkedin.com/in/muhammad-zaid-amjad-946b9228a/",
+    linkedin: "#",
     bio: "Oversights high-performance application architectures, state frameworks, and clean modular deployment patterns."
   },
   {
     name: "Waleed Sarfraz",
     role: "Head of UI/UX & Game Dev",
-    linkedin: "https://www.linkedin.com/in/waleed-sarfraz-2a83b928b/",
     bio: "Transforms complex logic paradigms into smooth user interfaces, structural visual asset guidelines, and interactive experiences."
   },
   {
     name: "Hamdan Aleem",
     role: "Senior Cybersecurity Engineer",
-    linkedin: "https://www.linkedin.com/in/hamdan-aleem-7411a228b/",
+    linkedin: "#",
     bio: "Our technical guardian. Manages deep network penetration testing, critical vulnerability scanning, and secure container structures."
   },
 

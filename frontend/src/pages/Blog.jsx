@@ -48,6 +48,86 @@ const blogPosts = [
     slug: "the-ultimate-ui-ux-checklist-sales-optimization",
     category: "UI/UX Design",
     date: "March 01, 2026"
+  },
+  {
+    title: "Why Next.js 15 and NestJS Are the New Gold Standard for 2026 Enterprise Applications",
+    description: "The combo of Next.js 15 on the frontend and NestJS on the backend is officially the new gold standard...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783631697/Why_Next.js_15_and_NestJS_Are_the_New_Gold_Standard_for_2026_Enterprise_Applications._cbndkn.jpg",
+    slug: "why-nextjs-15-and-nestjs-are-the-new-gold-standard-for-2026-enterprise-applications",
+    category: "Web Development",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Beyond Simple Chatbots: How Fleet Based Agentic AI Ecosystems Are Rewriting Enterprise Supply Chain Automation",
+    description: "Specialized networks of goal-oriented AI agents are transforming supply chains into self-correcting systems...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783631917/2_pj8pc8.jpg",
+    slug: "beyond-simple-chatbots-fleet-based-agentic-ai-supply-chain-automation",
+    category: "Agentic AI",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Template Limitations Are Costing You Conversions: The Technical Case for Decoupled Headless Retail Engines",
+    description: "Monolithic templates throttle performance and limit user experience. Discover the technical case for api-driven commerce...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783632123/Template_Limitations_Are_Costing_You_Conversions_The_Technical_Case_for_Decoupled_Headless_Retail_Engines._ca7i3a.jpg",
+    slug: "template-limitations-are-costing-you-conversions-headless-retail-engines",
+    category: "Web Development",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Generative Engine Optimization (GEO): How to Structure Your Corporate Knowledge Graph to Secure Citations in ChatGPT and Gemini",
+    description: "Discover how to structure your corporate knowledge graph programmatically to secure citations in ChatGPT, Gemini, and AI search engines...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783632344/Generative_Engine_Optimization_GEO_How_to_Structure_Your_Corporate_Knowledge_Graph_to_Secure_Citations_in_ChatGPT_Gemini._l7bfok.jpg",
+    slug: "generative-engine-optimization-geo-how-to-structure-your-corporate-knowledge-graph-secure-citations",
+    category: "GEO & AEO",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Why Compliance Checklists Fail: The Critical Need for Aggressive Manual Penetration Testing in Cloud Native Stacks",
+    description: "Relying purely on compliance scanners and checklists leaves your cloud infrastructure highly vulnerable. Discover why deep, manual offensive testing is non-negotiable...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783632344/Generative_Engine_Optimization_GEO_How_to_Structure_Your_Corporate_Knowledge_Graph_to_Secure_Citations_in_ChatGPT_Gemini._l7bfok.jpg",
+    slug: "why-compliance-checklists-fail-manual-penetration-testing-cloud-native",
+    category: "VAPT & Penetration Testing",
+    date: "July 09, 2026"
+  },
+  {
+    title: "The Castle and Moat Defense Is Dead: Architectural Blueprints for Implementing a Strict Zero Trust Framework",
+    description: "Relying on a perimeter-based security model is obsolete. Learn the technical blueprint for implementing a strict Zero Trust Architecture...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783632859/The_Castle-and-Moat_Defense_is_Dead_Architectural_Blueprints_for_Implementing_a_Strict_Zero-Trust_Framework._pppsf9.jpg",
+    slug: "the-castle-and-moat-defense-is-dead-architectural-blueprints-implementing-zero-trust",
+    category: "Zero-Trust & Cryptographic Engineering",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Eliminating Configuration Drift: Scaling Global Infrastructure Predictably via Declarative IaC Pipelines (Terraform and OpenTofu)",
+    description: "Configuration drift is the silent killer of operational stability. Learn how to eliminate drift and scale globally with absolute predictability...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783632957/Eliminating_Configuration_Drift_Scaling_Global_Infrastructure_Predictably_via_Declarative_IaC_Pipelines_Terraform_OpenTofu._jiclsy.jpg",
+    slug: "eliminating-configuration-drift-scaling-global-infrastructure-predictably-declarative-iac",
+    category: "Cloud & DevOps",
+    date: "July 09, 2026"
+  },
+  {
+    title: "From Rearview Dashboards to Proactive Foresight: Engineering Closed Loop MLOps Pipelines for Revenue Retention",
+    description: "Historical data tells you how much money you lost last month. Learn how closed-loop MLOps pipelines dynamically predict and prevent user churn...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783633160/From_Rearview_Dashboards_to_Proactive_Foresight_Engineering_Closed-Loop_MLOps_Pipelines_for_Revenue_Retention._fdtlbu.jpg",
+    slug: "rearview-dashboards-proactive-foresight-closed-loop-mlops-pipelines-revenue-retention",
+    category: "Growth Hacking",
+    date: "July 09, 2026"
+  },
+  {
+    title: "The New Mobile Architecture Battleground: Engineering Resilient Offline First Enterprise Applications",
+    description: "Offline-first mobile applications demand unshakeable database integrity and zero main-thread UI stutters. Learn the nativeSwift and Kotlin stack architectures...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783633312/Complex_local_state_synchronization_SQLiteRealm_payload_minimization_for_bandwidth_aur_strict_mobile_biometrics_FaceIDFingerprint._eakaen.jpg",
+    slug: "new-mobile-architecture-battleground-offline-first-enterprise-apps",
+    category: "Mobile Apps",
+    date: "July 09, 2026"
+  },
+  {
+    title: "Bridging the Chasm Between Figma Tokens and React UI: Scaling Development Velocity by 40% with Enterprise Design Systems",
+    description: "Tired of copy-pasting hex codes? Learn how Style Dictionary can automate your Figma design token pipelines into production-ready React styles...",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783625569/Serverless_Modernization_Microservices_f7eqgj.jpg",
+    slug: "figma-tokens-to-react-ui-enterprise-design-systems-velocity",
+    category: "UI/UX Design",
+    date: "July 09, 2026"
   }
 ];
 
@@ -56,7 +136,7 @@ const BlogPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -72,9 +152,9 @@ const BlogPage = () => {
 
   return (
     <div className="bg-white font-poppins min-h-screen text-gray-900 overflow-x-hidden">
-      
+
       {/* 1. Dynamic Hero Section */}
-      <section 
+      <section
         className="relative pt-36 pb-24 md:pt-48 md:pb-32 px-6 flex items-center bg-gray-900 overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${finalHeroImg})`,
@@ -99,60 +179,68 @@ const BlogPage = () => {
       {/* 2. Main Grid Content */}
       {/* PERFORMANCE TUNE: Grid layout widths adjust specifically to make cards look smaller and sharper on mobile */}
       <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 contain-intrinsic-size">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8 md:gap-y-16 md:gap-x-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-y-16 gap-x-8 md:gap-x-10">
           {blogPosts.map((post) => (
-            <article key={post.slug} className="flex flex-col transform-gpu">
-              
+            <article 
+              key={post.slug} 
+              className="flex flex-row sm:flex-col gap-4 sm:gap-0 items-start sm:items-stretch pb-6 sm:pb-0 border-b sm:border-b-0 border-gray-100 sm:border-transparent transform-gpu"
+            >
+
               {/* Image Box */}
-              <Link to={`/blog/${post.slug}`} className="block mb-4 overflow-hidden rounded-xl bg-gray-100 shadow-sm border border-gray-100">
+              <Link 
+                to={`/blog/${post.slug}`} 
+                className="block overflow-hidden rounded-xl bg-gray-100 shadow-sm border border-gray-100 shrink-0 w-[110px] h-[78px] sm:w-full sm:h-auto sm:mb-4"
+              >
                 <picture>
-                  <source 
-                    media="(min-width: 640px)" 
-                    srcSet={getOptimizedBlogUrl(post.img, 450, 75)} 
+                  <source
+                    media="(min-width: 640px)"
+                    srcSet={getOptimizedBlogUrl(post.img, 450, 75)}
                   />
-                  <img 
-                    src={getOptimizedBlogUrl(post.img, 320, 65)} 
-                    alt={post.title} 
-                    
-                    // Fixed hardcoded parameters stop Cumulative Layout Shifts completely
+                  <img
+                    src={getOptimizedBlogUrl(post.img, 180, 65)}
+                    alt={post.title}
                     width="450"
                     height="280"
-                    
-                    loading="lazy" 
+                    loading="lazy"
                     decoding="async"
-                    className="w-full aspect-[16/10] object-cover pointer-events-none"
+                    className="w-full h-full sm:aspect-[16/10] object-cover pointer-events-none"
                   />
                 </picture>
               </Link>
 
-              {/* Meta Info */}
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-[10px] font-bold text-purple-600 uppercase tracking-wider">{post.category}</span>
-                <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                <div className="flex items-center gap-1 text-gray-400 text-[11px] font-medium">
-                  <Clock size={12} /> <span>{post.date}</span>
+              {/* Content Wrap */}
+              <div className="flex-1 min-w-0 flex flex-col">
+                {/* Meta Info */}
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <span className="text-[9px] sm:text-[10px] font-bold text-purple-600 uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                  <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <div className="flex items-center gap-1 text-gray-400 text-[10px] sm:text-[11px] font-medium">
+                    <Clock size={10} className="sm:w-3 sm:h-3" /> <span>{post.date}</span>
+                  </div>
                 </div>
+
+                {/* Title */}
+                <Link to={`/blog/${post.slug}`}>
+                  <h2 className="text-xs sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 leading-snug hover:text-purple-600 transition-colors duration-200 line-clamp-2">
+                    {post.title}
+                  </h2>
+                </Link>
+
+                {/* Description */}
+                <p className="hidden sm:block text-gray-500 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">
+                  {post.description}
+                </p>
+
+                {/* Read Link */}
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="hidden sm:inline-flex items-center text-gray-900 font-bold text-xs border-b-2 border-purple-600 self-start pb-0.5 hover:text-purple-600 transition-colors"
+                >
+                  Read Full Story
+                </Link>
               </div>
-
-              {/* Title - Clean cut bounds */}
-              <Link to={`/blog/${post.slug}`}>
-                <h2 className="text-base md:text-lg font-bold text-gray-900 mb-2 leading-snug hover:text-purple-600 transition-colors duration-200">
-                  {post.title}
-                </h2>
-              </Link>
-
-              {/* Description */}
-              <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">
-                {post.description}
-              </p>
-
-              {/* Read Link */}
-              <Link 
-                to={`/blog/${post.slug}`} 
-                className="inline-flex items-center text-gray-900 font-bold text-xs border-b-2 border-purple-600 self-start pb-0.5 hover:text-purple-600 transition-colors"
-              >
-                Read Full Story
-              </Link>
             </article>
           ))}
         </div>

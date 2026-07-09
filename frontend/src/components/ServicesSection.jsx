@@ -11,18 +11,38 @@ const getOptimizedServiceUrl = (url, isMobile = false) => {
 };
 
 const allServices = [
-  { name: 'SEO', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/SEO_Optimization_zat9to_lugqth.webp', slug: 'seo' },
-  { name: 'Amazon Account Management', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Amazon_Optimization_and_Management_wicum8_adznot.webp', slug: 'amazon-account-management' },
-  { name: 'Shopify Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Shopify_Store_development_and_optimization_cxi3lp_kjwicc.webp', slug: 'shopify-development' },
-  { name: 'Digital Marketing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Digital_Marketing_Strategy_n283jq_xt8el1.webp', slug: 'digital-marketing' },
-  { name: 'Content Writing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Content_Writing_and_SEO_Content_Production_wlqhqh_mezhzn.webp', slug: 'content-writing' },
-  { name: 'Local SEO Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Local_SEO_Services_qvg8qn_yfobvg.webp', slug: 'local-seo' },
-  { name: 'Full Stack Development', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/website_development_by_wordpress_and_mern_stack_gxpczc_wm39yo.webp', slug: 'web-development' },
-  { name: 'Mobile App Dev', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160567/Mobile_Application_Development_rkueq7_zhouy0.webp', slug: 'mobile-app-dev' },
-  { name: 'DevOps', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Devops_ylm5az_qzvl6x.webp', slug: 'devops' },
-  { name: 'Generative AI', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/Genrative_AI_d937jp_ienmyz.webp', slug: 'generative-ai' },
-  { name: 'n8n Automation', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/n8n_yknrgj_p8i2k0.webp', slug: 'n8n-automation' },
-  { name: 'Blogging Services', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160566/bloging_yrfxxt_pjwvmn.webp', slug: 'bloging' },
+  // 💻 Core Engineering & Product Development
+  { name: 'Enterprise Web Application Engineering', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783622301/Enterprise_Web_Application_Engineering_ahxlus.jpg', slug: 'enterprise-web-application-engineering' },
+  { name: 'Cross-Platform & Native Mobile Dev', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783622936/Cross-Platform_Native_Mobile_Engineering_Building_High-Performance_Mobile_Ecosystems_ioqqte.jpg', slug: 'cross-platform-native-mobile-development' },
+  { name: 'Full-Cycle SaaS Product Engineering', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783623207/Full-Cycle_SaaS_Product_Engineering_yffzqn.jpg', slug: 'full-cycle-saas-product-engineering' },
+  { name: 'Headless Commerce & Custom E-Commerce', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783623582/Headless_Commerce_Custom_E-Commerce_sgrmmq.jpg', slug: 'headless-commerce-custom-ecommerce-architecture' },
+
+  // 🤖 Next-Gen AI & Automation
+  { name: 'Agentic AI & Autonomous Workflows', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783623943/Agentic_AI_Autonomous_Workflows_ntlzgj.jpg', slug: 'agentic-ai-autonomous-workflow-orchestration' },
+  { name: 'Custom LLM Fine-Tuning & RAG', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783624426/custom_llm_fine-tuning_rag_turpun.jpg', slug: 'custom-llm-fine-tuning-rag-frameworks' },
+  { name: 'Computer Vision & Spatial Analytics', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783624652/Computer_Vision_Spatial_Analytics_Engineering_oqbqsg.jpg', slug: 'computer-vision-spatial-analytics' },
+  { name: 'Predictive Data Science & Analytics', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783624812/Predictive_Data_Science_Analytics_fhg1mz.jpg', slug: 'predictive-data-science-advanced-analytics' },
+
+  // 🌐 Cloud, DevOps & Infrastructure
+  { name: 'Cloud Architecture & IaC', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783625106/Cloud_Architecture_IaC_njw1sg.jpg', slug: 'cloud-architecture-infrastructure-as-code' },
+  { name: 'Enterprise DevOps & CI/CD', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1779160565/Devops_ylm5az_qzvl6x.webp', slug: 'enterprise-devops-cicd-orchestration' },
+  { name: 'Serverless Modernization & Microservices', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783625569/Serverless_Modernization_Microservices_f7eqgj.jpg', slug: 'serverless-modernization-microservices' },
+  { name: 'High-Scale API Design & Integration', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783625732/High-Scale_API_Design_Integration_bljh7h.jpg', slug: 'high-scale-api-design-integration-ecosystems' },
+
+  // 🔒 Advanced Cybersecurity & Blockchain (Web3)
+  { name: 'VAPT & Penetration Testing', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783625884/VAPT_Penetration_Testing_kyl5fs.jpg', slug: 'vapt' },
+  { name: 'Zero-Trust & Cryptographics', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783626092/Zero-Trust_Cryptographics_gip8pw.jpg', slug: 'zero-trust-architecture-cryptographic-implementation' },
+  { name: 'Smart Contracts & Protocols (Web3)', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783626292/Smart_Contracts_Protocols_Web3_eatt6x.jpg', slug: 'smart-contracts-decentralized-protocols-web3' },
+
+  // 🎨 Design & Immersive Experiences
+  { name: 'Enterprise UI/UX Design Systems', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783626503/Enterprise_UIUX_Design_Systems_t5mkrf.jpg', slug: 'figma-ui-ux-design-systems' },
+  { name: 'Spatial Computing & AR/VR Apps', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783626687/Spatial_Computing_ARVR_Apps_erdbvn.jpg', slug: 'spatial-computing-spatial-app-development' },
+  { name: 'IoT Solutions Architecture', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783626874/IoT_Solutions_Architecture_wolkmj.jpg', slug: 'iot-solutions-architecture' },
+
+  // 📈 Modern Growth & Cognitive Marketing
+  { name: 'GEO & AEO (Generative Optimization)', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783627125/GEO_AEO_Generative_Optimization_iiqf1i.jpg', slug: 'geo-aeo-generative-engine-optimization' },
+  { name: 'Growth Hacking & Programmatic Funnels', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783627361/Growth_Hacking_Programmatic_Funnels_vicybf.jpg', slug: 'growth-hacking-programmatic-funnel-engineering' },
+  { name: 'Brand Strategy & Digital Identity', img: 'https://res.cloudinary.com/dawp1fcci/image/upload/v1783627623/Brand_Strategy_Digital_Identity_qp0zze.jpg', slug: 'brand-strategy-digital-identity-systems' }
 ];
 
 const ServicesSection = () => {
@@ -40,9 +60,9 @@ const ServicesSection = () => {
 
   return (
     <section className="relative py-12 md:py-24 px-4 sm:px-6 overflow-hidden bg-white contain-intrinsic-size">
-      
+
       {/* Background Glow - GPU Layer Isolation */}
-      <div 
+      <div
         className="absolute inset-0 z-0 pointer-events-none select-none opacity-50 md:opacity-90 transform-gpu"
         style={{
           background: `radial-gradient(circle at 50% 40%, rgba(147, 51, 234, 0.35) 0%, rgba(168, 85, 247, 0.15) 40%, rgba(255, 255, 255, 0) 75%)`
@@ -50,7 +70,7 @@ const ServicesSection = () => {
       ></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* Header Section */}
         <div className="mb-10 md:mb-16 text-center md:text-left">
           <p className="text-purple-600 font-bold tracking-widest uppercase text-[10px] md:text-sm mb-2">Our Services</p>
@@ -70,37 +90,36 @@ const ServicesSection = () => {
             const isHidden = !showAll && index >= 4;
 
             return (
-              <div 
-                key={service.slug} 
-                className={`w-full transform-gpu transition-all duration-500 ease-in-out ${
-                  isHidden 
-                    ? 'opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden hidden md:block lg:opacity-0 lg:max-h-0' 
-                    : 'opacity-100 scale-100 max-h-[500px]'
-                }`}
+              <div
+                key={service.slug}
+                className={`w-full transform-gpu transition-all duration-500 ease-in-out ${isHidden
+                  ? 'opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden hidden md:block lg:opacity-0 lg:max-h-0'
+                  : 'opacity-100 scale-100 max-h-[500px]'
+                  }`}
               >
-                <Link 
+                <Link
                   to={`/services/${service.slug}`}
                   className="group relative block aspect-square overflow-hidden rounded-2xl md:rounded-[2rem] bg-gray-900 shadow-md transition-all active:scale-98 md:hover:shadow-purple-300/20"
                 >
                   {/* Background Image */}
-                  <img 
-                    src={finalCardImg} 
-                    alt={service.name} 
-                    
+                  <img
+                    src={finalCardImg}
+                    alt={service.name}
+
                     // Fixed aspect properties to lock cumulative layout shift
                     width="450"
                     height="450"
-                    
+
                     // Native performance hooks: Eager load first row, lazy load expanded ones
                     loading={index < 4 ? "eager" : "lazy"}
                     decoding="async"
-                    
+
                     className="h-full w-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-50 md:opacity-60 pointer-events-none"
                   />
-                  
+
                   {/* Dark Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent md:group-hover:from-purple-900/80 transition-all duration-300"></div>
-                  
+
                   {/* Service Text */}
                   <div className="absolute bottom-0 p-3 md:p-8 w-full">
                     <h3 className="text-sm md:text-2xl font-extrabold text-white font-poppins leading-tight">
@@ -116,7 +135,7 @@ const ServicesSection = () => {
 
         {/* View More Button */}
         <div className="mt-10 md:mt-16 flex justify-center">
-          <button 
+          <button
             onClick={() => setShowAll(!showAll)}
             className="group flex items-center gap-2 border-2 border-purple-600 text-purple-600 px-6 py-3 md:px-10 md:py-4 rounded-full font-black text-[10px] md:text-sm uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all duration-300 active:scale-95 shadow-md"
           >

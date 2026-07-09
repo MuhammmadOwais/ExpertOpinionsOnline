@@ -3,20 +3,28 @@ import { Link } from 'react-router-dom';
 
 const currentYear = new Date().getFullYear();
 
-/* ─── Data ─── */
 const SERVICES = [
-  { name: 'SEO', href: '/services/seo' },
-  { name: 'Local SEO', href: '/services/local-seo' },
-  { name: 'Digital Marketing', href: '/services/digital-marketing' },
-  { name: 'Content Writing', href: '/services/content-writing' },
-  { name: 'Blogging', href: '/services/blogging' },
-  { name: 'Shopify Development', href: '/services/shopify-development' },
-  { name: 'Website Development', href: '/services/web-development' },
-  { name: 'Mobile App Dev', href: '/services/mobile-app-dev' },
-  { name: 'Amazon Management', href: '/services/amazon-account-management' },
-  { name: 'DevOps', href: '/services/devops' },
-  { name: 'Generative AI', href: '/services/generative-ai' },
-  { name: 'n8n Automation', href: '/services/n8n-automation' },
+  { name: 'Enterprise Web Apps', href: '/services/enterprise-web-application-engineering' },
+  { name: 'Cross-Platform Mobile', href: '/services/cross-platform-native-mobile-development' },
+  { name: 'SaaS Product Engineering', href: '/services/full-cycle-saas-product-engineering' },
+  { name: 'Headless Commerce Solutions', href: '/services/headless-commerce-custom-ecommerce-architecture' },
+  { name: 'Agentic AI & Workflows', href: '/services/agentic-ai-autonomous-workflow-orchestration' },
+  { name: 'LLM Fine-Tuning & RAG', href: '/services/custom-llm-fine-tuning-rag-frameworks' },
+  { name: 'Computer Vision Systems', href: '/services/computer-vision-spatial-analytics' },
+  { name: 'Predictive Data Analytics', href: '/services/predictive-data-science-advanced-analytics' },
+  { name: 'Cloud Architecture & IaC', href: '/services/cloud-architecture-infrastructure-as-code' },
+  { name: 'Enterprise DevOps & CI/CD', href: '/services/enterprise-devops-cicd-orchestration' },
+  { name: 'Serverless Modernization', href: '/services/serverless-modernization-microservices' },
+  { name: 'High-Scale API Design', href: '/services/high-scale-api-design-integration-ecosystems' },
+  { name: 'VAPT & Penetration Testing', href: '/services/vapt' },
+  { name: 'Zero-Trust Architecture', href: '/services/zero-trust-architecture-cryptographic-implementation' },
+  { name: 'Smart Contracts & Web3', href: '/services/smart-contracts-decentralized-protocols-web3' },
+  { name: 'Figma UI/UX Design Systems', href: '/services/figma-ui-ux-design-systems' },
+  { name: 'Spatial Computing AR/VR', href: '/services/spatial-computing-spatial-app-development' },
+  { name: 'IoT Solutions Architecture', href: '/services/iot-solutions-architecture' },
+  { name: 'GEO & AEO AI Optimization', href: '/services/geo-aeo-generative-engine-optimization' },
+  { name: 'Growth Hacking Funnels', href: '/services/growth-hacking-programmatic-funnel-engineering' },
+  { name: 'Brand Strategy & Identity', href: '/services/brand-strategy-digital-identity-systems' }
 ];
 
 const COMPANY = [
@@ -38,8 +46,9 @@ const CONTACT = [
 ];
 
 const SOCIAL = {
-  instagram: 'https://instagram.com',
-  linkedin: 'https://linkedin.com/company/expert-opinions',
+  instagram: 'https://www.instagram.com/inside.eo/',
+  facebook: 'https://www.facebook.com/profile.php?id=61553381223569',
+  linkedin: 'https://www.linkedin.com/search/results/all/?keywords=Expert%20Opinions&origin=ENTITY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A135095876&position=0',
 };
 
 /* ─── Icons ─── */
@@ -66,6 +75,11 @@ const InstagramIcon = () => (
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" />
+  </svg>
+);
+const FacebookIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
@@ -155,7 +169,7 @@ const Footer = () => (
         margin: 0 auto;
         padding: 44px 40px 36px;
         display: grid;
-        grid-template-columns: 1.6fr 2fr 0.9fr;
+        grid-template-columns: 1.5fr 1.8fr 0.8fr 1.2fr;
         gap: 48px;
         position: relative;
         z-index: 1;
@@ -246,6 +260,10 @@ const Footer = () => (
       .ft-legal a { font-size: 12px; color: var(--ft-muted); text-decoration: none; transition: color 0.15s; }
       .ft-legal a:hover { color: var(--ft-text); }
 
+      .ft-group-row {
+        display: contents;
+      }
+
       @media (max-width: 900px) {
         .ft-cta-strip { padding: 24px 24px; }
         .ft-main {
@@ -254,6 +272,16 @@ const Footer = () => (
           gap: 32px;
         }
         .ft-brand-col { grid-column: 1 / -1; }
+        .ft-group-row {
+          grid-column: 1 / -1;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 40px;
+          width: 100%;
+        }
+        .ft-badge-col { display: block; width: auto; }
         .ft-bottom { padding: 16px 24px; }
       }
 
@@ -261,6 +289,15 @@ const Footer = () => (
         .ft-cta-strip { flex-direction: column; align-items: flex-start; }
         .ft-main { grid-template-columns: 1fr; gap: 28px; }
         .ft-brand-col { grid-column: auto; }
+        .ft-group-row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 32px;
+          width: 100%;
+        }
+        .ft-badge-col { display: block; width: auto; }
         .ft-services-grid { grid-template-columns: 1fr 1fr; }
         .ft-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
       }
@@ -301,6 +338,9 @@ const Footer = () => (
           </ul>
 
           <div className="ft-socials">
+            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="ft-social-btn" aria-label="Facebook">
+              <FacebookIcon />
+            </a>
             <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="ft-social-btn" aria-label="Instagram">
               <InstagramIcon />
             </a>
@@ -320,16 +360,60 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Company */}
-        <div>
-          <p className="ft-col-label">Company</p>
-          <ul className="ft-company-list">
-            {COMPANY.map(c => (
-              <li key={c.name}>
-                <Link to={c.href} className="ft-link">{c.name}</Link>
-              </li>
-            ))}
-          </ul>
+        {/* Company + SPN Badge Row (aligned side-by-side on mobile/tablet) */}
+        <div className="ft-group-row">
+          {/* Company */}
+          <div>
+            <p className="ft-col-label">Company</p>
+            <ul className="ft-company-list">
+              {COMPANY.map(c => (
+                <li key={c.name}>
+                  <Link to={c.href} className="ft-link">{c.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Amazon SPN Partner Column */}
+          <div className="ft-badge-col flex flex-col items-center md:items-end justify-start text-center md:text-right">
+            <p className="hidden md:block ft-col-label">SPN Verified</p>
+            <a
+              href="https://sellercentral.amazon.com/tsba/provider-details/Account%20Management/a9ae60e9-9c17-438b-ae8f-500812fea693?ref_=sc_spn_blst_bdt-a9ae60e9&localeSelection=en_US&sellFrom=US&sellIn=US"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center md:items-end gap-3 p-0 md:p-5 rounded-2xl bg-transparent md:bg-white/[0.02] border-0 md:border md:border-purple-500/20 shadow-none md:shadow-[0_0_20px_rgba(139,92,246,0.03)] md:relative md:overflow-hidden group w-fit md:w-full max-w-[320px] md:max-w-[280px]"
+            >
+              {/* Background Accent Glow */}
+              <div className="hidden md:block absolute -top-10 -right-10 w-24 h-24 rounded-full bg-purple-500/10 blur-xl pointer-events-none group-hover:bg-purple-500/15 transition-colors"></div>
+
+              <div className="bg-white py-2 px-4 rounded-xl border border-white/10 flex items-center justify-center shrink-0 shadow-md w-fit max-w-[220px] md:max-w-none mx-auto md:mr-0">
+                <img
+                  src="https://res.cloudinary.com/dawp1fcci/image/upload/v1783556410/ChatGPT_Image_Jul_8_2026_04_30_48_PM_lfcsrw.png"
+                  alt="Official Amazon SPN Partner Badge"
+                  className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+                />
+              </div>
+
+              <div className="hidden md:flex flex-col text-center md:text-right w-full">
+                <span className="text-[10px] text-purple-400 font-extrabold uppercase tracking-wider leading-none mb-1 flex items-center justify-center md:justify-end gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
+                  Official SPN Partner
+                </span>
+                <span className="text-xs font-bold text-white leading-tight">Amazon Service Provider Network</span>
+              </div>
+
+              <p className="hidden md:block text-[11px] text-gray-400 leading-normal m-0 text-center md:text-right w-full">
+                Verified E-commerce growth, Amazon SEO, and store listing advisory specialists.
+              </p>
+
+              <span className="hidden md:flex mt-1 items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-[11px] font-bold tracking-wide transition-all transform hover:scale-[1.02] shadow-md shadow-purple-500/10 w-full text-center">
+                <span>View Directory</span>
+                <svg className="w-3 h-3 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -337,7 +421,7 @@ const Footer = () => (
       {/* ── Bottom Bar ── */}
       <div className="ft-bottom">
         <p className="ft-copy">
-          © {currentYear} Expert Opinions. All rights reserved. <strong>#BuildingAtTheSpeedOfAI</strong>
+          © {currentYear} Expert Opinions. All rights reserved. <span className="mx-2 text-white/15">|</span> <strong>Official Amazon Service Provider Network Partner</strong>
         </p>
         <nav className="ft-legal" aria-label="Legal">
           {LEGAL.map(l => (

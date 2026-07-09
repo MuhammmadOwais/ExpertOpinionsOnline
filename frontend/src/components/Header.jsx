@@ -1,31 +1,71 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-/* ─── Navigation Data ─────────────────────────────────────── */
+const PORTFOLIOS = [
+  {
+    category: "Core Engineering & Product",
+    items: [
+      { name: "Enterprise Web Application Engineering", href: "/services/enterprise-web-application-engineering" },
+      { name: "Cross-Platform Mobile Development", href: "/services/cross-platform-native-mobile-development" },
+      { name: "Full-Cycle SaaS Product Engineering", href: "/services/full-cycle-saas-product-engineering" },
+      { name: "Headless Commerce Architectures", href: "/services/headless-commerce-custom-ecommerce-architecture" }
+    ]
+  },
+  {
+    category: "AI & Automation",
+    items: [
+      { name: "Agentic AI & Workflow Orchestration", href: "/services/agentic-ai-autonomous-workflow-orchestration" },
+      { name: "Custom LLM Fine-Tuning & RAG", href: "/services/custom-llm-fine-tuning-rag-frameworks" },
+      { name: "Computer Vision & Spatial Analytics", href: "/services/computer-vision-spatial-analytics" },
+      { name: "Predictive Data Science & Analytics", href: "/services/predictive-data-science-advanced-analytics" }
+    ]
+  },
+  {
+    category: "Cloud & DevOps",
+    items: [
+      { name: "Cloud Architecture & IaC", href: "/services/cloud-architecture-infrastructure-as-code" },
+      { name: "Enterprise DevOps & CI/CD", href: "/services/enterprise-devops-cicd-orchestration" },
+      { name: "Serverless Modernization", href: "/services/serverless-modernization-microservices" },
+      { name: "High-Scale API Design & Integration", href: "/services/high-scale-api-design-integration-ecosystems" }
+    ]
+  },
+  {
+    category: "Cybersecurity & Web3",
+    items: [
+      { name: "VAPT & Infrastructure Audits", href: "/services/vapt" },
+      { name: "Zero-Trust & Cryptographics", href: "/services/zero-trust-architecture-cryptographic-implementation" },
+      { name: "Smart Contracts & Web3", href: "/services/smart-contracts-decentralized-protocols-web3" }
+    ]
+  },
+  {
+    category: "Design & Immersive",
+    items: [
+      { name: "Figma UI/UX Design Systems", href: "/services/figma-ui-ux-design-systems" },
+      { name: "Spatial Computing AR/VR Apps", href: "/services/spatial-computing-spatial-app-development" },
+      { name: "IoT Solutions Architecture", href: "/services/iot-solutions-architecture" }
+    ]
+  },
+  {
+    category: "Modern Growth & Marketing",
+    items: [
+      { name: "GEO & AEO AI Optimization", href: "/services/geo-aeo-generative-engine-optimization" },
+      { name: "Growth Hacking Funnels", href: "/services/growth-hacking-programmatic-funnel-engineering" },
+      { name: "Brand Strategy & Digital Identity", href: "/services/brand-strategy-digital-identity-systems" }
+    ]
+  }
+];
+
 const NAV = {
-  services: [
-    { name: 'SEO', desc: 'Rank higher, grow faster', href: '/services/seo' },
-    { name: 'Local SEO', desc: 'Dominate local search', href: '/services/local-seo' },
-    { name: 'Digital Marketing', desc: 'Full-funnel campaigns', href: '/services/digital-marketing' },
-    { name: 'Content Writing', desc: 'Words that convert', href: '/services/content-writing' },
-    { name: 'Blogging', desc: 'Authority-building content', href: '/services/blogging' },
-    { name: 'Shopify Development', desc: 'Commerce that scales', href: '/services/shopify-development' },
-    { name: 'Website Development', desc: 'Performant web experiences', href: '/services/web-development' },
-    { name: 'Mobile App Dev', desc: 'iOS & Android native', href: '/services/mobile-app-dev' },
-    { name: 'Amazon Account Management', desc: 'Marketplace dominance', href: '/services/amazon-account-management' },
-    { name: 'DevOps', desc: 'Ship faster, break less', href: '/services/devops' },
-    { name: 'Generative AI', desc: 'AI-powered solutions', href: '/services/generative-ai' },
-    { name: 'n8n Automation', desc: 'Workflows on autopilot', href: '/services/n8n-automation' },
-  ],
   about: [
-    { name: 'Our Story', desc: 'How we started & where we\'re headed', href: '/about/our-story' },
-    { name: 'Our Team', desc: 'The people behind the work', href: '/about/our-team' },
+    { name: 'Our Story', href: '/about/our-story' },
+    { name: 'Our Team', href: '/about/our-team' },
   ],
 };
 
 const SOCIAL = {
-  instagram: 'https://instagram.com',
-  linkedin: 'https://linkedin.com/company/expert-opinions',
+  instagram: 'https://www.instagram.com/inside.eo/',
+  facebook: 'https://www.facebook.com/profile.php?id=61553381223569',
+  linkedin: 'https://www.linkedin.com/search/results/all/?keywords=Expert%20Opinions&origin=ENTITY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A135095876&position=0',
 };
 
 /* ─── Icons ───────────────────────────────────────────────── */
@@ -65,6 +105,12 @@ const LinkedInIcon = ({ size = 16 }) => (
   </svg>
 );
 
+const FacebookIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
 /* ─── Desktop Mega-Menu Dropdown ──────────────────────────── */
 const ServicesDropdown = ({ label }) => {
   const [open, setOpen] = useState(false);
@@ -75,10 +121,6 @@ const ServicesDropdown = ({ label }) => {
   const handleClose = () => { timerRef.current = setTimeout(() => setOpen(false), 120); };
 
   useEffect(() => () => clearTimeout(timerRef.current), []);
-
-  const digital = NAV.services.slice(0, 5);
-  const tech = NAV.services.slice(5, 9);
-  const ai = NAV.services.slice(9);
 
   return (
     <div ref={ref} className="relative" onMouseEnter={handleOpen} onMouseLeave={handleClose}>
@@ -99,18 +141,38 @@ const ServicesDropdown = ({ label }) => {
             <h3 className="mega-menu-title">Digital Solutions, End-to-End</h3>
           </div>
           <div className="mega-menu-grid">
-            <div className="mega-menu-col">
-              <p className="col-label">Growth & Marketing</p>
-              {digital.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+            <div className="mega-menu-col flex flex-col gap-6">
+              <div>
+                <p className="col-label">{PORTFOLIOS[0].category}</p>
+                {PORTFOLIOS[0].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
+              <div>
+                <p className="col-label">{PORTFOLIOS[3].category}</p>
+                {PORTFOLIOS[3].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
             </div>
-            <div className="mega-menu-col">
-              <p className="col-label">Development</p>
-              {tech.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+
+            <div className="mega-menu-col flex flex-col gap-6">
+              <div>
+                <p className="col-label">{PORTFOLIOS[1].category}</p>
+                {PORTFOLIOS[1].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
+              <div>
+                <p className="col-label">{PORTFOLIOS[4].category}</p>
+                {PORTFOLIOS[4].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
             </div>
-            <div className="mega-menu-col">
-              <p className="col-label">AI & Automation</p>
-              {ai.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
-              <div className="mega-cta">
+
+            <div className="mega-menu-col flex flex-col gap-6 justify-between">
+              <div>
+                <p className="col-label">{PORTFOLIOS[2].category}</p>
+                {PORTFOLIOS[2].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
+              <div>
+                <p className="col-label">{PORTFOLIOS[5].category}</p>
+                {PORTFOLIOS[5].items.map(s => <ServiceItem key={s.name} item={s} onClose={() => setOpen(false)} />)}
+              </div>
+              <div className="mega-cta mt-2">
                 <p>Not sure where to start?</p>
                 <Link to="/contact" className="mega-cta-link" onClick={() => setOpen(false)}>
                   Book a free consultation <ArrowRight />
@@ -125,11 +187,9 @@ const ServicesDropdown = ({ label }) => {
 };
 
 const ServiceItem = ({ item, onClose }) => (
-  <Link to={item.href} role="menuitem" className="service-item" onClick={onClose}>
-    <span className="service-icon">{item.icon}</span>
+  <Link to={item.href} role="menuitem" className="service-item animate-fadeIn" onClick={onClose}>
     <span className="service-text">
       <span className="service-name">{item.name}</span>
-      <span className="service-desc">{item.desc}</span>
     </span>
   </Link>
 );
@@ -162,7 +222,6 @@ const SimpleDropdown = ({ label, items }) => {
           {items.map(item => (
             <Link key={item.name} to={item.href} role="menuitem" className="simple-item" onClick={() => setOpen(false)}>
               <span className="simple-item-name">{item.name}</span>
-              {item.desc && <span className="simple-item-desc">{item.desc}</span>}
             </Link>
           ))}
         </div>
@@ -208,6 +267,8 @@ const Header = () => {
 
   return (
     <>
+
+
       <style>{`
         /* ─── Fonts ─── */
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
@@ -739,6 +800,9 @@ const Header = () => {
           {/* Right Controls */}
           <div className="hdr-right">
             <div className="social-row" aria-label="Follow us">
+              <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Facebook">
+                <FacebookIcon />
+              </a>
               <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Instagram">
                 <InstagramIcon />
               </a>
@@ -764,6 +828,27 @@ const Header = () => {
 
         </div>
       </header>
+
+      {/* Responsive Amazon SPN Banner Ribbon below Navigation Bar */}
+      <div className="bg-gradient-to-r from-purple-950 via-purple-900/90 to-purple-950 border-b border-purple-500/30 py-1.5 px-4 text-center relative z-[90]">
+        <div className="max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-1.5 text-[9px] sm:text-[10px] md:text-xs font-sans text-white/90">
+          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse shrink-0"></span>
+          <span className="font-bold uppercase tracking-wider text-purple-200 shrink-0">Official Partner:</span>
+          <span className="font-medium tracking-wide">Verified Amazon SPN Platform</span>
+          <span className="text-white/25 shrink-0">|</span>
+          <a 
+            href="https://sellercentral.amazon.com/tsba/provider-details/Account%20Management/a9ae60e9-9c17-438b-ae8f-500812fea693?ref_=sc_spn_blst_bdt-a9ae60e9&localeSelection=en_US&sellFrom=US&sellIn=US"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-purple-200 font-bold underline transition-colors inline-flex items-center gap-0.5 shrink-0"
+          >
+            Verify Listing
+            <svg className="w-3 h-3 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
 
       {/* ── Mobile Drawer ── */}
       <div
@@ -802,40 +887,24 @@ const Header = () => {
             ))}
           </MobileSection>
 
-          <div className="drawer-divider">Services</div>
-
-          <MobileSection label="Growth & Marketing">
-            {NAV.services.slice(0, 5).map(s => (
-              <Link key={s.name} to={s.href} onClick={closeMenu} className="mobile-service-link">
-                <span className="mobile-service-icon">{s.icon}</span>
-                {s.name}
-              </Link>
-            ))}
-          </MobileSection>
-
-          <MobileSection label="Development">
-            {NAV.services.slice(5, 9).map(s => (
-              <Link key={s.name} to={s.href} onClick={closeMenu} className="mobile-service-link">
-                <span className="mobile-service-icon">{s.icon}</span>
-                {s.name}
-              </Link>
-            ))}
-          </MobileSection>
-
-          <MobileSection label="AI & Automation">
-            {NAV.services.slice(9).map(s => (
-              <Link key={s.name} to={s.href} onClick={closeMenu} className="mobile-service-link">
-                <span className="mobile-service-icon">{s.icon}</span>
-                {s.name}
-              </Link>
-            ))}
-          </MobileSection>
+          {PORTFOLIOS.map(p => (
+            <MobileSection key={p.category} label={p.category}>
+              {p.items.map(s => (
+                <Link key={s.name} to={s.href} onClick={closeMenu} className="mobile-service-link">
+                  {s.name}
+                </Link>
+              ))}
+            </MobileSection>
+          ))}
 
           <Link to="/blog" onClick={closeMenu} className="drawer-link">Blog</Link>
         </nav>
 
         <div className="drawer-footer">
           <div className="drawer-socials">
+            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Facebook">
+              <FacebookIcon size={14} /> Facebook
+            </a>
             <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Instagram">
               <InstagramIcon size={14} /> Instagram
             </a>
