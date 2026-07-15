@@ -568,8 +568,8 @@ const Header = () => {
         }
         .cta-btn:active { transform: translateY(0); }
 
-        /* ─── Mobile Toggle ─── */
-        .mobile-toggle {
+        /* ─── Mobile Toggle (Left) ─── */
+        .mobile-toggle-left {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -582,9 +582,10 @@ const Header = () => {
           cursor: pointer;
           transition: color 0.2s, border-color 0.2s, background 0.2s;
           flex-shrink: 0;
+          margin-right: 12px;
         }
-        @media (min-width: 1024px) { .mobile-toggle { display: none; } }
-        .mobile-toggle:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.2); background: var(--surface-hover); }
+        @media (min-width: 1024px) { .mobile-toggle-left { display: none; } }
+        .mobile-toggle-left:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.2); background: var(--surface-hover); }
 
         /* ─── Mobile CTA (small, always visible) ─── */
         .mobile-cta-mini {
@@ -780,6 +781,16 @@ const Header = () => {
       <header className={`site-header${scrolled ? ' scrolled' : ''}`} role="banner">
         <div className="hdr-inner">
 
+          {/* Mobile Toggle (Left) */}
+          <button
+            className="mobile-toggle-left"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(v => !v)}
+          >
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+
           {/* Logo */}
           <Link to="/" aria-label="Expert Opinions — Home" className="logo-link">
             <img
@@ -815,15 +826,6 @@ const Header = () => {
             <Link to="/contact" className="cta-btn">
               Get In Touch <ArrowRight size={13} />
             </Link>
-
-            <button
-              className="mobile-toggle"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(v => !v)}
-            >
-              {menuOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
           </div>
 
         </div>
@@ -836,7 +838,7 @@ const Header = () => {
           <span className="font-bold uppercase tracking-wider text-purple-200 shrink-0">Official Partner:</span>
           <span className="font-medium tracking-wide">Verified Amazon SPN Platform</span>
           <span className="text-white/25 shrink-0">|</span>
-          <a 
+          <a
             href="https://sellercentral.amazon.com/tsba/provider-details/Account%20Management/a9ae60e9-9c17-438b-ae8f-500812fea693?ref_=sc_spn_blst_bdt-a9ae60e9&localeSelection=en_US&sellFrom=US&sellIn=US"
             target="_blank"
             rel="noopener noreferrer"

@@ -62,7 +62,7 @@ const Hero = () => {
 
               // CRITICAL ACCURACY FIX: Pehli image par fetch priority high (No Lazy load here to save LCP)
               // Baaki images background memory se handle ho rhi hain
-              fetchpriority={imgIndex === 0 ? "high" : "low"}
+              fetchPriority={imgIndex === 0 ? "high" : "low"}
               loading={imgIndex === 0 ? "eager" : "lazy"}
 
               // Standard Explicit Layout Aspects to fix warnings completely
@@ -95,21 +95,21 @@ const Hero = () => {
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-4xl text-left"
+          className="max-w-4xl text-center md:text-left mx-auto md:mx-0 flex flex-col items-center md:items-start"
         >
-          <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-tight font-poppins">
+          <h1 className="text-4xl md:text-7xl font-extrabold text-white leading-tight font-poppins text-center md:text-left">
             Your Trusted
             <span className="text-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"> Partner</span>
           </h1>
-          <p className="mt-4 md:mt-6 text-base md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed">
+          <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed text-center md:text-left">
             We empower Brands with advanced
             SEO strategies, MERN stack solutions, and E-commerce management.
           </p>
 
-          <div className="mt-6 md:mt-10 flex flex-wrap gap-4 items-center">
+          <div className="mt-6 md:mt-10 flex flex-row flex-nowrap gap-2 md:gap-4 items-center justify-center md:justify-start w-full">
             <Link
               to="/contact"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-bold transition-all transform hover:scale-105 inline-block shadow-lg shadow-purple-500/30"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full text-[10px] sm:text-sm md:text-lg font-bold transition-all transform hover:scale-105 inline-block shadow-lg shadow-purple-500/30 whitespace-nowrap"
             >
               Let's Talk Business
             </Link>
@@ -117,7 +117,7 @@ const Hero = () => {
               href="https://www.upwork.com/freelancers/~015e347ad68c96da6f"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-purple-500 hover:bg-purple-500/10 text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
+              className="border border-purple-500 hover:bg-purple-500/10 text-white px-3 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full text-[10px] sm:text-sm md:text-lg font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center gap-1 md:gap-2 shadow-lg shadow-purple-500/20 whitespace-nowrap"
             >
               <svg
                 viewBox="0 0 512 512"
@@ -126,7 +126,7 @@ const Hero = () => {
                 clipRule="evenodd"
                 strokeLinejoin="round"
                 strokeMiterlimit="2"
-                className="w-5 h-5 fill-current text-purple-400"
+                className="w-3.5 h-3.5 md:w-5 md:h-5 fill-current text-purple-400"
               >
                 <ellipse cx="184.5" cy="234.5" rx="57.5" ry="56.5" transform="translate(-546.174 -763.565) scale(4.34783)" />
                 <path d="M345.516 181.708c-42.168 0-65.774 27.481-72.532 55.773-7.658-14.416-13.335-33.698-17.75-51.628H196.94v72.531c0 26.31-11.984 45.772-35.41 45.772-23.427 0-36.852-19.462-36.852-45.772l.27-72.531H91.34v72.531c0 21.174 6.848 40.366 19.372 54.061 12.884 14.146 30.454 21.534 50.817 21.534 40.545 0 68.837-31.085 68.837-75.595V209.64c4.235 16.038 14.326 46.853 33.608 73.884l-18.02 102.625h34.148l11.893-72.712c3.875 3.244 8.02 6.127 12.434 8.74 11.443 7.208 24.508 11.263 38.023 11.713 0 0 2.073.09 3.154.09 41.807 0 75.054-32.346 75.054-76.045 0-43.7-33.337-76.226-75.144-76.226m0 122.358c-25.86 0-42.979-20.003-47.754-27.752 6.127-49.015 24.057-64.512 47.754-64.512 23.426 0 41.626 18.741 41.626 46.132 0 27.39-18.2 46.132-41.626 46.132" fillRule="nonzero" />

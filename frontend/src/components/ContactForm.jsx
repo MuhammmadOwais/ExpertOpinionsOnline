@@ -183,7 +183,7 @@ const ContactForm = () => {
             </div>
             
             <div className="space-y-4 flex-1 flex flex-col justify-center">
-              {/* Email Square Block */}
+              {/* Email 1: Support */}
               <a 
                 href="mailto:Support@expertopinions.net" 
                 className="block bg-gray-50 border border-gray-100 rounded-none p-4 hover:border-purple-500/30 transition-all"
@@ -193,9 +193,27 @@ const ContactForm = () => {
                     <Mail size={16} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Email Us</span>
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Support Email</span>
                     <span className="text-sm font-bold text-gray-800 mt-0.5 break-all">
                       Support@expertopinions.net
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              {/* Email 2: Admin */}
+              <a 
+                href="mailto:admin@expertopinions.net" 
+                className="block bg-gray-50 border border-gray-100 rounded-none p-4 hover:border-purple-500/30 transition-all"
+              >
+                <div className="flex items-center gap-3.5">
+                  <div className="p-2.5 bg-purple-50 text-purple-600 rounded-none shrink-0">
+                    <Mail size={16} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Admin Email</span>
+                    <span className="text-sm font-bold text-gray-800 mt-0.5 break-all">
+                      admin@expertopinions.net
                     </span>
                   </div>
                 </div>

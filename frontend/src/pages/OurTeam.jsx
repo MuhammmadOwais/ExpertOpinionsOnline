@@ -40,6 +40,22 @@ const CORE_LEADERS = [
     img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1779159593/retouch_2026042503474735.jpg_qjn2k4_1_1_m4vdad.webp",
     linkedin: "https://www.linkedin.com/in/owaiskhubaisi/",
     bio: "A seasoned computer scientist leading our technical frontiers. He handles project scoping, budget allocation, timelines, and overall agency management. With deep experience in web development and cybersecurity, he ensures modern-day projects are executed with elite precision."
+  },
+  {
+    id: "hamzafaizan",
+    name: "Hamza Faizan",
+    role: "Senior Amazon Account Manager",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1784148155/Gemini_Generated_Image_h3em8dh3em8dh3em_cgqk3s.png",
+    linkedin: "#",
+    bio: "Directs complete store management frameworks, custom A10 search engine scaling pipelines, and organic revenue scaling paths. All active e-commerce client accounts are managed by him."
+  },
+  {
+    id: "hamzanisar",
+    name: "Hamza Nisar",
+    role: "Senior Amazon Account Builder",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1784148154/Gemini_Generated_Image_g628zjg628zjg628_x0bch6.png",
+    linkedin: "#",
+    bio: "Responsible for building e-commerce stores from zero to high/advanced levels. Specializes in store setup, inventory planning, and strategic inventory management."
   }
 ];
 
@@ -61,7 +77,7 @@ const DEPARTMENTS = [
     subtitle: "Global Marketplace Dominance",
     icon: <ShoppingCart size={20} />,
     head: { name: "Maqsood Ahmad", role: "Founder & Managing Director" },
-    members: ["Hamza Faizan", "Muhammad Faizan", "Muhammad Ali", "Ali Ahmad", "Sana Hussain", "Zainab Bibi", "Bilal Siddique"],
+    members: ["Hamza Faizan", "Hamza Nisar", "Muhammad Faizan", "Muhammad Ali", "Ali Ahmad", "Sana Hussain", "Zainab Bibi", "Bilal Siddique"],
     services: ["Amazon Optimization", "Shopify Development", "E-Commerce Strategy", "A10 Algorithm SEO"],
     tagline: "Engineering end-to-end store ecosystems optimized for complex product indexing and high velocity sales."
   },

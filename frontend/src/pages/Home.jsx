@@ -4,6 +4,7 @@ import LogoSlider from '../components/LogoSlider'; // 1. Check karein import sah
 import ServicesSection from '../components/ServicesSection';
 import Insights from '../components/Insights';
 import Achievements from '../components/Achievements';
+import ClientReviews from '../components/ClientReviews';
 import Leadership from '../components/Leadership';
 import ContactForm from '../components/ContactForm';
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       </div>
       <Insights />
       <Achievements />
+      <ClientReviews />
       <Leadership />
       <ContactForm />
     </main>

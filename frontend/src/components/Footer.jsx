@@ -40,7 +40,8 @@ const LEGAL = [
 ];
 
 const CONTACT = [
-  { label: 'Email', value: 'Support@expertopinions.net', href: 'mailto:Support@expertopinions.net' },
+  { label: 'Email (Support)', value: 'Support@expertopinions.net', href: 'mailto:Support@expertopinions.net' },
+  { label: 'Email (Admin)', value: 'admin@expertopinions.net', href: 'mailto:admin@expertopinions.net' },
   { label: 'Phone', value: '+1 307 227 3735', href: 'tel:+13072273735' },
   { label: 'Address', value: '1908 Thomes Ave STE 12337, Cheyenne, WY 82001', href: 'https://maps.app.goo.gl/9q3tdhePSXAcKFVGA' },
 ];

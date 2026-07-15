@@ -35,83 +35,92 @@ const coreLeaders = [
   {
     name: "Muhammad Owais",
     role: "Chief Technology Officer & Project Director",
-    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1783636713/ChatGPT_Image_Jul_9_2026_03_09_55_PM_o8dtsn.png",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1784153809/ChatGPT_Image_Jul_15_2026_03_08_48_PM_prsqlj.png",
     linkedin: "https://www.linkedin.com/in/owaiskhubaisi/",
-    bio: "A seasoned computer scientist leading our technical frontiers. He handles project scoping, budget allocation, timelines, and overall modern architecture with elite precision."
+    bio: "He oversees technical projects, solves complex tech challenges, and ensures every solution is delivered with quality and innovation. He is also the Founder of AIVISTY, a media network agency."
   },
-];
-
-// 2. Department Heads & Technical Leads (Text-Only Structural Layout)
-const technicalLeads = [
   {
     name: "Hamza Faizan",
-    role: "Head of eCommerce & Amazon SEO",
-    linkedin: "https://www.linkedin.com/in/hamza-faizan-6a6b42336?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    bio: "Directs complete store development frameworks, custom A10 search engine scaling pipelines, and organic revenue scaling paths."
-  },
-  {
-    name: "Abdul Hanan",
-    role: "Head of Artificial Intelligence",
+    role: "Senior Amazon Account Manager",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1784148155/Gemini_Generated_Image_h3em8dh3em8dh3em_cgqk3s.png",
     linkedin: "#",
-    bio: "Specializes in building complex AI automation pipelines, advanced machine learning architectures, and autonomous AI bots."
+    bio: "Directs complete store management frameworks, custom A10 search engine scaling pipelines, and organic revenue scaling paths. All active e-commerce client accounts are managed by him."
   },
   {
-    name: "Zaid Amjad",
-    role: "Senior Lead, Web & Mobile Apps",
+    name: "Hamza Nisar",
+    role: "Senior Amazon Account Builder",
+    img: "https://res.cloudinary.com/dawp1fcci/image/upload/v1784148154/Gemini_Generated_Image_g628zjg628zjg628_x0bch6.png",
     linkedin: "#",
-    bio: "Oversights high-performance application architectures, state frameworks, and clean modular deployment patterns."
+    bio: "Responsible for building e-commerce stores from zero to high/advanced levels. Specializes in store setup, inventory planning, and strategic inventory management."
   },
-  {
-    name: "Waleed Sarfraz",
-    role: "Head of UI/UX & Game Dev",
-    bio: "Transforms complex logic paradigms into smooth user interfaces, structural visual asset guidelines, and interactive experiences."
-  },
-  {
-    name: "Hamdan Aleem",
-    role: "Senior Cybersecurity Engineer",
-    linkedin: "#",
-    bio: "Our technical guardian. Manages deep network penetration testing, critical vulnerability scanning, and secure container structures."
-  },
-
 ];
+
+
 
 /* ─── Premium Core Card ── */
 const LeaderCard = ({ leader, index, isMobileView }) => {
   const finalSrc = getOptimizedPortraitUrl(leader.img, isMobileView);
 
   return (
-    <div className="ldr-card">
-      <div className="ldr-card__photo-wrap bg-gray-100">
-        <img
-          src={finalSrc}
-          alt={leader.name}
-          width="420"
-          height="525"
-          loading={index === 0 ? 'eager' : 'lazy'}
-          decoding="async"
-          className="ldr-card__photo"
-        />
-        <div className="ldr-card__overlay" aria-hidden="true" />
-        <a
-          href={leader.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ldr-card__linkedin"
-          aria-label={`${leader.name} on LinkedIn`}
-          onClick={(e) => leader.linkedin === '#' && e.preventDefault()}
-        >
-          <FaLinkedin size={16} />
-        </a>
-        <span className="ldr-card__num" aria-hidden="true">
+    <div className="group relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-md hover:shadow-2xl hover:border-purple-500/40 transition-all duration-500 select-none">
+
+      {/* Portrait Image */}
+      <img
+        src={finalSrc}
+        alt={leader.name}
+        width="420"
+        height="525"
+        loading={index === 0 ? 'eager' : 'lazy'}
+        decoding="async"
+        className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
+      />
+
+      {/* Modern Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent z-10" />
+
+      {/* Floating Card Top - Number and LinkedIn */}
+      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
+        <span className="text-[10px] font-black text-white/50 tracking-wider font-mono">
           {String(index + 1).padStart(2, '0')}
         </span>
+        {leader.linkedin !== '#' && (
+          <a
+            href={leader.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 rounded-full bg-white/10 hover:bg-purple-600 border border-white/10 hover:border-purple-500 text-white flex items-center justify-center transition-all duration-300 transform scale-90 group-hover:scale-100 opacity-60 group-hover:opacity-100 cursor-pointer"
+            aria-label={`${leader.name} on LinkedIn`}
+          >
+            <FaLinkedin size={14} />
+          </a>
+        )}
       </div>
 
-      <div className="ldr-card__info bg-white">
-        <p className="ldr-card__role">{leader.role}</p>
-        <h3 className="ldr-card__name">{leader.name}</h3>
-        <p className="ldr-card__bio">{leader.bio}</p>
+      {/* Text Info Section (Overlayed at Bottom) */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 z-20 flex flex-col justify-end transition-all duration-300">
+        {/* Role Tag */}
+        <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-1.5 block">
+          {leader.role}
+        </span>
+
+        {/* Leader Name */}
+        <h3 className="text-base md:text-lg font-black text-white leading-tight mb-2">
+          {leader.name}
+        </h3>
+
+        {/* Bio description - Slides up and fades in on desktop hover, always shown on mobile slider */}
+        <p className={`text-[11px] md:text-[12px] text-slate-300 leading-relaxed transition-all duration-300 transform-gpu
+          ${isMobileView
+            ? 'opacity-100 max-h-[80px]'
+            : 'opacity-0 max-h-0 -translate-y-2 group-hover:opacity-100 group-hover:max-h-[120px] group-hover:translate-y-0'
+          } overflow-hidden`}
+        >
+          {leader.bio}
+        </p>
       </div>
+
+      {/* Subtle Purple Accent Glow Line at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30" />
     </div>
   );
 };
@@ -159,6 +168,7 @@ const MobileSlider = ({ isMobileView }) => {
 /* ─── Main Advanced Leadership Section ── */
 const Leadership = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -168,6 +178,18 @@ const Leadership = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const nextDesktop = () => {
+    if (startIndex < coreLeaders.length - 4) {
+      setStartIndex(prev => prev + 1);
+    }
+  };
+
+  const prevDesktop = () => {
+    if (startIndex > 0) {
+      setStartIndex(prev => prev - 1);
+    }
+  };
 
   return (
     <section className="ldr-section font-poppins relative overflow-hidden" aria-labelledby="ldr-heading">
@@ -188,58 +210,63 @@ const Leadership = () => {
               <span className="ldr-heading__accent">Elite Innovation</span>
             </h2>
           </div>
-          <p className="ldr-desc">
-            Our principal steering team targets global operational standards, guiding cross-functional technologies and high-tier client ecosystems across multiple continents.
-          </p>
+
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+            <p className="ldr-desc">
+              Our principal steering team targets global operational standards, guiding cross-functional technologies and high-tier client ecosystems across multiple continents.
+            </p>
+            {/* Desktop Navigation Controls */}
+            <div className="hidden md:flex items-center gap-2.5 shrink-0 self-end">
+              <button
+                onClick={prevDesktop}
+                disabled={startIndex === 0}
+                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${startIndex === 0
+                  ? 'border-slate-200 text-slate-300 cursor-not-allowed'
+                  : 'border-purple-200 text-purple-600 hover:bg-purple-600 hover:text-white cursor-pointer shadow-sm'
+                  }`}
+                aria-label="Previous Leaders"
+              >
+                <FaArrowLeft size={13} />
+              </button>
+              <button
+                onClick={nextDesktop}
+                disabled={startIndex >= coreLeaders.length - 4}
+                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${startIndex >= coreLeaders.length - 4
+                  ? 'border-slate-200 text-slate-300 cursor-not-allowed'
+                  : 'border-purple-200 text-purple-600 hover:bg-purple-600 hover:text-white cursor-pointer shadow-sm'
+                  }`}
+                aria-label="Next Leaders"
+              >
+                <FaArrowRight size={13} />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Desktop Rendering Grid Framework */}
-        <div className="ldr-grid" role="list">
-          {coreLeaders.map((l, i) => (
-            <div key={`desktop-ldr-${i}`} role="listitem">
-              <LeaderCard leader={l} index={i} isMobileView={isMobile} />
-            </div>
-          ))}
+        {/* Desktop Rendering Grid Framework (With Slider) */}
+        <div className="hidden md:block w-full overflow-hidden py-2" role="list">
+          <div
+            className="flex gap-5 transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(calc(-${startIndex * 25}% - ${startIndex * 5}px))`,
+            }}
+          >
+            {coreLeaders.map((l, i) => (
+              <div
+                key={`desktop-ldr-${i}`}
+                role="listitem"
+                className="w-[calc(25%-15px)] shrink-0 transition-all duration-300"
+              >
+                <LeaderCard leader={l} index={i} isMobileView={isMobile} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile View Slider */}
         <MobileSlider isMobileView={isMobile} />
 
-        <hr className="ldr-divider" />
 
-        {/* Section 2: Department Heads & Technical Leads */}
-        <div className="tech-header">
-          <div className="ldr-eyebrow-row">
-            <span className="ldr-eyebrow-line" aria-hidden="true" />
-            <span className="ldr-eyebrow">Technical Frontlines</span>
-          </div>
-          <h3 className="tech-heading">Department Heads & Tech Leads</h3>
-        </div>
-
-        <div className="tech-grid">
-          {technicalLeads.map((lead, i) => (
-            <div key={`tech-lead-${i}`} className="tech-card">
-              <div className="tech-card__header">
-                <div>
-                  <h4 className="tech-card__name">{lead.name}</h4>
-                  <p className="tech-card__role">{lead.role}</p>
-                </div>
-                {lead.linkedin !== '#' && (
-                  <a
-                    href={lead.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="tech-card__link"
-                    aria-label={`${lead.name} LinkedIn Profile`}
-                  >
-                    <FaLinkedin size={15} />
-                  </a>
-                )}
-              </div>
-              <p className="tech-card__bio">{lead.bio}</p>
-            </div>
-          ))}
-        </div>
 
       </div>
 

@@ -8,7 +8,9 @@ const contactDetails = [
     icon: <Mail className="text-purple-600" size={20} />,
     title: "Email Us",
     value: "Support@expertopinions.net",
-    link: "mailto:Support@expertopinions.net"
+    value2: "admin@expertopinions.net",
+    link: "mailto:Support@expertopinions.net",
+    link2: "mailto:admin@expertopinions.net"
   },
   {
     icon: <Phone className="text-purple-600" size={20} />,
@@ -68,20 +70,31 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6 -mt-12 md:-mt-16 relative z-10 contain-intrinsic-size">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {contactDetails.map((detail, index) => (
-            <a
+            <div
               key={`contact-tile-${index}`}
-              href={detail.link}
-              target={detail.title === "Global HQ" ? "_blank" : "_self"}
-              rel={detail.title === "Global HQ" ? "noopener noreferrer" : undefined}
-              onClick={(e) => detail.link === '#' && e.preventDefault()}
               className="bg-white p-6 md:p-8 rounded-2xl md:rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center text-center transition-colors duration-200 hover:border-purple-500/50 group"
             >
               <div className="p-3.5 bg-purple-50 text-purple-600 rounded-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-200 shrink-0">
                 {detail.icon}
               </div>
               <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1">{detail.title}</h3>
-              <p className="text-xs md:text-sm text-gray-500 break-words w-full font-medium leading-relaxed">{detail.value}</p>
-            </a>
+              {detail.link2 ? (
+                <div className="flex flex-col gap-1 w-full select-all">
+                  <a href={detail.link} className="text-xs md:text-sm text-gray-500 hover:text-purple-600 break-words font-medium leading-relaxed">{detail.value}</a>
+                  <a href={detail.link2} className="text-xs md:text-sm text-gray-500 hover:text-purple-600 break-words font-medium leading-relaxed">{detail.value2}</a>
+                </div>
+              ) : (
+                <a 
+                  href={detail.link} 
+                  target={detail.title === "Global HQ" ? "_blank" : "_self"} 
+                  rel={detail.title === "Global HQ" ? "noopener noreferrer" : undefined} 
+                  onClick={(e) => detail.link === '#' && e.preventDefault()} 
+                  className="text-xs md:text-sm text-gray-500 hover:text-purple-600 break-words w-full font-medium leading-relaxed"
+                >
+                  {detail.value}
+                </a>
+              )}
+            </div>
           ))}
         </div>
       </div>
