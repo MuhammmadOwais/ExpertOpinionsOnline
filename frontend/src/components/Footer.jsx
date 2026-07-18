@@ -3,33 +3,9 @@ import { Link } from 'react-router-dom';
 
 const currentYear = new Date().getFullYear();
 
-const SERVICES = [
-  { name: 'Enterprise Web Apps', href: '/services/enterprise-web-application-engineering' },
-  { name: 'Cross-Platform Mobile', href: '/services/cross-platform-native-mobile-development' },
-  { name: 'SaaS Product Engineering', href: '/services/full-cycle-saas-product-engineering' },
-  { name: 'Headless Commerce Solutions', href: '/services/headless-commerce-custom-ecommerce-architecture' },
-  { name: 'Agentic AI & Workflows', href: '/services/agentic-ai-autonomous-workflow-orchestration' },
-  { name: 'LLM Fine-Tuning & RAG', href: '/services/custom-llm-fine-tuning-rag-frameworks' },
-  { name: 'Computer Vision Systems', href: '/services/computer-vision-spatial-analytics' },
-  { name: 'Predictive Data Analytics', href: '/services/predictive-data-science-advanced-analytics' },
-  { name: 'Cloud Architecture & IaC', href: '/services/cloud-architecture-infrastructure-as-code' },
-  { name: 'Enterprise DevOps & CI/CD', href: '/services/enterprise-devops-cicd-orchestration' },
-  { name: 'Serverless Modernization', href: '/services/serverless-modernization-microservices' },
-  { name: 'High-Scale API Design', href: '/services/high-scale-api-design-integration-ecosystems' },
-  { name: 'VAPT & Penetration Testing', href: '/services/vapt' },
-  { name: 'Zero-Trust Architecture', href: '/services/zero-trust-architecture-cryptographic-implementation' },
-  { name: 'Smart Contracts & Web3', href: '/services/smart-contracts-decentralized-protocols-web3' },
-  { name: 'Figma UI/UX Design Systems', href: '/services/figma-ui-ux-design-systems' },
-  { name: 'Spatial Computing AR/VR', href: '/services/spatial-computing-spatial-app-development' },
-  { name: 'IoT Solutions Architecture', href: '/services/iot-solutions-architecture' },
-  { name: 'GEO & AEO AI Optimization', href: '/services/geo-aeo-generative-engine-optimization' },
-  { name: 'Growth Hacking Funnels', href: '/services/growth-hacking-programmatic-funnel-engineering' },
-  { name: 'Brand Strategy & Identity', href: '/services/brand-strategy-digital-identity-systems' }
-];
 
 const COMPANY = [
   { name: 'Our Story', href: '/about/our-story' },
-  { name: 'Our Team', href: '/about/our-team' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact' },
 ];
@@ -40,15 +16,14 @@ const LEGAL = [
 ];
 
 const CONTACT = [
-  { label: 'Email (Support)', value: 'Support@expertopinions.net', href: 'mailto:Support@expertopinions.net' },
-  { label: 'Email (Admin)', value: 'admin@expertopinions.net', href: 'mailto:admin@expertopinions.net' },
+  { label: 'Email', value: 'Support@expertopinions.net', href: 'mailto:Support@expertopinions.net' },
   { label: 'Phone', value: '+1 307 227 3735', href: 'tel:+13072273735' },
   { label: 'Address', value: '1908 Thomes Ave STE 12337, Cheyenne, WY 82001', href: 'https://maps.app.goo.gl/9q3tdhePSXAcKFVGA' },
 ];
 
 const SOCIAL = {
   instagram: 'https://www.instagram.com/inside.eo/',
-  facebook: 'https://www.facebook.com/profile.php?id=61553381223569',
+  facebook: 'https://www.facebook.com/expertopinions.net',
   linkedin: 'https://www.linkedin.com/search/results/all/?keywords=Expert%20Opinions&origin=ENTITY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A135095876&position=0',
 };
 
@@ -170,7 +145,7 @@ const Footer = () => (
         margin: 0 auto;
         padding: 44px 40px 36px;
         display: grid;
-        grid-template-columns: 1.5fr 1.8fr 0.8fr 1.2fr;
+        grid-template-columns: 1.5fr 1fr 1.2fr;
         gap: 48px;
         position: relative;
         z-index: 1;
@@ -292,9 +267,8 @@ const Footer = () => (
         .ft-brand-col { grid-column: auto; }
         .ft-group-row {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: flex-start;
+          flex-direction: column;
+          align-items: flex-start;
           gap: 32px;
           width: 100%;
         }
@@ -351,15 +325,6 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Services — 2-col grid */}
-        <div>
-          <p className="ft-col-label">Services</p>
-          <div className="ft-services-grid">
-            {SERVICES.map(s => (
-              <Link key={s.name} to={s.href} className="ft-link">{s.name}</Link>
-            ))}
-          </div>
-        </div>
 
         {/* Company + SPN Badge Row (aligned side-by-side on mobile/tablet) */}
         <div className="ft-group-row">
@@ -376,18 +341,18 @@ const Footer = () => (
           </div>
 
           {/* Amazon SPN Partner Column */}
-          <div className="ft-badge-col flex flex-col items-center md:items-end justify-start text-center md:text-right">
-            <p className="hidden md:block ft-col-label">SPN Verified</p>
+          <div className="ft-badge-col flex flex-col items-center justify-start text-center">
+            <p className="ft-col-label">SPN Verified</p>
             <a
               href="https://sellercentral.amazon.com/tsba/provider-details/Account%20Management/a9ae60e9-9c17-438b-ae8f-500812fea693?ref_=sc_spn_blst_bdt-a9ae60e9&localeSelection=en_US&sellFrom=US&sellIn=US"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center md:items-end gap-3 p-0 md:p-5 rounded-2xl bg-transparent md:bg-white/[0.02] border-0 md:border md:border-purple-500/20 shadow-none md:shadow-[0_0_20px_rgba(139,92,246,0.03)] md:relative md:overflow-hidden group w-fit md:w-full max-w-[320px] md:max-w-[280px]"
+              className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-purple-500/20 shadow-[0_0_20px_rgba(139,92,246,0.03)] relative overflow-hidden group w-full max-w-[320px] md:max-w-[280px]"
             >
               {/* Background Accent Glow */}
-              <div className="hidden md:block absolute -top-10 -right-10 w-24 h-24 rounded-full bg-purple-500/10 blur-xl pointer-events-none group-hover:bg-purple-500/15 transition-colors"></div>
+              <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-purple-500/10 blur-xl pointer-events-none group-hover:bg-purple-500/15 transition-colors"></div>
 
-              <div className="bg-white py-2 px-4 rounded-xl border border-white/10 flex items-center justify-center shrink-0 shadow-md w-fit max-w-[220px] md:max-w-none mx-auto md:mr-0">
+              <div className="bg-white py-2 px-4 rounded-xl border border-white/10 flex items-center justify-center shrink-0 shadow-md w-fit max-w-[220px] md:max-w-none mx-auto">
                 <img
                   src="https://res.cloudinary.com/dawp1fcci/image/upload/v1783556410/ChatGPT_Image_Jul_8_2026_04_30_48_PM_lfcsrw.png"
                   alt="Official Amazon SPN Partner Badge"
@@ -395,19 +360,19 @@ const Footer = () => (
                 />
               </div>
 
-              <div className="hidden md:flex flex-col text-center md:text-right w-full">
-                <span className="text-[10px] text-purple-400 font-extrabold uppercase tracking-wider leading-none mb-1 flex items-center justify-center md:justify-end gap-1">
+              <div className="flex flex-col text-center w-full">
+                <span className="text-[10px] text-purple-400 font-extrabold uppercase tracking-wider leading-none mb-1 flex items-center justify-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
                   Official SPN Partner
                 </span>
                 <span className="text-xs font-bold text-white leading-tight">Amazon Service Provider Network</span>
               </div>
 
-              <p className="hidden md:block text-[11px] text-gray-400 leading-normal m-0 text-center md:text-right w-full">
+              <p className="text-[11px] text-gray-400 leading-normal m-0 text-center w-full">
                 Verified E-commerce growth, Amazon SEO, and store listing advisory specialists.
               </p>
 
-              <span className="hidden md:flex mt-1 items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-[11px] font-bold tracking-wide transition-all transform hover:scale-[1.02] shadow-md shadow-purple-500/10 w-full text-center">
+              <span className="flex mt-1 items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-[11px] font-bold tracking-wide transition-all transform hover:scale-[1.02] shadow-md shadow-purple-500/10 w-full text-center">
                 <span>View Directory</span>
                 <svg className="w-3 h-3 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>

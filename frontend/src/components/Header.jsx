@@ -58,13 +58,12 @@ const PORTFOLIOS = [
 const NAV = {
   about: [
     { name: 'Our Story', href: '/about/our-story' },
-    { name: 'Our Team', href: '/about/our-team' },
   ],
 };
 
 const SOCIAL = {
   instagram: 'https://www.instagram.com/inside.eo/',
-  facebook: 'https://www.facebook.com/profile.php?id=61553381223569',
+  facebook: 'https://www.facebook.com/expertopinions.net',
   linkedin: 'https://www.linkedin.com/search/results/all/?keywords=Expert%20Opinions&origin=ENTITY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A135095876&position=0',
 };
 
@@ -259,8 +258,17 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
   }, [menuOpen]);
 
   useEffect(() => { closeMenu(); }, [location.pathname, closeMenu]);
@@ -905,13 +913,13 @@ const Header = () => {
         <div className="drawer-footer">
           <div className="drawer-socials">
             <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Facebook">
-              <FacebookIcon size={14} /> Facebook
+              <FacebookIcon size={14} />
             </a>
             <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Instagram">
-              <InstagramIcon size={14} /> Instagram
+              <InstagramIcon size={14} />
             </a>
             <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="LinkedIn">
-              <LinkedInIcon size={14} /> LinkedIn
+              <LinkedInIcon size={14} />
             </a>
           </div>
           <Link to="/contact" onClick={closeMenu} className="drawer-cta">

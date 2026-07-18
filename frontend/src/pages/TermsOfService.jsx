@@ -37,14 +37,14 @@ const TermsOfService = () => {
     <div className="bg-white font-poppins">
       {/* Hero Section */}
       <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
-        <img 
-          src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774949816/pexels-codioful-6985259_ezmqrg.jpg" 
-          alt="Terms of Service Background" 
+        <img
+          src="https://res.cloudinary.com/dawp1fcci/image/upload/v1774949816/pexels-codioful-6985259_ezmqrg.jpg"
+          alt="Terms of Service Background"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10 text-center px-6">
-          <motion.h1 
+          <motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="text-4xl md:text-6xl font-black text-white mb-4 uppercase tracking-tighter"
@@ -68,7 +68,7 @@ const TermsOfService = () => {
 
           <div className="space-y-16">
             {tosSections.map((section, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

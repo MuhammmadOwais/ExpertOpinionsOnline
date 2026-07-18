@@ -12,7 +12,6 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import OurStory from './pages/OurStory';
-import OurTeam from './pages/OurTeam';
 import Blog from './pages/Blog';
 import BlogPostDetail from './pages/BlogPostDetail';
 import ServiceDetail from './pages/ServiceDetail';
@@ -32,7 +31,6 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/about/our-story" element={<OurStory />} />
-            <Route path="/about/our-team" element={<OurTeam />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={< BlogPostDetail />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />

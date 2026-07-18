@@ -183,11 +183,6 @@ const ClientReviews = () => {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all duration-300 flex flex-col justify-between group h-full relative"
               >
-                {/* Verified Tag */}
-                <div className="absolute top-3 right-3 bg-emerald-100/80 text-emerald-800 border border-emerald-200/60 rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider flex items-center gap-1 select-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0 animate-pulse"></span>
-                  Verified
-                </div>
 
                 <div>
                   {/* Rating & Platform */}
