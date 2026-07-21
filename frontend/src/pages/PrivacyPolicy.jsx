@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { updateSEO } from '../utils/seo';
 
 const PrivacyPolicy = () => {
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEO("Privacy Policy", "Read the privacy policy of Expert Opinions. Understand how we collect, store, and secure your personal details and telemetry logs.");
   }, []);
 
   const sections = [

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import LogoSlider from '../components/LogoSlider'; // 1. Check karein import sahi hai
 import ServicesSection from '../components/ServicesSection';
@@ -7,7 +7,16 @@ import Achievements from '../components/Achievements';
 import ClientReviews from '../components/ClientReviews';
 import Leadership from '../components/Leadership';
 import ContactForm from '../components/ContactForm';
+import { updateSEO } from '../utils/seo';
+
 const Home = () => {
+  useEffect(() => {
+    updateSEO(
+      "Enterprise Web Engineering, SEO & E-commerce",
+      "Scale your brand with advanced SEO optimization, custom MERN stack development, and Amazon FBA store management. Partner with Expert Opinions today."
+    );
+  }, []);
+
   return (
     <main>
       <Hero />

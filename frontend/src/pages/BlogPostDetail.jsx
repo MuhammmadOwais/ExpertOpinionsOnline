@@ -2,12 +2,20 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Clock, ChevronLeft, Share2, Sparkles, Zap } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import { updateSEO } from '../utils/seo';
 
 const BlogPostDetail = () => {
   const { slug } = useParams(); // URL se slug pakre ga
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const post = allPosts[slug];
+    if (post) {
+      updateSEO(
+        post.title,
+        `Read "${post.title}" on the official Expert Opinions blog. In-depth technical guides, e-commerce strategies, and developer tutorials.`
+      );
+    }
   }, [slug]);
 
   // --- BLOG DATA REPOSITORY ---
@@ -75,7 +83,7 @@ const BlogPostDetail = () => {
           <section>
             <h2 className="text-lg md:text-xl font-bold text-black mb-3 tracking-tight uppercase border-b border-gray-100 pb-2">03. External Attribution</h2>
             <p className="text-slate-600">
-              Driving external traffic from platforms like TikTok, Instagram, or Google Ads isn't just a sale—it's a significant ranking boost. Sellers can also earn a 10% Brand Referral Bonus via Attribution links.
+              Driving external traffic from platforms like TikTok, Instagram, or Google Ads isn't just a sale, it is a significant ranking boost. Sellers can also earn a 10% Brand Referral Bonus via Attribution links.
             </p>
           </section>
 
@@ -134,7 +142,7 @@ const BlogPostDetail = () => {
         <section className="mb-10">
           <h2 className="text-lg md:text-xl font-bold text-black mb-3 uppercase tracking-tight border-b border-gray-100 pb-2">Moving Beyond Content Production</h2>
           <p className="text-base md:text-lg font-normal leading-relaxed mb-4 text-slate-700">
-            In the early days of the digital age, volume was a key competitive advantage. However, in 2026, volume is no longer a viable option. Machines can produce thousands of words in seconds—what matters now is <strong className="font-bold text-black italic">Information Gain</strong>.
+            In the early days of the digital age, volume was a key competitive advantage. However, in 2026, volume is no longer a viable option. Machines can produce thousands of words in seconds, but what matters now is <strong className="font-bold text-black italic">Information Gain</strong>.
           </p>
           <p className="text-slate-600">
             This means your content must provide value by offering something new, which has never before been presented in massive data sets. Your unique data, your failures, and your successes are what will get you noticed. When you write a story about a project failure and how you overcame it, you are providing value that a machine cannot reproduce.
@@ -182,7 +190,7 @@ const BlogPostDetail = () => {
         <footer className="mt-8">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block mb-1">Strategic Summary</span>
           <p className="text-base font-normal leading-relaxed text-slate-500 italic border-t border-gray-100 pt-4">
-            The future of SEO is no longer about winning the click—it is about winning the <strong>trust</strong> of both the generative engine and the human reader.
+            The future of SEO is no longer about winning the click; it is about winning the <strong>trust</strong> of both the generative engine and the human reader.
           </p>
         </footer>
       </div>
@@ -350,7 +358,7 @@ const BlogPostDetail = () => {
             </div>
             <div className="bg-slate-900 text-white p-6 rounded-xl">
               <h4 className="text-[10px] font-bold uppercase tracking-widest text-purple-400 mb-2 border-b border-gray-800 pb-2">Operational Reality</h4>
-              <p className="text-xs md:text-sm font-light text-gray-300 leading-relaxed">Specifically engineered for complex digital products—custom dashboards, data-intensive platforms, or unique interactive UIs.</p>
+              <p className="text-xs md:text-sm font-light text-gray-300 leading-relaxed">Specifically engineered for complex digital products, such as custom dashboards, data-intensive platforms, or unique interactive UIs.</p>
             </div>
           </div>
         </section>
@@ -503,7 +511,7 @@ const BlogPostDetail = () => {
         <footer className="border-t border-gray-100 pt-4 mt-6">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block mb-1">Strategic Summary</span>
           <p className="text-base font-normal leading-relaxed text-slate-500 italic">
-            The future of UI/UX is no longer about just looking pretty — it is about clearing the friction between the user's intent and your conversion goal.
+            The future of UI/UX is no longer about just looking pretty; it is about clearing the friction between the user's intent and your conversion goal.
           </p>
         </footer>
 
@@ -841,7 +849,7 @@ const BlogPostDetail = () => {
             <tbody className="divide-y divide-slate-200 text-slate-600">
               <tr>
                 <td className="p-4 font-semibold text-slate-900">Average Time to First Byte (TTFB)</td>
-                <td className="p-4">1.2s - 2.5s (Dependent on database load)</td>
+                <td className="p-4">1.2s to 2.5s (Dependent on database load)</td>
                 <td className="p-4">&lt;100ms (Served directly from edge networks)</td>
               </tr>
               <tr>
@@ -1308,7 +1316,7 @@ const BlogPostDetail = () => {
 
         <h2 className="text-xl font-bold text-black mt-10 mb-4 uppercase">Conclusion: True Security Requires No Assumptions</h2>
         <p className="mb-6">
-          The death of the castle and moat framework isn’t an engineering tragedy - it’s a necessary evolution. Relying on a rigid, geographic perimeter model creates a false sense of safety that modern threat actors exploit with ease.
+          The death of the castle and moat framework isn’t an engineering tragedy; it’s a necessary evolution. Relying on a rigid, geographic perimeter model creates a false sense of safety that modern threat actors exploit with ease.
         </p>
         <p className="mb-6">
           Adopting a strict Zero Trust framework allows your organization to build an intelligent, distributed, and highly resilient defense architecture. By verifying every user, validating every device, and securing every data packet explicitly, you protect your enterprise from lateral movement and ensure your digital infrastructure remains secure, adaptable, and ready for the future.
@@ -1766,7 +1774,7 @@ WorkManager.getInstance(context).enqueueUniquePeriodicWork(
 
         <h2 className="text-xl font-bold text-black mt-10 mb-4 uppercase">1. The Anatomy of a Modern Design Token Pipeline</h2>
         <p className="mb-6">
-          A Design Token is an agnostic, abstract atom of a visual design system—a key value pair storing architectural visual properties like colors, font families, border radii, or animation curves.
+          A Design Token is an agnostic, abstract atom of a visual design system, which is a key value pair storing architectural visual properties like colors, font families, border radii, or animation curves.
         </p>
         <p className="mb-6">
           The goal of an automated design token pipeline is to treat these variables as an immutable, version controlled dependency. Instead of manually copy pasting hex codes, the design system operates as a continuous delivery pipeline:

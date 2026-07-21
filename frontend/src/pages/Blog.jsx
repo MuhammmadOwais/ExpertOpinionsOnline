@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Clock } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import { updateSEO } from '../utils/seo';
 
 // Dynamic pipeline queries for optimization updates
 const getOptimizedBlogUrl = (url, width, quality = 70) => {
@@ -136,6 +137,10 @@ const BlogPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEO(
+      "Insights & Articles",
+      "Read deep-dives, guides, and strategic insights on Amazon SEO, Generative Engine Optimization (GEO), Web Development (MERN, React, Next.js), and Cybersecurity."
+    );
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);

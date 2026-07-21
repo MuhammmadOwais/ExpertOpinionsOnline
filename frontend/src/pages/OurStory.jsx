@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
 import Insights from '../components/Insights';
+import { updateSEO } from '../utils/seo';
 
 const OurStory = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEO(
+      "Our Story",
+      "Discover the journey of Expert Opinions from a decade inside global commerce to an integrated, elite software house leading digital growth and enterprise solutions."
+    );
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import LogoSlider from '../components/LogoSlider';
+import { updateSEO } from '../utils/seo';
 
 const contactDetails = [
   {
@@ -35,6 +36,10 @@ const contactDetails = [
 const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEO(
+      "Contact Us",
+      "Get in touch with the solution architects at Expert Opinions. Let's initiate a discussion about your web application development, SEO ranking, or e-commerce scaling needs."
+    );
   }, []);
 
   return (

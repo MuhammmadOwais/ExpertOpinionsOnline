@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { updateSEO } from '../utils/seo';
 
 const TermsOfService = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEO("Terms of Service", "Read the terms of service of Expert Opinions. Understand user guidelines, service agreements, payments, intellectual property rules, and liabilities.");
   }, []);
 
   const tosSections = [

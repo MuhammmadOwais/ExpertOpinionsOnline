@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, ShieldCheck, BarChart3, Globe, ArrowRight, Search, } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import Insights from '../components/Insights';
+import { updateSEO } from '../utils/seo';
 
 const NEW_SERVICES_DATA = {
   // 💻 Core Engineering & Product Development
@@ -237,6 +238,13 @@ const ServiceDetail = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const service = NEW_SERVICES_DATA[slug];
+    if (service) {
+      updateSEO(
+        service.title,
+        `${service.subtitle} In-depth details, execution frameworks, and technical architecture reviews from Expert Opinions.`
+      );
+    }
   }, [slug]);
 
   // --- SERVICES DATA REPOSITORY ---
@@ -1679,201 +1687,119 @@ const ServiceDetail = () => {
         <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
 
           {/* --- Executive Hero Section --- */}
-          <section className="relative w-full h-[65vh] md:h-[80vh] flex items-center bg-slate-950">
+          <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center bg-slate-950 mb-16">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-30"
+              className="absolute inset-0 bg-cover bg-center opacity-30 grayscale-[20%]"
               style={{
                 backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1783626292/Smart_Contracts_Protocols_Web3_eatt6x.jpg')`,
                 backgroundAttachment: 'fixed'
               }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-              <div className="max-w-4xl border-l-2 border-purple-600 pl-10 py-6">
-                <p className="text-xs font-bold tracking-[0.5em] uppercase text-purple-500 mb-6">
+            <div className="relative z-10 max-w-4xl mx-auto px-6 w-full">
+              <div className="border-l-2 border-purple-600 pl-8 py-4">
+                <p className="text-xs font-bold tracking-[0.4em] uppercase text-purple-400 mb-4">
                   Advanced Cybersecurity &amp; Web3
                 </p>
-                <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-8">
+                <h1 className="text-4xl md:text-6xl font-light text-white leading-tight mb-6">
                   Smart Contracts <br />
-                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">&amp; Protocol Engineering</span>
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+                    &amp; Protocol Engineering
+                  </span>
                 </h1>
-                <p className="text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed mb-10">
+                <p className="text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed mb-8">
                   Engineering secure decentralized protocols, EVM &amp; Rust contract configurations, and multi-sig timelocked upgrade strategies.
                 </p>
-                <Link to="/contact" className="inline-block bg-white text-slate-950 px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-xl">
-                  Engineer Your Web3 Protocols
+                <Link to="/contact" className="inline-block bg-white text-slate-950 px-8 py-4 font-bold uppercase tracking-widest text-xs hover:bg-purple-600 hover:text-white transition-all duration-300">
+                  Initiate Consultation
                 </Link>
               </div>
             </div>
           </section>
 
-          {/* --- Strategic Overview --- */}
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32">
-            <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32">
-              <div className="lg:col-span-8">
-                <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight uppercase">Immutable Infrastructure</h2>
-                <p className="text-xl leading-relaxed text-slate-600 mb-10 font-light border-b border-slate-100 pb-12 italic">
-                  "In the Web3 ecosystem, software deployment introduces a radical shift in engineering risk. Code is immutable, execution is public, and live economic capital is bound directly to your logic. Unlike traditional web applications where bugs are patched post launch via server hotfixes, a single logical flaw, access control oversight, or price oracle vulnerability in a deployed smart contract can lead to the instantaneous, irreversible loss of millions of dollars in protocol assets."
-                </p>
-                <p className="text-lg leading-relaxed text-slate-500 font-light">
-                  According to recent Web3 threat assessments, decentralized systems lose hundreds of millions annually, not because blockchain security fails, but because the underlying smart contract protocols are structurally flawed. At Expert Opinions, we don’t just write smart contracts. We engineer rigorous, production grade Web3 protocols designed to survive hostile mempool front running, pass top tier audits, and enforce absolute economic integrity.
-                </p>
-              </div>
-              <div className="lg:col-span-4 bg-slate-900 p-12 text-white border-t-4 border-purple-600 shadow-2xl">
-                <div className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-8">Ecosystem Vibe</div>
-                <div className="text-4xl font-light mb-4 tracking-tighter italic">Immutable Logic</div>
-                <p className="text-slate-400 text-sm leading-relaxed border-t border-slate-800 pt-6 font-light">
-                  We develop high-performance decentralized systems across dominant networks (Solidity/Rust) optimized natively for execution security.
-                </p>
-              </div>
-            </section>
+          {/* --- Main Content Body (Image style simple paragraphs) --- */}
+          <div className="max-w-4xl mx-auto px-6 pb-24">
 
-            {/* --- Processing Lifecycle (Pipeline) --- */}
-            <section className="py-24 border-t border-slate-100 mb-32">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <div className="lg:col-span-6 space-y-6">
-                  <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em]">Lifecycle Path</h3>
-                  <h2 className="text-3xl font-bold text-slate-900 uppercase">The Protocol Security Lifecycle</h2>
-                  <p className="text-slate-600 font-light leading-relaxed">
-                    Building a bulletproof decentralized network requires moving far beyond simple code scripting.
-                  </p>
-                  <p className="text-slate-600 font-light leading-relaxed">
-                    We implement an end-to-end engineering pipeline that treats smart contract security as a rigorous, mathematical science—from compilation validations to mainnet proxies.
-                  </p>
-                </div>
-                <div className="lg:col-span-6 bg-slate-50 p-8 border border-slate-100 flex items-center justify-center">
-                  <div className="w-full max-w-[400px]">
-                    <svg width="100%" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600">
-                      {/* Tier 1 */}
-                      <rect x="10" y="10" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="32" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Rigorous Development Framework</text>
-                      <text x="210" y="48" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">Solidity 0.8.x+ / Rust • Foundry Native Testing</text>
+            {/* --- Section 1 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              1. Immutable Infrastructure &amp; Security Risks
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              In the Web3 ecosystem, software deployment introduces a radical shift in engineering risk. Code is immutable, execution is public, and live economic capital is bound directly to your logic. Unlike traditional web applications where bugs are patched post-launch via server hotfixes, a single logical flaw, access control oversight, or price oracle vulnerability in a deployed smart contract can lead to the instantaneous, irreversible loss of millions of dollars in protocol assets.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              According to recent Web3 threat assessments, decentralized systems lose hundreds of millions annually, not because blockchain security fails, but because the underlying smart contract protocols are structurally flawed. At Expert Opinions, we don’t just write smart contracts. We engineer rigorous, production-grade Web3 protocols designed to survive hostile mempool front-running, pass top-tier audits, and enforce absolute economic integrity.
+            </p>
 
-                      {/* Arrow 1 */}
-                      <path d="M210 65 V105" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="210,105 205,97 215,97" fill="currentColor" />
+            {/* --- Section 2 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              2. The Protocol Security Lifecycle
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              Building a bulletproof decentralized network requires moving far beyond simple code scripting. We implement an end-to-end engineering pipeline that treats smart contract security as a rigorous, mathematical science; from compilation validations to mainnet proxies.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 01 // Static Analysis:</strong> Solidity and Rust codebases run through Slither and Semgrep scanning pipelines to catch basic modifiers or low-level vulnerabilities.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 02 // Invariant Fuzzing:</strong> Foundry toolchains perform invariant property tests, bombarding public interfaces with millions of random input parameters.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 03 // Fork Simulations:</strong> Deploying code locally against RPC forks (Anvil, Hardhat) to check live protocol integrations (Uniswap, Aave, Chainlink).
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              <strong>Phase 04 // Deterministic Verification:</strong> Repeatable deployment runs compile and verify bytecodes directly on Etherscan/Solscan for user transparency.
+            </p>
 
-                      {/* Tier 2 */}
-                      <rect x="10" y="105" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="127" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Multi-Layer Static &amp; Fuzz Gates</text>
-                      <text x="210" y="143" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">Slither / Mythril Analysis • Automated Property Fuzz</text>
+            {/* --- Section 3 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              3. Core Web3 Offerings
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Path 01 // EVM &amp; Solana Optimization:</strong> Developing protocols across dominant networks. Solidity for EVM compatible setups (Base, Arbitrum, Optimism) and Rust via Anchor for Solana. Strictly implementing Checks-Effects-Interactions (CEI) to neutralize reentrancy vectors and packing variables natively.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              <strong>Path 02 // Protocol Governance:</strong> Isolating administrative operations by integrating strict Role-Based Access Control backed by OpenZeppelin. Upgrades and critical calls require multi-sig signer consensus paired with a mandatory 48-hour Timelock Controller.
+            </p>
 
-                      {/* Arrow 2 */}
-                      <path d="M210 160 V200" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="210,200 205,192 215,192" fill="currentColor" />
-
-                      {/* Tier 3 */}
-                      <rect x="10" y="200" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="222" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Production Runtime &amp; Guardrails</text>
-                      <text x="210" y="238" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">Multi-Sig Access • Timelocked UUPS Proxies • Oracles</text>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* --- Strategic Core Offerings --- */}
-            <section className="py-24 border-t border-slate-100 mb-32">
-              <div className="mb-16">
-                <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em]">Decentralized Engines</h3>
-                <h2 className="text-3xl font-bold text-slate-900 uppercase">Core Web3 Offerings</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="p-12 bg-slate-50 border border-slate-100 hover:border-purple-600 transition-colors duration-300">
-                  <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest mb-6 block">Path 01 // Multi-Chain Development</span>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 uppercase">EVM &amp; Solana Optimization</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light mb-6">
-                    Developing protocols across dominant networks. Solidity for EVM compatible setups (Base, Arbitrum, Optimism) and Rust via Anchor for Solana. Strictly implementing Checks-Effects-Interactions (CEI) to neutralize reentrancy vectors and packing variables natively.
-                  </p>
-                </div>
-                <div className="p-12 bg-slate-50 border border-slate-100 hover:border-purple-600 transition-colors duration-300">
-                  <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest mb-6 block">Path 02 // Protocol Governance</span>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 uppercase">Access &amp; Upgradeability</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light mb-6">
-                    Isolating administrative operations by integrating strict Role Based Access Control backed by OpenZeppelin. Upgrades and critical calls require multi-sig signer consensus paired with a mandatory 48-hour Timelock Controller.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* --- Operational Benchmarks (Table) --- */}
-            <section className="py-24 border-b border-slate-100 mb-32">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <div className="max-w-2xl">
-                  <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em] mb-4">Protocol Safety</h3>
-                  <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-tighter">System Benchmarks</h2>
-                </div>
-              </div>
-
-              <div className="border border-slate-200 shadow-sm overflow-hidden">
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-slate-50">
-                    <tr>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Vulnerability Vector</th>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Targeted Engineering Guardrail</th>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Strategic Economic Protection</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {[
-                      ["Access Control Bugs", "Multi-Sig Signer Sets + UUPS Proxies", "Prevents unauthorized initialization or contract hijacking."],
-                      ["Price Oracle Manipulation", "Multi-Source Feeds (Chainlink Aggregators + TWAP)", "Neutralizes spot price skewing and flash loan facilitated attacks."],
-                      ["Arithmetic / Logic Errors", "Strict Invariant Testing & OpenZeppelin Libraries", "Eliminates rounding vulnerabilities and calculation exploits."],
-                      ["Reentrancy Violations", "NonReentrant State Guards (CEI Adherence)", "Blocks recursive token draining withdrawal loops permanently."]
-                    ].map(([benefit, execution, impact], idx) => (
-                      <tr key={benefit} className="hover:bg-slate-50 transition-colors">
-                        <td className="p-8 font-bold text-slate-900 text-sm w-1/4 italic border-r border-slate-50">
-                          <span className="text-[10px] text-purple-600 mr-3 font-mono">0{idx + 1}</span>
-                          {benefit}
-                        </td>
-                        <td className="p-8 text-slate-600 text-sm leading-relaxed font-light border-r border-slate-50">{execution}</td>
-                        <td className="p-8 text-slate-600 text-sm leading-relaxed font-light">{impact}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            {/* --- Integration Steps (Stepper) --- */}
-            <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-slate-950 text-white p-12 md:p-24 overflow-hidden mb-32">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[150px]"></div>
-
-              <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                <h2 className="text-xs font-bold uppercase tracking-[0.5em] text-purple-500 mb-16">
-                  Web3 Testing &amp; Deployment Workflow
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                  {[
-                    { step: "01", title: "Static Analysis", desc: "Solidity and Rust codebases run through Slither and Semgrep scanning pipelines to catch basic modifiers or low-level vulnerabilities." },
-                    { step: "02", title: "Invariant Fuzzing", desc: "Foundry toolchains perform invariant property tests, bombarding public interfaces with millions of random input parameters." },
-                    { step: "03", title: "Fork Simulations", desc: "Deploying code locally against RPC forks (Anvil, Hardhat) to check live protocol integrations (Uniswap, Aave, Chainlink)." },
-                    { step: "04", title: "deterministic verification", desc: " Repeatable deployment runs compile and verify bytecodes directly on Etherscan/Solscan for user transparency." }
-                  ].map((proc, i) => (
-                    <div key={i} className="space-y-4 border-l border-slate-800 pl-6 hover:border-purple-500 transition-colors duration-300">
-                      <span className="text-3xl font-mono text-purple-500 font-bold block">{proc.step}</span>
-                      <h4 className="text-lg font-bold tracking-tight text-white uppercase italic">{proc.title}</h4>
-                      <p className="text-slate-400 text-sm font-light leading-relaxed">{proc.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* --- Executive CTA --- */}
-            <section className="mt-32 py-24 border border-slate-900 text-center bg-slate-50 relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-4xl font-bold text-slate-900 mb-8 tracking-tighter uppercase italic">Secure Your Protocols</h3>
-                <p className="max-w-2xl mx-auto mb-12 text-slate-500 font-light text-lg">
-                  Stop gambling your enterprise capital on unverified contract templates. Partner with a veteran Web3 team to safeguard your assets.
-                </p>
-                <Link to="/contact" className="inline-flex items-center gap-6 bg-slate-950 text-white px-16 py-6 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 transition-all duration-300">
-                  Launch Protocol Consultation <ChevronRight size={18} />
-                </Link>
-              </div>
-            </section>
+            {/* --- Section 4 (Table) --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              4. System Benchmarks &amp; Guardrails
+            </h2>
+            <div className="w-full overflow-x-auto mb-8">
+              <table className="w-full text-left border-collapse border border-slate-200">
+                <thead>
+                  <tr className="bg-slate-50">
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Vulnerability Vector</th>
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Engineering Guardrail</th>
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Economic Protection</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Access Control Bugs</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">Multi-Sig Signer Sets + UUPS Proxies</td>
+                    <td className="p-4 text-sm text-slate-600">Prevents unauthorized initialization or contract hijacking.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Price Oracle Manipulation</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">Multi-Source Feeds (Chainlink + TWAP)</td>
+                    <td className="p-4 text-sm text-slate-600">Neutralizes spot price skewing and flash loan attacks.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Arithmetic / Logic Errors</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">Invariant Testing &amp; OZ Libraries</td>
+                    <td className="p-4 text-sm text-slate-600">Eliminates rounding vulnerabilities and calculation exploits.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Reentrancy Violations</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">NonReentrant State Guards (CEI)</td>
+                    <td className="p-4 text-sm text-slate-600">Blocks recursive token draining withdrawal loops permanently.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
           </div>
         </div>
@@ -2161,201 +2087,119 @@ const ServiceDetail = () => {
         <div className="text-slate-800 bg-white font-sans overflow-x-hidden">
 
           {/* --- Executive Hero Section --- */}
-          <section className="relative w-full h-[65vh] md:h-[80vh] flex items-center bg-slate-950">
+          <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center bg-slate-950 mb-16">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-30"
+              className="absolute inset-0 bg-cover bg-center opacity-30 grayscale-[20%]"
               style={{
                 backgroundImage: `url('https://res.cloudinary.com/dawp1fcci/image/upload/v1783626874/IoT_Solutions_Architecture_wolkmj.jpg')`,
                 backgroundAttachment: 'fixed'
               }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-              <div className="max-w-4xl border-l-2 border-purple-600 pl-10 py-6">
-                <p className="text-xs font-bold tracking-[0.5em] uppercase text-purple-500 mb-6">
+            <div className="relative z-10 max-w-4xl mx-auto px-6 w-full">
+              <div className="border-l-2 border-purple-600 pl-8 py-4">
+                <p className="text-xs font-bold tracking-[0.4em] uppercase text-purple-400 mb-4">
                   Design &amp; Immersive Experiences
                 </p>
-                <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-8">
+                <h1 className="text-4xl md:text-6xl font-light text-white leading-tight mb-6">
                   IoT Solutions <br />
-                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Architecture</span>
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+                    Architecture
+                  </span>
                 </h1>
-                <p className="text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed mb-10">
+                <p className="text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed mb-8">
                   Engineering secure hardware edge layers, real-time message brokers, time-series storage grids, and secure over-the-air firmware updates.
                 </p>
-                <Link to="/contact" className="inline-block bg-white text-slate-950 px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-xl">
-                  Engineer Your IoT Infrastructure
+                <Link to="/contact" className="inline-block bg-white text-slate-950 px-8 py-4 font-bold uppercase tracking-widest text-xs hover:bg-purple-600 hover:text-white transition-all duration-300">
+                  Initiate Consultation
                 </Link>
               </div>
             </div>
           </section>
 
-          {/* --- Strategic Overview --- */}
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32">
-            <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32">
-              <div className="lg:col-span-8">
-                <h2 className="text-3xl font-bold text-slate-900 mb-8 tracking-tight uppercase">Connected Device Ecosystems</h2>
-                <p className="text-xl leading-relaxed text-slate-600 mb-10 font-light border-b border-slate-100 pb-12 italic">
-                  "In a modern enterprise footprint, the physical and digital operations of a business must move in perfect lockstep. Relying on isolated physical assets, manual equipment inspections, or disconnected facility systems introduces major operational blind spots."
-                </p>
-                <p className="text-lg leading-relaxed text-slate-500 font-light">
-                  When telemetry data is trapped inside silos, businesses are forced to remain reactive, discovering machinery faults, supply chain delays, or building inefficiencies only after they impact operations. True physical digital convergence requires a sophisticated IoT Solutions Architecture: an end to end network capable of securely ingesting millions of telemetry data points, processing heavy workloads at the network edge, and converting raw hardware signals into automated corporate strategies. At Expert Opinions, we engineer highly resilient, enterprise grade Internet of Things ecosystems designed to bridge hardware and software.
-                </p>
-              </div>
-              <div className="lg:col-span-4 bg-slate-900 p-12 text-white border-t-4 border-purple-600 shadow-2xl">
-                <div className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-8">Industrial Vibe</div>
-                <div className="text-4xl font-light mb-4 tracking-tighter italic">Signal Convergence</div>
-                <p className="text-slate-400 text-sm leading-relaxed border-t border-slate-800 pt-6 font-light">
-                  We engineer end-to-end networks capable of securely ingesting telemetry points and processing heavy workloads at the edge.
-                </p>
-              </div>
-            </section>
+          {/* --- Main Content Body (Image style simple paragraphs) --- */}
+          <div className="max-w-4xl mx-auto px-6 pb-24">
 
-            {/* --- Processing Lifecycle (Pipeline) --- */}
-            <section className="py-24 border-t border-slate-100 mb-32">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <div className="lg:col-span-6 space-y-6">
-                  <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em]">Hardware Data Loop</h3>
-                  <h2 className="text-3xl font-bold text-slate-900 uppercase">The Distributed IoT Stack</h2>
-                  <p className="text-slate-600 font-light leading-relaxed">
-                    An enterprise IoT network must capture, transmit, and analyze complex hardware data under varying network conditions.
-                  </p>
-                  <p className="text-slate-600 font-light leading-relaxed">
-                    Our architecture routes edge signals through secure local translation layers into cloud event brokers, feeding time-series logs dynamically.
-                  </p>
-                </div>
-                <div className="lg:col-span-6 bg-slate-50 p-8 border border-slate-100 flex items-center justify-center">
-                  <div className="w-full max-w-[400px]">
-                    <svg width="100%" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600">
-                      {/* Tier 1 */}
-                      <rect x="10" y="10" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="32" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Edge Compute &amp; Protocol Broker</text>
-                      <text x="210" y="48" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">Modbus / OPC UA • MQTT / AMQP Compression</text>
+            {/* --- Section 1 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              1. Connected Device Ecosystems
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              In a modern enterprise footprint, the physical and digital operations of a business must move in perfect lockstep. Relying on isolated physical assets, manual equipment inspections, or disconnected facility systems introduces major operational blind spots.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              When telemetry data is trapped inside silos, businesses are forced to remain reactive, discovering machinery faults, supply chain delays, or building inefficiencies only after they impact operations. True physical-digital convergence requires a sophisticated IoT Solutions Architecture: an end-to-end network capable of securely ingesting millions of telemetry data points, processing heavy workloads at the network edge, and converting raw hardware signals into automated corporate strategies. At Expert Opinions, we engineer highly resilient, enterprise-grade Internet of Things ecosystems designed to bridge hardware and software.
+            </p>
 
-                      {/* Arrow 1 */}
-                      <path d="M210 65 V105" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="210,105 205,97 215,97" fill="currentColor" />
+            {/* --- Section 2 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              2. The Distributed IoT Stack &amp; Lifecycle
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              An enterprise IoT network must capture, transmit, and analyze complex hardware data under varying network conditions. Our architecture routes edge signals through secure local translation layers into cloud event brokers, feeding time-series logs dynamically.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 01 // Crypto Provisioning:</strong> Every hardware device is provisioned with unique X.509 keys, ensuring mutual TLS device verification natively.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 02 // Edge Compute &amp; Protocol Broker:</strong> Modbus, BACnet, and OPC UA field environments are bridged natively with lightweight, high-reliability MQTT or AMQP pipelines. Gateways locally filter telemetry logs to minimize cloud storage footprint.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Phase 03 // Stream Brokerage &amp; Ingestion Gateway:</strong> Ingesting signals utilizing Apache Kafka, AWS IoT Core, or Azure IoT Hub. Ingestion queues parse active signals, cross-referencing equipment records against ML anomalies in real time.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              <strong>Phase 04 // High Frequency Time-Series Storage:</strong> Telemetry streams are structured dynamically into TimescaleDB, InfluxDB, or AWS Timestream logs. Firmware updates are published securely via throttled OTA deployment waves.
+            </p>
 
-                      {/* Tier 2 */}
-                      <rect x="10" y="105" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="127" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Cloud Telemetry Ingestion Gateway</text>
-                      <text x="210" y="143" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">AWS IoT Core • Azure IoT Hub • Apache Kafka Broker</text>
+            {/* --- Section 3 --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              3. Core IoT Offerings
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 mb-4 max-w-none">
+              <strong>Path 01 // Edge &amp; Protocol Translation:</strong> Developing smart edge compute layers to interface with diverse industrial configurations. Bridging Modbus, BACnet, and OPC UA field environments natively with lightweight, high-reliability MQTT or AMQP data pipelines.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600 mb-8 max-w-none">
+              <strong>Path 02 // Stream Processing &amp; Time-Series Ingestion:</strong> Building robust telemetry pipelines utilizing Apache Kafka, AWS IoT Core, or Azure IoT Hub. Telemetry blocks are structured dynamically into TimescaleDB, InfluxDB, or AWS Timestream repositories without affecting active runs.
+            </p>
 
-                      {/* Arrow 2 */}
-                      <path d="M210 160 V200" stroke="currentColor" strokeWidth="1.5" />
-                      <polygon points="210,200 205,192 215,192" fill="currentColor" />
-
-                      {/* Tier 3 */}
-                      <rect x="10" y="200" width="400" height="55" rx="6" fill="#0f172a" stroke="currentColor" strokeWidth="1.5" />
-                      <text x="210" y="222" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">High Frequency Time-Series Storage</text>
-                      <text x="210" y="238" fill="#94a3b8" fontSize="10" textAnchor="middle" fontFamily="sans-serif">TimescaleDB • InfluxDB • AWS Timestream logs</text>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* --- Strategic Core Offerings --- */}
-            <section className="py-24 border-t border-slate-100 mb-32">
-              <div className="mb-16">
-                <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em]">Asset Integration</h3>
-                <h2 className="text-3xl font-bold text-slate-900 uppercase">Core IoT Offerings</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="p-12 bg-slate-50 border border-slate-100 hover:border-purple-600 transition-colors duration-300">
-                  <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest mb-6 block">Path 01 // Protocol Bridging</span>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 uppercase">Edge &amp; Protocol translation</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light mb-6">
-                    Developing smart edge compute layers to interface with diverse industrial configurations. Bridging Modbus, BACnet, and OPC UA field environments natively with lightweight, high-reliability MQTT or AMQP data pipelines.
-                  </p>
-                </div>
-                <div className="p-12 bg-slate-50 border border-slate-100 hover:border-purple-600 transition-colors duration-300">
-                  <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest mb-6 block">Path 02 // Stream Processing</span>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 uppercase">Ingestion &amp; Time-Series Data</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light mb-6">
-                    Building robust telemetry pipelines utilizing Apache Kafka, AWS IoT Core, or Azure IoT Hub. Telemetry blocks are structured dynamically into TimescaleDB, InfluxDB, or AWS Timestream repositories without affecting active runs.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* --- Operational Benchmarks (Table) --- */}
-            <section className="py-24 border-b border-slate-100 mb-32">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <div className="max-w-2xl">
-                  <h3 className="text-xs font-bold text-purple-600 uppercase tracking-[0.4em] mb-4">Device Security</h3>
-                  <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-tighter">IoT Benchmarks</h2>
-                </div>
-              </div>
-
-              <div className="border border-slate-200 shadow-sm overflow-hidden">
-                <table className="w-full text-left border-collapse">
-                  <thead className="bg-slate-50">
-                    <tr>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Technical Control Vector</th>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Production Target Benchmark</th>
-                      <th className="p-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200">Strategic Operational Impact</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {[
-                      ["Data Ingestion Capacity", "50,000+ Telemetry Messages / Second", "Accommodates sprawling, enterprise-wide sensor deployments effortlessly."],
-                      ["Edge Decision Latency", "10 ms or less (Local Execution Loops)", "Triggers emergency safety shut-offs instantly without waiting for cloud returns."],
-                      ["Device Connection Security", "X.509 Cryptographic Certificate Authentication", "Blocks unauthorized rogue hardware from accessing your internal enterprise networks."],
-                      ["System Data Availability", "99.99% Continuous Pipeline Uptime", "Guarantees critical industrial logging remains active through localized buffering."]
-                    ].map(([benefit, execution, impact], idx) => (
-                      <tr key={benefit} className="hover:bg-slate-50 transition-colors">
-                        <td className="p-8 font-bold text-slate-900 text-sm w-1/4 italic border-r border-slate-50">
-                          <span className="text-[10px] text-purple-600 mr-3 font-mono">0{idx + 1}</span>
-                          {benefit}
-                        </td>
-                        <td className="p-8 text-slate-600 text-sm leading-relaxed font-light border-r border-slate-50">{execution}</td>
-                        <td className="p-8 text-slate-600 text-sm leading-relaxed font-light">{impact}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            {/* --- Device Management (Stepper) --- */}
-            <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-slate-950 text-white p-12 md:p-24 overflow-hidden mb-32">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[150px]"></div>
-
-              <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                <h2 className="text-xs font-bold uppercase tracking-[0.5em] text-purple-500 mb-16">
-                  The Advanced IoT Lifecycle
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                  {[
-                    { step: "01", title: "Crypto Provisioning", desc: "Every hardware device is provisioned with unique X.509 keys, ensuring mutual TLS device verification natively." },
-                    { step: "02", title: "Edge Filtration", desc: "Gateways locally scan telemetry logs, transmitting only high-priority events to minimize cloud database storage bills." },
-                    { step: "03", title: "Stream brokerage", desc: "Ingestion queues parse active signals, cross-referencing equipment records against ML anomalies in real time." },
-                    { step: "04", title: "Immutable FOTA", desc: "Firmware builds publish securely to field units via throttled OTA deployment waves, maximizing operational uptime." }
-                  ].map((proc, i) => (
-                    <div key={i} className="space-y-4 border-l border-slate-800 pl-6 hover:border-purple-500 transition-colors duration-300">
-                      <span className="text-3xl font-mono text-purple-500 font-bold block">{proc.step}</span>
-                      <h4 className="text-lg font-bold tracking-tight text-white uppercase italic">{proc.title}</h4>
-                      <p className="text-slate-400 text-sm font-light leading-relaxed">{proc.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* --- Executive CTA --- */}
-            <section className="mt-32 py-24 border border-slate-900 text-center bg-slate-50 relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-4xl font-bold text-slate-900 mb-8 tracking-tighter uppercase italic">Connect Your Operations</h3>
-                <p className="max-w-2xl mx-auto mb-12 text-slate-500 font-light text-lg">
-                  Stop letting valuable machine metrics slip away on isolated factory floors. Partner with a veteran IoT team to shield your brand today.
-                </p>
-                <Link to="/contact" className="inline-flex items-center gap-6 bg-slate-950 text-white px-16 py-6 font-bold uppercase tracking-widest text-sm hover:bg-purple-600 transition-all duration-300">
-                  Request IoT Architecture Audit <ChevronRight size={18} />
-                </Link>
-              </div>
-            </section>
+            {/* --- Section 4 (Table) --- */}
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              4. System Benchmarks &amp; Guardrails
+            </h2>
+            <div className="w-full overflow-x-auto mb-8">
+              <table className="w-full text-left border-collapse border border-slate-200">
+                <thead>
+                  <tr className="bg-slate-50">
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Technical Control Vector</th>
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Production Target Benchmark</th>
+                    <th className="p-4 text-sm font-bold uppercase tracking-wider text-slate-700 border-b border-slate-200">Strategic Operational Impact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Data Ingestion Capacity</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">50,000+ Telemetry Messages / Second</td>
+                    <td className="p-4 text-sm text-slate-600">Accommodates sprawling, enterprise-wide sensor deployments effortlessly.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Edge Decision Latency</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">≤ 10 ms (Local Execution Loops)</td>
+                    <td className="p-4 text-sm text-slate-600">Triggers emergency safety shut-offs instantly without waiting for cloud returns.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">Device Connection Security</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">X.509 Cryptographic Authentication</td>
+                    <td className="p-4 text-sm text-slate-600">Blocks unauthorized rogue hardware from accessing your internal enterprise networks.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm text-slate-900 font-medium">System Data Availability</td>
+                    <td className="p-4 text-sm text-slate-900 font-semibold">99.99% Continuous Pipeline Uptime</td>
+                    <td className="p-4 text-sm text-slate-600">Guarantees critical industrial logging remains active through localized buffering.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
           </div>
         </div>
